@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 46 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 48 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -940,6 +940,183 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   <text x="230" y="379" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24"><tspan font-weight="700">Merksatz: </tspan><tspan>Die Schutzart gilt nur für das geschlossene Gehäuse.</tspan></text>
 </svg>
         <figcaption><strong>Aufbau des IP-Codes</strong> Erste Ziffer: feste Fremdkörper und Berührung. Zweite Ziffer: Wasser. Die Schutzart gilt nur für das geschlossene Gehäuse.</figcaption>
+      </figure>
+    </div>
+    <div class="unterkapitel">
+      <h4>Kriechströme und Wärmestau</h4>
+      <ul class="theorie">
+        <li>Ein Kriechstrom ist ein Strom, der über die Oberfläche eines Isolierstoffs fließt, statt durch das Material hindurch. Damit ist er von zwei anderen Erscheinungen zu unterscheiden: Der Ableitstrom fließt durch den Isolierstoff selbst oder über Kapazitäten und tritt auch bei einwandfreier Isolierung auf, während der Durchschlag ein Versagen durch das Material hindurch ist, das die Isolierung zerstört. Für die Konstruktion sind deshalb zwei Abstände festgelegt, nämlich die Kriechstrecke als kürzeste Entfernung entlang der Oberfläche zwischen zwei leitfähigen Teilen und die Luftstrecke als kürzeste Entfernung durch die Luft; beide sind in DIN EN 60664-1 im Rahmen der Isolationskoordination festgelegt und hängen von der Spannung, der Verschmutzung und der Höhe über dem Meeresspiegel ab. Ein Kriechstrom entsteht vor allem dort, wo Feuchtigkeit und Verschmutzung zusammenkommen, denn Staub, Salz, Metallspäne, Mehl oder Futterstaub bilden mit Wasser einen leitfähigen Film auf der Oberfläche. Besonders kritisch sind Bereiche mit Kondensation durch Temperaturschwankungen, also landwirtschaftliche Betriebe, Werkstätten mit Metallstaub, Schwimmbäder, Wäschereien und ungeheizte Außenverteiler.</li>
+        <li>Gefährlich wird ein Kriechstrom dadurch, dass er sich selbst verstärkt, ähnlich wie die Erwärmung einer lockeren Klemmstelle. Der Strom erwärmt die Oberfläche an der engsten Stelle, die Feuchtigkeit verdampft dort, die Verschmutzung verkohlt, und es entsteht eine leitfähige Kohlespur, die als Kriechspur oder auf Englisch als Tracking bezeichnet wird. Diese Spur bleibt dauerhaft leitfähig, der Strom steigt weiter, die Verkohlung frisst sich in die Oberfläche hinein, und am Ende steht der Überschlag oder der Brand. Genau das ist eine der häufigsten Ursachen für Brände in elektrischen Anlagen in staubigen und feuchten Betrieben. Wie widerstandsfähig ein Isolierwerkstoff dagegen ist, beschreibt die Vergleichszahl der Kriechwegbildung, kurz CTI, die nach IEC 60112 bestimmt wird; Werkstoffe mit hohem CTI verkohlen später und werden für stark beanspruchte Isolierteile gewählt. Gegenmaßnahmen sind die Reinigung und Trocknung der Anlage, die Erhöhung der Kriechstrecken durch Rippen oder größere Abstände, der Verguss oder die Verkapselung gefährdeter Teile, die Verwendung von Werkstoffen mit hohem CTI, eine höhere Schutzart gegen Staub und Wasser sowie in gefährdeten Verteilern eine Beheizung, die die Kondensation verhindert.</li>
+        <li>Wärmestau bedeutet, dass die im Betrieb entstehende Verlustwärme nicht ausreichend abgeführt wird und sich im Gehäuse ansammelt. Jedes Schaltgerät gibt Verlustleistung ab, die im Datenblatt steht; in einem geschlossenen Verteiler addieren sich diese Anteile, und die Innentemperatur steigt über die Umgebungstemperatur. Wärmestau entsteht durch zu dicht gepackte Geräte, geschlossene Gehäuse ohne Lüftung, zu kleine Schränke, Staubablagerungen auf den Kühlflächen, ausgefallene Lüfter und Sonneneinstrahlung auf außen stehende Schränke. Die Folgen sind gravierend: Die Lebensdauer der Isolierung und der elektronischen Bauteile sinkt, weil eine um 10 Kelvin höhere Dauertemperatur die Lebensdauer etwa halbiert; die thermischen Auslöser der Schutzgeräte sprechen früher an, sodass es zu unerwünschten Abschaltungen kommt; und im Extremfall entsteht Brandgefahr. Bei der Auslegung wird deshalb die Summe der Verlustleistungen der Wärmeabgabe des Gehäuses gegenübergestellt, die von der Oberfläche, dem Werkstoff, der Aufstellungsart und der Temperaturdifferenz abhängt. Reicht die natürliche Abgabe nicht aus, kommen Lüftungsöffnungen mit Filterlüftern, Wärmetauscher oder Klimageräte zum Einsatz. Dabei ist ein Zielkonflikt zu beachten: Eine hohe Schutzart schützt gegen Staub und Wasser, verhindert aber die natürliche Lüftung, sodass in staubigen und feuchten Bereichen eine höhere Schutzart und eine aktive Kühlung zusammen erforderlich sind.</li>
+      </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 270" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="270" fill="#f7f9fc"/>
+
+  <!-- linke und rechte Anschlussmetallbloecke -->
+  <rect x="18" y="86" width="67" height="78" rx="2" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="375" y="86" width="67" height="78" rx="2" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="51" y="128" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Metall</text>
+  <text x="408" y="128" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Metall</text>
+
+  <!-- Isolierkoerper mit leicht gewellter Oberflaeche -->
+  <path d="M 85 108 Q 95 102 105 108 Q 115 114 125 108 Q 135 102 145 108 Q 155 114 165 108 Q 175 102 185 108 Q 195 114 205 108 Q 215 102 225 108 Q 235 114 245 108 Q 255 102 265 108 Q 275 114 285 108 Q 295 102 305 108 Q 315 114 325 108 Q 335 102 345 108 Q 355 114 365 108 Q 370 105 375 108 L 375 164 L 85 164 Z" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <text x="230" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Isolierk&#246;rper</text>
+
+  <!-- verschmutzte und feuchte Oberflaeche: Punkte und Tropfen -->
+  <circle cx="95" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="115" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="135" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="155" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="175" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="195" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="215" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="235" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="255" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="275" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="295" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="315" cy="108" r="1.3" fill="#5c6672"/>
+  <circle cx="335" cy="103" r="1.3" fill="#5c6672"/>
+  <circle cx="355" cy="108" r="1.3" fill="#5c6672"/>
+  <ellipse cx="105" cy="106" rx="2.2" ry="2" fill="#5c6672"/>
+  <ellipse cx="185" cy="106" rx="2.2" ry="2" fill="#5c6672"/>
+  <ellipse cx="265" cy="106" rx="2.2" ry="2" fill="#5c6672"/>
+  <ellipse cx="345" cy="106" rx="2.2" ry="2" fill="#5c6672"/>
+
+  <!-- Kriechweg ueber die verschmutzte Oberflaeche -->
+  <line x1="85" y1="99" x2="350" y2="99" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="252" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">Kriechweg &#252;ber die Oberfl&#228;che</text>
+
+  <!-- Luftstrecke: Bogen durch die Luft -->
+  <path d="M 30 86 Q 230 -20 430 86" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="230" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8">Luftstrecke durch die Luft</text>
+
+  <!-- verkohlte, verzweigte Kriechspur am rechten Ende des Kriechwegs -->
+  <polygon points="345,103 353,104 356,110 353,117 357,124 352,131 355,139 358,146 352,154 346,146 344,138 346,130 342,122 343,113" fill="#1b1f24"/>
+  <ellipse cx="350" cy="105" rx="8" ry="3" fill="#1b1f24"/>
+  <polyline points="344,124 336,130 332,138" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <polyline points="354,133 362,139 365,147" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <polyline points="347,141 341,148 339,155" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <polyline points="352,112 360,116 363,122" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="370" y1="178" x2="360" y2="158" stroke="#5c6672" stroke-width="2"/>
+  <text x="310" y="182" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">verkohlte Kriechspur,</text>
+  <text x="310" y="194" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">die leitf&#228;hig wird</text>
+
+  <!-- Beschriftung der Schmutz- und Feuchtigkeitsschicht -->
+  <line x1="120" y1="92" x2="110" y2="101" stroke="#5c6672" stroke-width="2"/>
+  <text x="88" y="76" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Verschmutzung</text>
+  <text x="88" y="88" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">und Feuchtigkeit</text>
+
+  <!-- Hinweiskaesten -->
+  <rect x="18" y="203" width="424" height="26" rx="4" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <text x="30" y="220" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">Kriechstrom flie&#223;t &#252;ber die verschmutzte Oberfl&#228;che.</text>
+  <rect x="18" y="233" width="424" height="32" rx="4" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <text x="30" y="246" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Die Kriechspur verst&#228;rkt sich selbst, weil W&#228;rme und Strom</text>
+  <text x="30" y="258" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">sich gegenseitig treiben.</text>
+</svg>
+        <figcaption><strong>Kriechstrom über die Oberfläche</strong> Der Kriechweg läuft über die verschmutzte Oberfläche, die Luftstrecke durch die Luft — die Kriechspur wird leitfähig.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 270" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="270" fill="#f7f9fc"/>
+
+  <!-- ================= LINKS: Schaltschrank OHNE Lueftung ================= -->
+  <g id="schrank-ohne-lueftung">
+    <rect x="14" y="24" width="192" height="152" rx="2" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="19" y="29" width="182" height="142" fill="none" stroke="#9aa3ad" stroke-width="2"/>
+    <text x="110" y="13" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#dc2626">OHNE L&#220;FTUNG</text>
+
+    <!-- vier Geraete, uebereinander und nebeneinander -->
+    <rect x="42" y="88" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="116" y="88" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="42" y="126" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="116" y="126" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <text x="66" y="104" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G1</text>
+    <text x="140" y="104" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G2</text>
+    <text x="66" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G3</text>
+    <text x="140" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G4</text>
+
+    <!-- Waermepolster unter der geschlossenen Decke -->
+    <polyline points="23,32 197,32" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4"/>
+
+    <!-- Waermepfeile: aufsteigen, stauen, zurueckgeworfen werden -->
+    <path d="M 54 88 L 54 46 Q 54 36 64 36 Q 74 36 74 46 L 74 66" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="70,66 78,66 74,74" fill="#dc2626"/>
+    <path d="M 128 88 L 128 46 Q 128 36 138 36 Q 148 36 148 46 L 148 66" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="144,66 152,66 148,74" fill="#dc2626"/>
+    <path d="M 90 138 L 103 138 L 103 46" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="98,46 108,46 103,38" fill="#dc2626"/>
+    <path d="M 164 138 L 180 138 L 180 46" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="175,46 185,46 180,38" fill="#dc2626"/>
+    <line x1="30" y1="32" x2="30" y2="60" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="25,60 35,60 30,68" fill="#dc2626"/>
+    <line x1="193" y1="32" x2="193" y2="60" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="188,60 198,60 193,68" fill="#dc2626"/>
+  </g>
+
+  <!-- ================= RECHTS: Schaltschrank MIT Lueftung ================= -->
+  <g id="schrank-mit-lueftung">
+    <rect x="254" y="24" width="192" height="152" rx="2" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="259" y="29" width="182" height="142" fill="none" stroke="#9aa3ad" stroke-width="2"/>
+    <text x="350" y="13" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#15803d">MIT L&#220;FTUNG</text>
+
+    <!-- untere Oeffnung und obere Oeffnung -->
+    <rect x="330" y="168" width="42" height="12" fill="#f7f9fc" stroke="none"/>
+    <rect x="394" y="20" width="44" height="12" fill="#f7f9fc" stroke="none"/>
+    <line x1="338" y1="170" x2="338" y2="176" stroke="#9aa3ad" stroke-width="2"/>
+    <line x1="346" y1="170" x2="346" y2="176" stroke="#9aa3ad" stroke-width="2"/>
+    <line x1="354" y1="170" x2="354" y2="176" stroke="#9aa3ad" stroke-width="2"/>
+    <line x1="362" y1="170" x2="362" y2="176" stroke="#9aa3ad" stroke-width="2"/>
+
+    <!-- dieselben vier Geraete -->
+    <rect x="282" y="88" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="356" y="88" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="282" y="126" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <rect x="356" y="126" width="48" height="24" rx="2" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+    <text x="306" y="104" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G1</text>
+    <text x="380" y="104" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G2</text>
+    <text x="306" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G3</text>
+    <text x="380" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">G4</text>
+
+    <!-- Zuluft: Pfeil nach innen -->
+    <line x1="348" y1="164" x2="348" y2="140" stroke="#1d4ed8" stroke-width="2"/>
+    <polygon points="343,140 353,140 348,132" fill="#1d4ed8"/>
+
+    <!-- Waermepfeile steigen auf und verlassen den Schrank oben -->
+    <line x1="302" y1="88" x2="302" y2="62" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="297,62 307,62 302,54" fill="#dc2626"/>
+    <line x1="380" y1="88" x2="380" y2="62" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="375,62 385,62 380,54" fill="#dc2626"/>
+    <path d="M 330 138 L 336 138 L 336 62" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="331,62 341,62 336,54" fill="#dc2626"/>
+    <path d="M 404 138 L 416 138 L 416 16" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="411,16 421,16 416,8" fill="#dc2626"/>
+
+    <text x="351" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1d4ed8">Zuluft</text>
+    <text x="406" y="44" text-anchor="end" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">Abluft</text>
+  </g>
+
+  <!-- ================= Warnhinweis zum Waermestau ================= -->
+  <g id="warnhinweis">
+    <line x1="26" y1="204" x2="26" y2="190" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="21,190 31,190 26,182" fill="#dc2626"/>
+    <text x="36" y="197" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">Temperatur steigt</text>
+
+    <polygon points="146,180 132,202 160,202" fill="#f7f9fc" stroke="#dc2626" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="146" y1="187" x2="146" y2="194" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="146" cy="198" r="1.4" fill="#dc2626"/>
+    <text x="168" y="187" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">W&#228;rme kann nicht</text>
+    <text x="168" y="199" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">entweichen.</text>
+  </g>
+
+  <!-- ================= Merksatz ================= -->
+  <g id="merksatz">
+    <rect x="14" y="210" width="432" height="52" rx="5" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="230" y="232" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">W&#228;rmestau verk&#252;rzt die Lebensdauer</text>
+    <text x="230" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">und l&#228;sst Schutzger&#228;te fr&#252;her ausl&#246;sen.</text>
+  </g>
+</svg>
+        <figcaption><strong>Wärmestau im geschlossenen Schrank</strong> Ohne Lüftung staut sich die Verlustwärme, mit Zu- und Abluft wird sie abgeführt.</figcaption>
       </figure>
     </div>
     <div class="unterkapitel">
