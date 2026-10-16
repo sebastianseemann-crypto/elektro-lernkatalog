@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 48 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 49 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -728,9 +728,58 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
         <li>Die Auftragsanalyse beginnt mit der Ermittlung der Anschlussleistung, der Spannung, der Stromart und der Umgebungsbedingungen, daraus werden Betriebsstrom und Leitungsschutz abgeleitet.</li>
         <li>Der Betriebsstrom ergibt sich bei Drehstrom aus I = P / (√3 · U · cos φ) und bei Wechselstrom aus I = P / (U · cos φ).</li>
         <li>Der Querschnitt wird nach der Strombelastbarkeit in Anlehnung an VDE 0298-4 gewählt, wobei Verlegeart, Häufung, Umgebungstemperatur und die Art der Aderisolation als Korrekturgrößen eingehen.</li>
-        <li>Der Spannungsfall berechnet sich für einphasige Leitungen mit ΔU = (2 · l · I) / (κ · A) und soll ab dem Hausanschluss in der Regel 3 % nicht überschreiten.</li>
+        <li>Der Spannungsfall ist die Spannungsdifferenz, die durch den Widerstand der Leitung zwischen der Einspeisestelle und dem Verbraucher entsteht; die Spannung am Verbraucher ist also um diesen Betrag niedriger als an der Quelle. Berechnet wird er für einphasige Stromkreise nach Delta U = 2 · l · I geteilt durch κ · A, wobei der Faktor 2 den Hin- und Rückweg über Außen- und Neutralleiter erfasst, l die einfache Leitungslänge in Metern, I der Strom in Ampere, κ die Leitfähigkeit mit rund 56 für Kupfer und A der Nennquerschnitt ist. Für dreiphasige Stromkreise tritt an die Stelle des Faktors 2 die Wurzel aus 3, weil dort drei Außenleiter geführt werden. Genau genommen geht in die Rechnung noch der Leistungsfaktor ein, sodass die vollständige Beziehung Delta U = 2 · l · I · cos φ geteilt durch κ · A lautet; bei ohmschen Verbrauchern wie Heizgeräten ist cos φ gleich eins, bei Motoren liegt er bei etwa 0,8, sodass der Spannungsfall dort größer ausfällt.</li>
+        <li>Die zulässigen Werte für den Spannungsfall sind in DIN VDE 0100-520 festgelegt und gelten von der Einspeisestelle bis zum letzten Verbraucher. Für Beleuchtungsanlagen sind höchstens 3 Prozent zulässig, für alle sonstigen Verbraucher höchstens 5 Prozent. Die Begrenzung hat mehrere Gründe. Zum einen brauchen die Verbraucher eine Mindestspannung, um richtig zu arbeiten: Ein Motor verliert bei niedriger Spannung Drehmoment, erwärmt sich stärker und altert schneller, Leuchten verlieren Helligkeit und elektronische Geräte können Fehlfunktionen zeigen. Zum anderen sinkt beim Anlauf eines Motors das Anlaufdrehmoment mit dem Quadrat der Spannung, sodass ein Motor bei zu großem Spannungsfall nicht mehr sicher anläuft. Hinzu kommen die Verluste, die als Wärme in der Leitung entstehen und als Kosten bezahlt werden. Bei der Berechnung ist außerdem zu beachten, dass die einfache Formel mit der Leitfähigkeit nur bis zu mittleren Querschnitten genau genug ist: Bei großen Querschnitten macht sich die Induktivität der Leitung bemerkbar, und der Blindanteil ist dann nicht mehr zu vernachlässigen, sodass mit der Impedanz statt mit dem Wirkwiderstand gerechnet werden muss.</li>
+        <li>Der Spannungsfall ist neben der Strombelastbarkeit, der Kurzschlussfestigkeit und der Abschaltbedingung ein eigenständiges Kriterium für die Wahl des Querschnitts, und der Querschnitt wird aus dem ungünstigsten dieser Nachweise bestimmt. Um eine Überschreitung zu vermeiden, gibt es mehrere Möglichkeiten: Der Querschnitt wird vergrößert, die Leitungslänge verringert, die Last auf mehrere Stromkreise aufgeteilt, oder der Leistungsfaktor durch eine Blindstromkompensation verbessert. Bei Anlagen mit hoher Anschlussleistung kann außerdem eine höhere Spannungsebene sinnvoll sein, weil bei gleicher Leistung der Strom und damit der Spannungsfall sinkt. Gemessen wird der Spannungsfall, indem die Spannung an der Einspeisestelle und am Verbraucher verglichen wird, und zwar unter Last, denn ohne Stromfluss entsteht auch kein Spannungsfall. Zu beachten ist schließlich, dass jede Klemmstelle mit ihrem Übergangswiderstand einen weiteren kleinen Anteil beiträgt, der bei gehäuften schlechten Kontakten durchaus ins Gewicht fallen kann.</li>
         <li>Belastbarkeit, Spannungsfall und Wirtschaftlichkeit sind gegeneinander abzuwägen, weil ein größerer Querschnitt mehr Material kostet, aber Erwärmung und Verluste senkt.</li>
       </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" role="img" aria-label="Spannungsfall entlang einer Leitung mit Quelle 230 V, Verlust im Aussen- und Neutralleiter, Spannung am Verbraucher, Grenzwerten und Formel">
+  <rect x="0" y="0" width="460" height="280" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="274" fill="none" stroke="#dde1e6" stroke-width="2"/>
+
+  <line x1="45" y1="58" x2="352" y2="58" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="45" y1="102" x2="352" y2="102" stroke="#1b1f24" stroke-width="2"/>
+
+  <circle cx="45" cy="80" r="22" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M 36 80 C 38.5 71 42 71 45 80 C 48 89 51.5 89 54 80" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="45" y="122" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">U = 230 V</text>
+
+  <rect x="352" y="58" width="30" height="44" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <text x="388" y="84" font-family="system-ui, sans-serif" font-size="11" fill="#15803d">Verbraucher</text>
+
+  <path d="M 140 52 L 140 42 L 290 42 L 290 52" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="215" y="36" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">Verlust im Au&#223;enleiter</text>
+
+  <path d="M 150 96 L 150 88 L 280 88 L 280 96" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="215" y="82" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">Verlust im Neutralleiter</text>
+
+  <line x1="14" y1="130" x2="446" y2="130" stroke="#dde1e6" stroke-width="2"/>
+
+  <line x1="100" y1="206" x2="340" y2="206" stroke="#1b1f24" stroke-width="2"/>
+
+  <rect x="120" y="146" width="46" height="60" fill="#1d4ed8" stroke="#1b1f24" stroke-width="2"/>
+  <text x="143" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">230 V an der Quelle</text>
+
+  <rect x="270" y="170" width="46" height="36" fill="#15803d" stroke="#1b1f24" stroke-width="2"/>
+  <text x="293" y="218" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Spannung am Verbraucher</text>
+
+  <path d="M 175 178 L 175 186 L 212 186 L 218 192 L 224 186 L 261 186 L 261 178" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="218" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle">Spannungsfall &#916;U</text>
+
+  <rect x="20" y="226" width="200" height="28" rx="4" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="120" y="237" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Beleuchtungsanlagen</text>
+  <text x="120" y="249" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">h&#246;chstens 3 %</text>
+
+  <rect x="240" y="226" width="200" height="28" rx="4" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="340" y="237" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Sonstige Verbraucher</text>
+  <text x="340" y="249" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">h&#246;chstens 5 %</text>
+
+  <text x="130" y="270" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">&#916;U = 2 &#183; l &#183; I / (&#954; &#183; A)</text>
+  <text x="340" y="270" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">f&#252;r den einphasigen Stromkreis</text>
+</svg>
+        <figcaption><strong>Spannungsfall entlang einer Leitung</strong> Der Verlust im Außen- und im Neutralleiter senkt die Spannung am Verbraucher — 3 % bei Beleuchtung, 5 % bei sonstigen Verbrauchern.</figcaption>
+      </figure>
     </div>
     <div class="unterkapitel">
       <h4>Strombelastbarkeit und Erwärmung</h4>
