@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 38 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 40 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -2110,6 +2110,128 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   </g>
 </svg>
         <figcaption><strong>Crimpfehler und Sichtprüfung</strong> Eine korrekte Crimpung und die drei typischen Fehler: zu schwach verpresst, Kragen mitgecrimpt, Leiter zu kurz.</figcaption>
+      </figure>
+    </div>
+    <div class="unterkapitel">
+      <h4>Übergangswiderstand und Kontaktierung</h4>
+      <ul class="theorie">
+        <li>Der Übergangswiderstand ist der elektrische Widerstand an der Berührungsstelle zweier Leiter oder zwischen einem Leiter und einer Klemme. Er ist niemals null, denn zwei Metallflächen berühren sich nie über ihre ganze geometrische Fläche, sondern nur an den Erhebungen ihrer Oberfläche. Der Strom wird dadurch gezwungen, sich an diesen wenigen Punkten zusammenzudrängen, und der daraus entstehende Anteil heißt Engewiderstand. Hinzu kommt der Fremdschichtwiderstand durch Oxid- und Sulfidschichten, Schmutz oder Fettrückstände zwischen den Flächen, die je nach Material sehr unterschiedlich stark isolierend wirken; Aluminium bildet besonders schnell eine feste Oxidschicht, während Gold praktisch nicht oxidiert und deshalb für empfindliche Kontakte verwendet wird. Beide Anteile hängen entscheidend von der Kontaktkraft ab: Je stärker die Flächen zusammengepresst werden, desto mehr Rauheitsspitzen verformen sich plastisch, desto größer wird die wirksame Kontaktfläche und desto kleiner der Widerstand. Deshalb ist das vom Hersteller vorgegebene Anzugsmoment keine Formsache. Ein guter Kontakt liegt in der Größenordnung von wenigen Milliohm, und als Faustregel gilt, dass der Übergangswiderstand den Widerstand von etwa einem Meter derselben Leitung nicht überschreiten soll.</li>
+        <li>Gemessen wird der Übergangswiderstand mit der Vierleitermessung, auch Kelvinmessung genannt, weil die einfache Zweileitermessung dafür unbrauchbar ist. Bei der Vierleitermessung führen zwei Leitungen den Messstrom in die Verbindung hinein und wieder heraus, während zwei getrennte Leitungen die Spannung unmittelbar an der Verbindung abgreifen. Da das Spannungsmessgerät nahezu keinen Strom aufnimmt, fällt an den Zuleitungen und an den Übergängen der Spannungsabgriffleitungen keine nennenswerte Spannung ab; gemessen wird deshalb nur der Widerstand zwischen den beiden Abgriffpunkten, also der Übergangswiderstand selbst. Bei der gewöhnlichen Zweileitermessung dagegen gingen der Widerstand der Messleitungen und der Übergangswiderstand der Messspitzen in das Ergebnis ein, was bei Werten im Milliohmbereich das Ergebnis vollständig verfälscht; eine solche Messung zeigt dann eher die Qualität der Messleitungen als die der Verbindung. Für die Praxis gibt es neben der direkten Messung mit einem Mikroohmmeter die Vergleichsmessung, bei der der Spannungsabfall über der Verbindung bei bekanntem Strom mit dem einer einwandfreien Vergleichsstelle verglichen wird, die Thermografie unter Last, die den erwärmten Kontakt sichtbar macht, und die Spannungsfallmessung, bei der aus dem gemessenen Abfall und dem Strom der Widerstand berechnet wird. Wichtig ist die Abgrenzung zum Isolationswiderstand: Der Übergangswiderstand soll klein sein und wird im Milliohmbereich gemessen, der Isolationswiderstand soll groß sein und wird im Megaohmbereich mit einer hohen Prüfspannung gemessen; die beiden Größen verhalten sich also genau entgegengesetzt und erfordern unterschiedliche Messgeräte.</li>
+      </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="280" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="274" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="18" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8" text-anchor="middle">&#220;bergangswiderstand zweier Metallfl&#228;chen</text>
+
+  <polygon points="130,100 140,103 150,98 160,104 170,97 180,103 190,96 200,102 210,106 220,98 230,104 240,97 250,103 260,95 270,101 280,96 290,102 300,104 310,97 320,103 330,98 330,108 320,111 310,106 300,104 290,108 280,105 270,109 260,106 250,113 240,106 230,104 220,108 210,112 200,109 190,107 180,112 170,105 160,104 150,108 140,109 130,107" fill="#7c3aed" fill-opacity="0.5"/>
+
+  <polygon points="130,30 330,30 330,98 320,103 310,97 300,104 290,102 280,96 270,101 260,95 250,103 240,97 230,104 220,98 210,106 200,102 190,96 180,103 170,97 160,104 150,98 140,103 130,100" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <polygon points="130,107 140,109 150,108 160,104 170,105 180,112 190,107 200,109 210,112 220,108 230,104 240,106 250,113 260,106 270,109 280,105 290,108 300,104 310,106 320,111 330,108 330,182 130,182" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+
+  <polyline points="151,36 151,76 160,104 151,132 151,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <polyline points="169,36 169,76 160,104 169,132 169,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="160" y1="36" x2="160" y2="172" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="160,176 156.5,168 163.5,168" fill="#1d4ed8"/>
+
+  <polyline points="221,36 221,76 230,104 221,132 221,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <polyline points="239,36 239,76 230,104 239,132 239,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="230" y1="36" x2="230" y2="172" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="230,176 226.5,168 233.5,168" fill="#1d4ed8"/>
+
+  <polyline points="291,36 291,76 300,104 291,132 291,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <polyline points="309,36 309,76 300,104 309,132 309,172" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="300" y1="36" x2="300" y2="172" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="300,176 296.5,168 303.5,168" fill="#1d4ed8"/>
+
+  <circle cx="160" cy="104" r="3.5" fill="#dc2626"/>
+  <circle cx="230" cy="104" r="3.5" fill="#dc2626"/>
+  <circle cx="300" cy="104" r="3.5" fill="#dc2626"/>
+
+  <polygon points="129,104 107,96 107,100 24,100 24,108 107,108 107,112" fill="#1b1f24"/>
+  <polygon points="331,104 353,96 353,100 436,100 436,108 353,108 353,112" fill="#1b1f24"/>
+
+  <line x1="98" y1="58" x2="154" y2="101" stroke="#5c6672" stroke-width="2"/>
+  <line x1="95" y1="146" x2="143" y2="107" stroke="#5c6672" stroke-width="2"/>
+  <circle cx="145" cy="105" r="2" fill="#5c6672"/>
+  <line x1="378" y1="50" x2="306" y2="99" stroke="#5c6672" stroke-width="2"/>
+  <circle cx="306" cy="99" r="2" fill="#5c6672"/>
+
+  <text x="6" y="42" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">Ber&#252;hrung nur an</text>
+  <text x="6" y="55" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">wenigen Punkten</text>
+  <text x="64" y="92" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#1b1f24" text-anchor="middle">Kontaktkraft</text>
+  <text x="6" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#7c3aed">Fremdschicht aus</text>
+  <text x="6" y="153" font-family="system-ui, sans-serif" font-size="10" fill="#7c3aed">Oxid und Schmutz</text>
+
+  <text x="398" y="44" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">Engewiderstand</text>
+  <text x="394" y="92" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#1b1f24" text-anchor="middle">Kontaktkraft</text>
+  <text x="398" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle">Stromfluss</text>
+  <line x1="398" y1="144" x2="398" y2="162" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="398,170 393.5,162 402.5,162" fill="#1d4ed8"/>
+
+  <rect x="12" y="190" width="436" height="46" rx="5" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="210" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8" text-anchor="middle">U = I &#183; R</text>
+  <text x="230" y="226" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Spannungsabfall am &#220;bergang</text>
+
+  <rect x="12" y="240" width="436" height="32" rx="5" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="260" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle"><tspan fill="#15803d" font-weight="600">Ohne Kontaktkraft</tspan> steigt der &#220;bergangswiderstand.</text>
+</svg>
+        <figcaption><strong>Wie ein Übergangswiderstand entsteht</strong> Zwei Metallflächen berühren sich nur an Rauheitsspitzen — daraus entstehen Engewiderstand und Fremdschichtwiderstand.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="280" fill="#f7f9fc"/>
+  <rect x="6" y="6" width="448" height="268" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">Vierleitermessung an einer Klemmstelle</text>
+
+  <!-- Messgeraet -->
+  <rect x="308" y="30" width="140" height="58" rx="6" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="318" y="38" width="120" height="26" rx="3" fill="#1b1f24" stroke="#1b1f24" stroke-width="2"/>
+  <text x="378" y="57" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">0,9 mΩ</text>
+  <text x="378" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Milliohmmeter</text>
+
+  <!-- Hinweis -->
+  <rect x="12" y="30" width="162" height="72" rx="4" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <text x="20" y="46" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">Hinweis:</text>
+  <text x="20" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Das Voltmeter nimmt fast</text>
+  <text x="20" y="72" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">keinen Strom auf, deshalb</text>
+  <text x="20" y="84" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">fällt an den Messleitungen</text>
+  <text x="20" y="96" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">keine Spannung ab.</text>
+
+  <!-- Stromquelle -->
+  <rect x="20" y="114" width="64" height="44" rx="4" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+  <text x="52" y="132" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">Strom-</text>
+  <text x="52" y="146" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24">quelle</text>
+
+  <!-- Klemmstelle -->
+  <rect x="196" y="108" width="68" height="54" rx="5" fill="#f7f9fc" stroke="#9aa3ad" stroke-width="2"/>
+  <line x1="230" y1="100" x2="230" y2="127" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="230" y="84" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7c3aed">Übergangs-</text>
+  <text x="230" y="96" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7c3aed">widerstand</text>
+  <text x="230" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Klemmstelle</text>
+
+  <!-- Strompfad: kraeftige Messleitungen -->
+  <line x1="84" y1="135" x2="264" y2="135" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="264,135 300,135 300,196 52,196 52,158" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="223" y="127" width="14" height="16" rx="2" fill="#7c3aed"/>
+  <polygon points="154,130 166,135 154,140" fill="#1d4ed8"/>
+  <polygon points="222,191 210,196 222,201" fill="#1d4ed8"/>
+  <text x="118" y="127" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">Strompfad</text>
+  <text x="170" y="213" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8">Strompfad</text>
+
+  <!-- Spannungspfad: duenne Messleitungen -->
+  <polyline points="196,119 186,119 186,54 308,54" fill="none" stroke="#15803d" stroke-width="1.5" stroke-linejoin="round"/>
+  <polyline points="264,119 274,119 274,100 390,100 390,88" fill="none" stroke="#15803d" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="196" cy="119" r="2.5" fill="#15803d"/>
+  <circle cx="264" cy="119" r="2.5" fill="#15803d"/>
+  <text x="246" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#15803d">Spannungspfad</text>
+
+  <!-- Merksatz -->
+  <rect x="40" y="220" width="380" height="48" rx="6" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="240" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">Nur die Vierleitermessung erfasst den</text>
+  <text x="230" y="258" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">Übergangswiderstand allein.</text>
+</svg>
+        <figcaption><strong>Vierleitermessung des Übergangswiderstands</strong> Zwei Leitungen führen den Strom, zwei getrennte Leitungen greifen die Spannung ab — nur so wird der Übergangswiderstand allein erfasst.</figcaption>
       </figure>
     </div>
     <div class="unterkapitel">
