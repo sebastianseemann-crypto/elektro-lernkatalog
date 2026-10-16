@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 23 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 24 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -2828,7 +2828,76 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
         <li>Der Schutzpotenzialausgleich verbindet alle berührbaren metallenen Körper der Betriebsmittel und alle fremden leitfähigen Teile mit dem Schutzleiter und der Erdungsanlage. Der Hauptpotenzialausgleich wird an der Haupterdungsschiene hergestellt und erfasst den Schutzleiter der Anlage, den Erder sowie metallene Rohrleitungen, Heizungs-, Lüftungs- und Klimaanlagen und metallene Gebäudeteile. Der Potenzialausgleichsleiter hat mindestens 6 mm² Kupfer, bei Anforderungen des Blitzschutzes 16 mm²; die genauen Werte stehen in DIN VDE 0100-540.</li>
         <li>Der Schutzpotenzialausgleich verhindert gefährliche Potenzialdifferenzen zwischen gleichzeitig berührbaren Teilen. Entscheidend ist nicht die Höhe einer Spannung, sondern die Differenz zwischen zwei Punkten: Wer mit einer Hand ein fehlerhaftes Gerät unter Spannung und mit der anderen Hand eine Wasserleitung auf Erdpotenzial berührt, bekommt die volle Spannung über den Körper. Liegen beide Teile durch den Potenzialausgleich auf demselben Potenzial, kann kein Strom über den Menschen fließen. Wichtig zur Abgrenzung: Der Potenzialausgleich führt keinen Fehlerstrom ab und löst keine Schutzeinrichtung aus. Die verbreitete Vorstellung, der Strom werde über den Erder in die Erde abgeleitet, trifft nicht zu, denn ein Erder mit beispielsweise 10 Ω lässt bei 230 V nur rund 23 A fließen, was keine Schutzeinrichtung sicher auslöst. Die Abschaltung übernehmen Leitungsschutzschalter und Fehlerstrom-Schutzeinrichtung, der Potenzialausgleich verhindert lediglich die Potenzialdifferenz; beide Maßnahmen ergänzen sich und ersetzen einander nicht.</li>
         <li>Der ergänzende Schutzpotenzialausgleich ist eine örtliche Ergänzung in Bereichen mit erhöhter Gefährdung, etwa in Räumen mit Badewanne oder Dusche, in Schwimmbädern und in medizinisch genutzten Bereichen. Er verbindet die dort gleichzeitig berührbaren fremden leitfähigen Teile untereinander und mit dem Schutzleiter, zum Beispiel den Wannenanschluss sowie Wasser- und Heizungsleitungen. Nachgewiesen wird er durch eine Widerstandsmessung mit einem Prüfstrom von mindestens 200 mA.</li>
+        <li>Zu einer vollständigen Erdungsanlage gehört der Erder selbst, und dafür wird heute in der Regel der Fundamenterder nach DIN 18014 verwendet. Er besteht aus einem korrosionsbeständigen Leiter, meist aus Band- oder Rundstahl, der in das Fundament aus Beton eingelegt wird, und er wird über eine Anschlussfahne, die aus dem Fundament herausgeführt wird, mit der Haupterdungsschiene verbunden. Der Fundamenterder ist die bevorzugte Lösung, weil der Beton den Leiter dauerhaft vor Korrosion schützt, weil er sich über die gesamte Gebäudefläche erstreckt und dadurch einen niedrigen Erdungswiderstand erreicht, und weil er während der Bauphase ohnehin mit verlegt wird. Wird kein Fundamenterder eingebaut, kommen Stab-, Strahlen- oder Ringerder zum Einsatz, die im Erdreich liegen. Der Erder wird über eine trennbare Klemme an die Haupterdungsschiene angeschlossen, damit der Erdungswiderstand später gemessen werden kann, und die Erdungsanlage wird in einem Erdungsprotokoll mit Messwerten und Verlegeplan dokumentiert. Für die Ausführung des Hauptpotenzialausgleichs gilt außerdem: Jedes fremde leitfähige Teil wird möglichst mit einer eigenen Leitung sternförmig zur Haupterdungsschiene geführt, Verbindungen werden geschraubt oder mit geeigneten Klemmen hergestellt und nicht gelötet, und beim Übergang zwischen unterschiedlichen Metallen wie Kupfer und verzinktem Stahl sind Verbindungsstücke zu verwenden, die der Kontaktkorrosion vorbeugen. Für den ergänzenden Schutzpotenzialausgleich in Räumen mit erhöhter Gefährdung gelten kleinere Querschnitte, nämlich 2,5 Quadratmillimeter Kupfer bei mechanisch geschütztem Verlauf und 4 Quadratmillimeter bei ungeschütztem Verlauf.</li>
       </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="4" y="4" width="452" height="252" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="17" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">Hauptpotentialausgleich am Beispiel eines Hauses</text>
+
+  <text x="10" y="32" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Schutzleiter der Zuleitung</text>
+  <text x="10" y="48" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Kabeltragekonstruktion</text>
+  <text x="10" y="64" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Heizungsrohre</text>
+  <text x="10" y="80" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Gasleitung mit Isolierst&#252;ck</text>
+  <text x="10" y="96" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Wasserleitung</text>
+
+  <line x1="190" y1="28" x2="380" y2="28" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="172" y1="44" x2="350" y2="44" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="110" y1="60" x2="320" y2="60" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="187" y1="76" x2="290" y2="76" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="95" y1="92" x2="260" y2="92" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="205" y="72" width="18" height="8" fill="#f7f9fc" stroke="#92400e" stroke-width="2"/>
+
+  <line x1="380" y1="28" x2="380" y2="140" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="350" y1="44" x2="350" y2="140" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="320" y1="60" x2="320" y2="140" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="290" y1="76" x2="290" y2="140" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="260" y1="92" x2="260" y2="140" stroke="#1b1f24" stroke-width="2"/>
+
+  <polygon points="376,134 384,134 380,141" fill="#1b1f24"/>
+  <polygon points="346,134 354,134 350,141" fill="#1b1f24"/>
+  <polygon points="316,134 324,134 320,141" fill="#1b1f24"/>
+  <polygon points="286,134 294,134 290,141" fill="#1b1f24"/>
+  <polygon points="256,134 264,134 260,141" fill="#1b1f24"/>
+
+  <rect x="60" y="140" width="340" height="10" fill="#dde1e6" stroke="#1b1f24" stroke-width="2"/>
+  <text x="68" y="162" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">Haupterdungsschiene</text>
+  <text x="8" y="176" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Hauptpotentialausgleichsleiter</text>
+  <text x="8" y="188" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Kupfer, mindestens 6 mm&#178;</text>
+
+  <line x1="230" y1="150" x2="230" y2="178" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="226,174 234,174 230,180" fill="#1d4ed8"/>
+
+  <line x1="8" y1="193" x2="284" y2="193" stroke="#5c6672" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="210" y1="186" x2="250" y2="186" stroke="#15803d" stroke-width="2"/>
+  <line x1="216" y1="194" x2="244" y2="194" stroke="#15803d" stroke-width="2"/>
+  <line x1="222" y1="202" x2="238" y2="202" stroke="#15803d" stroke-width="2"/>
+  <text x="186" y="216" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">Fundamenterder</text>
+
+  <rect x="290" y="154" width="166" height="98" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <rect x="306" y="183" width="38" height="7" fill="#f7f9fc" stroke="#5c6672" stroke-width="2"/>
+  <circle cx="344" cy="186" r="3" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <rect x="372" y="170" width="48" height="26" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="382" y1="176" x2="408" y2="190" stroke="#dc2626" stroke-width="2"/>
+  <line x1="408" y1="176" x2="382" y2="190" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="372" cy="186" r="3" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <circle cx="357" cy="166" r="6" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="357" y1="172" x2="357" y2="200" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="344" y1="186" x2="357" y2="184" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="357" y1="184" x2="372" y2="186" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="357" y1="200" x2="349" y2="218" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="357" y1="200" x2="365" y2="218" stroke="#1b1f24" stroke-width="2"/>
+  <text x="325" y="206" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">Rohr</text>
+  <text x="396" y="206" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">Ger&#228;t defekt</text>
+  <text x="371" y="232" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">keine Potentialdifferenz,</text>
+  <text x="371" y="246" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">kein Strom durch den K&#246;rper</text>
+
+  <text x="8" y="232" font-family="system-ui, sans-serif" font-size="12" fill="#1d4ed8">Nicht die H&#246;he des Potentials ist gef&#228;hrlich,</text>
+  <text x="8" y="246" font-family="system-ui, sans-serif" font-size="12" fill="#1d4ed8">sondern der Unterschied.</text>
+</svg>
+        <figcaption><strong>Hauptpotenzialausgleich am Beispiel eines Hauses</strong> Alle fremden leitfähigen Teile und der Schutzleiter werden sternförmig auf der Haupterdungsschiene zusammengeführt und mit dem Fundamenterder verbunden.</figcaption>
+      </figure>
     </div>
     <div class="unterkapitel">
       <h4>Netzqualität und Netzanschluss</h4>
