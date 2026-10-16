@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 37 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 38 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -1525,6 +1525,224 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   <text x="230" y="289" font-family="system-ui, sans-serif" font-size="11" fill="#5c6672" text-anchor="middle">Normreihe (mm&#178;): <tspan fill="#1b1f24" font-weight="600">1,5 &#8211; 2,5 &#8211; 4 &#8211; 6 &#8211; 10 &#8211; 16 &#8211; 25 &#8211; 35 &#8211; 50</tspan></text>
 </svg>
         <figcaption><strong>Nennquerschnitt bei eindrähtigem und feindrähtigem Leiter</strong> Gleicher Nennquerschnitt, größerer Außendurchmesser: Zwischen den runden Einzeldrähten bleiben Hohlräume.</figcaption>
+      </figure>
+    </div>
+    <div class="unterkapitel">
+      <h4>Leiteraufbau und Leiterklassen</h4>
+      <ul class="theorie">
+        <li>Eine Litze ist ein dünner Einzeldraht, und ein Leiter, der aus vielen solchen dünnen Einzeldrähten aufgebaut ist, wird als Litzenleiter oder feindrähtiger Leiter bezeichnet. Die Begriffe werden in der Praxis nicht immer sauber getrennt, deshalb lohnt die Abgrenzung: Der Draht oder die Litze ist der blanke metallische Leiter, die Ader ist ein Leiter mit seiner eigenen Isolierung, die Leitung bündelt mehrere Adern unter einem gemeinsamen Mantel, und das Kabel ist eine Leitung mit zusätzlichem mechanischem Schutz für die Verlegung im Erdreich oder unter erschwerten Bedingungen. Umgangssprachlich wird mit Litze häufig auch eine einzelne flexible Ader gemeint, wie sie als H07V-K zum Verdrahten im Verteiler verwendet wird.</li>
+        <li>Der Aufbau des Leiters wird durch die Leiterklasse nach DIN EN 60228 beschrieben. Klasse 1 ist eindrähtig und besteht aus einem einzigen Draht. Klasse 2 ist mehrdrähtig und besteht aus mehreren dickeren Drähten, die verseilt sind, aber nicht für häufiges Biegen gedacht sind. Klasse 5 ist feindrähtig und besteht aus vielen dünnen Einzeldrähten, Klasse 6 ist feinstdrähtig und besteht aus sehr vielen sehr dünnen Drähten; für 1,5 Quadratmillimeter sind in Klasse 5 typischerweise 30 Einzeldrähte mit 0,25 Millimetern Durchmesser üblich, in Klasse 6 dagegen deutlich mehr und dünnere. Je feiner die Einzeldrähte, desto biegsamer ist der Leiter, weil sich die Verformung beim Biegen über viele Gleitflächen verteilt. Daraus ergibt sich die Verwendung: Klasse 1 und 2 für die Festverlegung, Klasse 5 für flexible Leitungen und ortsveränderliche Geräte, Klasse 6 für hochflexible Anwendungen wie Prüfleitungen, Schweißleitungen und Leitungen an ständig bewegten Maschinenteilen.</li>
+        <li>Beim Umgang mit Litzen sind einige Regeln einzuhalten, die sich aus dem Aufbau ergeben. Einzeldrähte dürfen nicht abgetrennt werden, weil sich damit der wirksame Querschnitt verringert und die Strombelastbarkeit sinkt. Die Litze darf nicht verdrillt werden, denn das Verdrillen knickt und bricht einzelne Drähte. Beim Abisolieren sind Kerben im Kupfer zu vermeiden, weil jede Kerbe eine Sollbruchstelle bildet. Vor dem Anklemmen in einer Schraubklemme gehört eine Aderendhülse auf den Leiter, die mit der Crimpzange verpresst wird. Neben dem blanken Kupfer gibt es weitere Ausführungen: verzinnter Kupferdraht für besseren Korrosionsschutz, Kupferlackdraht mit einer Isolierschicht für Wicklungen, wie sie in Motoren und Transformatoren vorkommen, sowie hochflexible Ausführungen mit besonders feiner Verseilung und teilweise zusätzlicher textilem Seele. Die Verseilung selbst wird durch die Schlaglänge beschrieben, also die Länge, nach der ein Draht eine volle Windung um die Leiterachse zurückgelegt hat; eine kurze Schlaglänge ergibt einen festeren, eine lange einen biegsameren Leiter.</li>
+      </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="254" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="20" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8" text-anchor="middle">Leiterklassen nach DIN EN 60228</text>
+  <text x="230" y="36" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">Vier Leiterquerschnitte mit gleichem Nennquerschnitt &#8211; schematisch</text>
+  <g fill="#f7f9fc" stroke="#1b1f24" stroke-width="2">
+    <circle cx="72" cy="100" r="30"/>
+    <circle cx="177" cy="100" r="30"/>
+    <circle cx="282" cy="100" r="30"/>
+    <circle cx="387" cy="100" r="30"/>
+  </g>
+  <circle cx="72" cy="100" r="26" fill="#b45309" stroke="#1b1f24" stroke-width="2"/>
+  <g fill="#b45309" stroke="#1b1f24" stroke-width="2">
+    <circle cx="177" cy="100" r="8.2"/>
+    <circle cx="194.6" cy="100" r="8.2"/>
+    <circle cx="185.8" cy="115.242" r="8.2"/>
+    <circle cx="168.2" cy="115.242" r="8.2"/>
+    <circle cx="159.4" cy="100" r="8.2"/>
+    <circle cx="168.2" cy="84.758" r="8.2"/>
+    <circle cx="185.8" cy="84.758" r="8.2"/>
+  </g>
+  <g fill="#b45309" stroke="#1b1f24" stroke-width="1.5">
+    <circle cx="282" cy="100" r="3.9"/>
+    <circle cx="277.7" cy="92.552" r="3.9"/>
+    <circle cx="286.3" cy="92.552" r="3.9"/>
+    <circle cx="290.6" cy="100" r="3.9"/>
+    <circle cx="286.3" cy="107.448" r="3.9"/>
+    <circle cx="277.7" cy="107.448" r="3.9"/>
+    <circle cx="273.4" cy="100" r="3.9"/>
+    <circle cx="269.1" cy="92.552" r="3.9"/>
+    <circle cx="282" cy="85.104" r="3.9"/>
+    <circle cx="294.9" cy="92.552" r="3.9"/>
+    <circle cx="294.9" cy="107.448" r="3.9"/>
+    <circle cx="282" cy="114.896" r="3.9"/>
+    <circle cx="269.1" cy="107.448" r="3.9"/>
+    <circle cx="273.4" cy="85.104" r="3.9"/>
+    <circle cx="290.6" cy="85.104" r="3.9"/>
+    <circle cx="299.2" cy="100" r="3.9"/>
+    <circle cx="290.6" cy="114.896" r="3.9"/>
+    <circle cx="273.4" cy="114.896" r="3.9"/>
+    <circle cx="264.8" cy="100" r="3.9"/>
+    <circle cx="260.5" cy="92.552" r="3.9"/>
+    <circle cx="264.8" cy="85.104" r="3.9"/>
+    <circle cx="277.7" cy="77.657" r="3.9"/>
+    <circle cx="286.3" cy="77.657" r="3.9"/>
+    <circle cx="299.2" cy="85.104" r="3.9"/>
+    <circle cx="303.5" cy="92.552" r="3.9"/>
+    <circle cx="303.5" cy="107.448" r="3.9"/>
+    <circle cx="299.2" cy="114.896" r="3.9"/>
+    <circle cx="286.3" cy="122.343" r="3.9"/>
+    <circle cx="277.7" cy="122.343" r="3.9"/>
+    <circle cx="264.8" cy="114.896" r="3.9"/>
+    <circle cx="260.5" cy="107.448" r="3.9"/>
+  </g>
+  <g fill="#b45309">
+    <circle cx="387" cy="100" r="1.9"/>
+    <circle cx="384.9" cy="96.363" r="1.9"/>
+    <circle cx="389.1" cy="96.363" r="1.9"/>
+    <circle cx="391.2" cy="100" r="1.9"/>
+    <circle cx="389.1" cy="103.637" r="1.9"/>
+    <circle cx="384.9" cy="103.637" r="1.9"/>
+    <circle cx="382.8" cy="100" r="1.9"/>
+    <circle cx="380.7" cy="96.363" r="1.9"/>
+    <circle cx="387" cy="92.725" r="1.9"/>
+    <circle cx="393.3" cy="96.363" r="1.9"/>
+    <circle cx="393.3" cy="103.637" r="1.9"/>
+    <circle cx="387" cy="107.275" r="1.9"/>
+    <circle cx="380.7" cy="103.637" r="1.9"/>
+    <circle cx="382.8" cy="92.725" r="1.9"/>
+    <circle cx="391.2" cy="92.725" r="1.9"/>
+    <circle cx="395.4" cy="100" r="1.9"/>
+    <circle cx="391.2" cy="107.275" r="1.9"/>
+    <circle cx="382.8" cy="107.275" r="1.9"/>
+    <circle cx="378.6" cy="100" r="1.9"/>
+    <circle cx="376.5" cy="96.363" r="1.9"/>
+    <circle cx="378.6" cy="92.725" r="1.9"/>
+    <circle cx="384.9" cy="89.088" r="1.9"/>
+    <circle cx="389.1" cy="89.088" r="1.9"/>
+    <circle cx="395.4" cy="92.725" r="1.9"/>
+    <circle cx="397.5" cy="96.363" r="1.9"/>
+    <circle cx="397.5" cy="103.637" r="1.9"/>
+    <circle cx="395.4" cy="107.275" r="1.9"/>
+    <circle cx="389.1" cy="110.912" r="1.9"/>
+    <circle cx="384.9" cy="110.912" r="1.9"/>
+    <circle cx="378.6" cy="107.275" r="1.9"/>
+    <circle cx="376.5" cy="103.637" r="1.9"/>
+    <circle cx="380.7" cy="89.088" r="1.9"/>
+    <circle cx="393.3" cy="89.088" r="1.9"/>
+    <circle cx="399.6" cy="100" r="1.9"/>
+    <circle cx="393.3" cy="110.912" r="1.9"/>
+    <circle cx="380.7" cy="110.912" r="1.9"/>
+    <circle cx="374.4" cy="100" r="1.9"/>
+    <circle cx="374.4" cy="92.725" r="1.9"/>
+    <circle cx="387" cy="85.451" r="1.9"/>
+    <circle cx="399.6" cy="92.725" r="1.9"/>
+    <circle cx="399.6" cy="107.275" r="1.9"/>
+    <circle cx="387" cy="114.549" r="1.9"/>
+    <circle cx="374.4" cy="107.275" r="1.9"/>
+    <circle cx="372.3" cy="96.363" r="1.9"/>
+    <circle cx="376.5" cy="89.088" r="1.9"/>
+    <circle cx="382.8" cy="85.451" r="1.9"/>
+    <circle cx="391.2" cy="85.451" r="1.9"/>
+    <circle cx="397.5" cy="89.088" r="1.9"/>
+    <circle cx="401.7" cy="96.363" r="1.9"/>
+    <circle cx="401.7" cy="103.637" r="1.9"/>
+    <circle cx="397.5" cy="110.912" r="1.9"/>
+    <circle cx="391.2" cy="114.549" r="1.9"/>
+    <circle cx="382.8" cy="114.549" r="1.9"/>
+    <circle cx="376.5" cy="110.912" r="1.9"/>
+    <circle cx="372.3" cy="103.637" r="1.9"/>
+    <circle cx="378.6" cy="85.451" r="1.9"/>
+    <circle cx="395.4" cy="85.451" r="1.9"/>
+    <circle cx="403.8" cy="100" r="1.9"/>
+    <circle cx="395.4" cy="114.549" r="1.9"/>
+    <circle cx="378.6" cy="114.549" r="1.9"/>
+    <circle cx="370.2" cy="100" r="1.9"/>
+    <circle cx="370.2" cy="92.725" r="1.9"/>
+    <circle cx="372.3" cy="89.088" r="1.9"/>
+    <circle cx="384.9" cy="81.813" r="1.9"/>
+    <circle cx="389.1" cy="81.813" r="1.9"/>
+    <circle cx="401.7" cy="89.088" r="1.9"/>
+    <circle cx="403.8" cy="92.725" r="1.9"/>
+    <circle cx="403.8" cy="107.275" r="1.9"/>
+    <circle cx="401.7" cy="110.912" r="1.9"/>
+    <circle cx="389.1" cy="118.187" r="1.9"/>
+    <circle cx="384.9" cy="118.187" r="1.9"/>
+    <circle cx="372.3" cy="110.912" r="1.9"/>
+    <circle cx="370.2" cy="107.275" r="1.9"/>
+    <circle cx="368.1" cy="96.363" r="1.9"/>
+    <circle cx="374.4" cy="85.451" r="1.9"/>
+    <circle cx="380.7" cy="81.813" r="1.9"/>
+    <circle cx="393.3" cy="81.813" r="1.9"/>
+    <circle cx="399.6" cy="85.451" r="1.9"/>
+    <circle cx="405.9" cy="96.363" r="1.9"/>
+    <circle cx="405.9" cy="103.637" r="1.9"/>
+    <circle cx="399.6" cy="114.549" r="1.9"/>
+    <circle cx="393.3" cy="118.187" r="1.9"/>
+    <circle cx="380.7" cy="118.187" r="1.9"/>
+    <circle cx="374.4" cy="114.549" r="1.9"/>
+    <circle cx="368.1" cy="103.637" r="1.9"/>
+    <circle cx="376.5" cy="81.813" r="1.9"/>
+    <circle cx="397.5" cy="81.813" r="1.9"/>
+    <circle cx="408" cy="100" r="1.9"/>
+    <circle cx="397.5" cy="118.187" r="1.9"/>
+    <circle cx="376.5" cy="118.187" r="1.9"/>
+    <circle cx="366" cy="100" r="1.9"/>
+    <circle cx="368.1" cy="89.088" r="1.9"/>
+    <circle cx="387" cy="78.176" r="1.9"/>
+    <circle cx="405.9" cy="89.088" r="1.9"/>
+    <circle cx="405.9" cy="110.912" r="1.9"/>
+    <circle cx="387" cy="121.824" r="1.9"/>
+    <circle cx="368.1" cy="110.912" r="1.9"/>
+    <circle cx="366" cy="92.725" r="1.9"/>
+    <circle cx="370.2" cy="85.451" r="1.9"/>
+    <circle cx="382.8" cy="78.176" r="1.9"/>
+    <circle cx="391.2" cy="78.176" r="1.9"/>
+    <circle cx="403.8" cy="85.451" r="1.9"/>
+    <circle cx="408" cy="92.725" r="1.9"/>
+    <circle cx="408" cy="107.275" r="1.9"/>
+    <circle cx="403.8" cy="114.549" r="1.9"/>
+    <circle cx="391.2" cy="121.824" r="1.9"/>
+    <circle cx="382.8" cy="121.824" r="1.9"/>
+    <circle cx="370.2" cy="114.549" r="1.9"/>
+    <circle cx="366" cy="107.275" r="1.9"/>
+    <circle cx="363.9" cy="96.363" r="1.9"/>
+    <circle cx="372.3" cy="81.813" r="1.9"/>
+    <circle cx="378.6" cy="78.176" r="1.9"/>
+    <circle cx="395.4" cy="78.176" r="1.9"/>
+    <circle cx="401.7" cy="81.813" r="1.9"/>
+    <circle cx="410.1" cy="96.363" r="1.9"/>
+    <circle cx="410.1" cy="103.637" r="1.9"/>
+    <circle cx="401.7" cy="118.187" r="1.9"/>
+    <circle cx="395.4" cy="121.824" r="1.9"/>
+    <circle cx="378.6" cy="121.824" r="1.9"/>
+    <circle cx="372.3" cy="118.187" r="1.9"/>
+    <circle cx="363.9" cy="103.637" r="1.9"/>
+    <circle cx="374.4" cy="78.176" r="1.9"/>
+    <circle cx="399.6" cy="78.176" r="1.9"/>
+    <circle cx="412.2" cy="100" r="1.9"/>
+    <circle cx="399.6" cy="121.824" r="1.9"/>
+    <circle cx="374.4" cy="121.824" r="1.9"/>
+    <circle cx="361.8" cy="100" r="1.9"/>
+  </g>
+  <text x="72" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">Klasse 1</text>
+  <text x="72" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">eindrahtig</text>
+  <text x="72" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">1 Draht</text>
+  <text x="72" y="184" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">f&#252;r Festverlegung</text>
+  <text x="177" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">Klasse 2</text>
+  <text x="177" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">mehrdrahtig</text>
+  <text x="177" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">wenige dickere</text>
+  <text x="177" y="184" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">Dr&#228;hte</text>
+  <text x="177" y="196" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">f&#252;r Festverlegung</text>
+  <text x="282" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">Klasse 5</text>
+  <text x="282" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">feindrahtig</text>
+  <text x="282" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">viele d&#252;nne Dr&#228;hte</text>
+  <text x="282" y="184" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">f&#252;r flexible</text>
+  <text x="282" y="196" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Leitungen</text>
+  <text x="387" y="148" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">Klasse 6</text>
+  <text x="387" y="160" font-family="system-ui, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">feinstdrahtig</text>
+  <text x="387" y="172" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">sehr viele sehr</text>
+  <text x="387" y="184" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672" text-anchor="middle">d&#252;nne Dr&#228;hte</text>
+  <text x="387" y="196" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">f&#252;r hochflexible</text>
+  <text x="387" y="208" font-family="system-ui, sans-serif" font-size="10" fill="#1b1f24" text-anchor="middle">Leitungen</text>
+  <rect x="20" y="218" width="420" height="30" rx="5" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <rect x="20" y="218" width="6" height="30" rx="3" fill="#15803d"/>
+  <text x="233" y="236" font-family="system-ui, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">Je feiner die Einzeldr&#228;hte, desto biegsamer der Leiter.</text>
+</svg>
+        <figcaption><strong>Leiterklassen nach DIN EN 60228</strong> Eindrähtig, mehrdrähtig, feindrähtig und feinstdrähtig im Querschnittsvergleich.</figcaption>
       </figure>
     </div>
     <div class="unterkapitel">
