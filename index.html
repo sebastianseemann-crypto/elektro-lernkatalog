@@ -62,6 +62,28 @@
   .chips.stufen button.on { background: var(--accent); border-color: var(--accent); }
   .count { margin-top: 13px; font-size: 13px; color: var(--muted); }
 
+  .filter-kopf { margin-top: 10px; }
+  .filter-kopf button { font-size: 13px; padding: 6px 12px; }
+  .filter-aktiv { font-size: 12.5px; font-weight: 600; color: var(--accent); }
+  #filter-bereich[hidden] { display: none; }
+  .controls.filter-zu { padding-bottom: 12px; }
+
+  @media (max-width: 700px) {
+    .controls {
+      position: static;              /* darf auf dem Handy nicht kleben */
+      margin: 14px 0 12px; padding: 12px;
+    }
+    .row { gap: 8px; }
+    input[type=search] { flex: 1 1 100%; min-width: 0; font-size: 15px; }
+    button { padding: 7px 11px; font-size: 13px; }
+    .group { margin-top: 10px; }
+    .chips { gap: 5px; }
+    .chips button { font-size: 12px; padding: 4px 9px; }
+    .chips button .n { font-size: 11px; }
+    .count { margin-top: 9px; font-size: 12.5px; }
+    .fortschritt textarea { min-height: 44px; }
+  }
+
   .card {
     background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--c, var(--accent));
     border-radius: 10px; padding: 16px 18px; margin-bottom: 14px;
@@ -163,12 +185,20 @@
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
-  <div class="controls">
+  <div class="controls" id="controls">
     <div class="row">
       <input id="search" type="search" placeholder="Suchen in Frage, Antworten und Erklärung ...">
       <button id="toggle">Antworten verbergen</button>
       <button id="print">Drucken</button>
     </div>
+
+    <div class="row filter-kopf">
+      <button id="filter-schalter" type="button" aria-expanded="true"
+              aria-controls="filter-bereich">Filter ausblenden</button>
+      <span class="filter-aktiv" id="filter-aktiv"></span>
+    </div>
+
+    <div id="filter-bereich">
 
     <div class="group">
       <div class="label">Ausbildungsstand</div>
@@ -194,6 +224,8 @@
       </div>
       <textarea id="fortschritt-feld" placeholder="Hier erscheint der Stand als kurzer Text, zum Beispiel 1-3,7,12-20. Diesen Text kannst du auf ein anderes Gerät übertragen."></textarea>
       <div class="tipp" id="fortschritt-tipp">Der Lernstand wird automatisch im Browser gespeichert. Über „Stand sichern" bekommst du einen kurzen Text, den du auf dem Handy oder einem anderen Rechner wieder laden kannst — beim Laden wird zusammengeführt, nichts wird überschrieben.</div>
+    </div>
+
     </div>
 
     <div class="count" id="count"></div>
@@ -447,8 +479,37 @@ function apply() {
     if (visible) shown++;
   });
   aktualisiereZaehlerStand(shown);
+  aktualisiereFilterAnzeige();
   emptyEl.style.display = shown === 0 ? "" : "none";
 }
+
+// ---- Filterbereich ein- und ausklappen ---------------------------------
+const controlsEl = document.getElementById("controls");
+const filterBereichEl = document.getElementById("filter-bereich");
+const filterSchalterEl = document.getElementById("filter-schalter");
+const filterAktivEl = document.getElementById("filter-aktiv");
+const FILTER_KEY = "em1nd3r-filter-offen-v1";
+
+function setzeFilterOffen(offen) {
+  filterBereichEl.hidden = !offen;
+  controlsEl.classList.toggle("filter-zu", !offen);
+  filterSchalterEl.textContent = offen ? "Filter ausblenden" : "Filter einblenden";
+  filterSchalterEl.setAttribute("aria-expanded", offen ? "true" : "false");
+  try { localStorage.setItem(FILTER_KEY, offen ? "1" : "0"); } catch (e) {}
+}
+
+function aktualisiereFilterAnzeige() {
+  const teile = [];
+  if (activeStufe !== "Alle") teile.push(activeStufe);
+  if (activeTopic !== "Alle") teile.push(activeTopic);
+  if (activeStand !== "Alle") teile.push(activeStand);
+  filterAktivEl.textContent = teile.join(" · ");
+  filterSchalterEl.classList.toggle("on", teile.length > 0);
+}
+
+filterSchalterEl.addEventListener("click", () => {
+  setzeFilterOffen(filterBereichEl.hidden);
+});
 
 function aktualisiereZaehlerStand(shown) {
   if (shown === undefined) {
@@ -540,6 +601,16 @@ document.getElementById("importieren").addEventListener("click", () => {
     + (unbekannt ? ", " + unbekannt + " unbekannte Nummern ignoriert" : "")
     + ". Zusammen " + anzahlBeantwortet() + " beantwortet.";
 });
+
+// Startzustand: gemerkte Wahl, sonst auf schmalen Bildschirmen zugeklappt
+(function () {
+  let gemerkt = null;
+  try { gemerkt = localStorage.getItem(FILTER_KEY); } catch (e) {}
+  if (gemerkt !== "0" && gemerkt !== "1") {
+    gemerkt = window.innerWidth >= 700 ? "1" : "0";
+  }
+  setzeFilterOffen(gemerkt === "1");
+})();
 
 aufbauStandChips();
 apply();
