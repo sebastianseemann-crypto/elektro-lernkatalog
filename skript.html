@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 21 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 23 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -1105,6 +1105,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
       <li>Für die Regelung gilt die Grundgleichung der Regelabweichung: Regelabweichung = Sollwert minus Istwert.</li>
       <li>Der Stromstoßschalter, auch Stromstoßrelais oder Impulsschalter genannt, ist ein bistabiles Relais für Installationsschaltungen. Er hat zwei stabile Schaltzustände und wechselt bei jedem Steuerimpuls, also bei jedem Tastendruck, vom Ein- in den Auszustand oder umgekehrt. Weil der Kontakt mechanisch oder durch einen Permanentmagneten in seiner Lage gehalten wird, fließt nur während des kurzen Steuerimpulses Strom durch die Spule, danach nicht mehr. Typische Anwendung ist die Treppenhausbeleuchtung, bei der an jeder Etage ein Taster sitzt und alle Taster parallel auf denselben Steuereingang geführt werden.</li>
       <li>Abgrenzung zum Schütz und praktische Hinweise: Ein Schütz ist monostabil, es fällt ohne dauerhaftes Steuersignal wieder ab und braucht deshalb eine Selbsthaltung, während der Stromstoßschalter mit einem einzigen Tasterimpuls umschaltet und ohne Haltestrom auskommt. Der Steuerkreis führt in der Regel Netzspannung, die Taster sind also Teil der elektrischen Anlage und werden wie diese geprüft. Beim Schalten moderner LED-Leuchten ist der Einschaltstrom zu beachten, weil die Kontakte durch hohe kapazitive Ladeströme verschleißen oder verschweißen können; viele Hersteller geben für LED-Lasten deshalb eine deutlich niedrigere Schaltleistung oder eine Höchstzahl zulässiger Treiber an. Für die Treppenhausbeleuchtung wird häufig ein Treppenlichtzeitschalter eingesetzt, der zusätzlich eine einstellbare Ausschaltverzögerung und eine Warnung vor dem Abschalten bietet.</li>
+      <li>Bei einer Ausschaltung wird der Schalter grundsätzlich in den Außenleiter gelegt und nicht in den Neutralleiter, obwohl die Leuchte in beiden Fällen leuchtet und erlischt. Der Grund ist ausschließlich die Sicherheit. Wird der Außenleiter geschaltet, dann ist die Leuchte im ausgeschalteten Zustand vom spannungsführenden Leiter getrennt und liegt nur noch über den Neutralleiter an Erdpotenzial, sodass ein Lampenwechsel oder eine Arbeit an den Klemmen gefahrlos möglich ist. Wird dagegen der Neutralleiter geschaltet, dann bleibt die Leuchte samt Fassung mit dem Außenleiter verbunden und führt weiterhin 230 V gegen Erde, obwohl der Schalter aus ist. Wer dann eine Lampe einschraubt oder an der Fassung hantiert, fasst einen unter Spannung stehenden Teil an, und ein Spannungsprüfer zeigt die Spannung auch an, sodass sich der gefährliche Zustand nicht einmal als spannungsfrei nachweisen lässt. Auch im Fehlerfall wirkt sich das aus, denn bei einem Isolationsfehler im Bereich der Leuchte steht diese weiterhin unter Spannung, statt dass keine Energie mehr zur Verfügung stünde. Ein weiterer Grund ist die gemeinsame Nutzung des Neutralleiters: Er wird in einer Anlage von mehreren Stromkreisen verwendet, und würde er in einem Stromkreis abgeschaltet, könnten Teile davon weiterhin den Rückstrom anderer Stromkreise führen.</li>
+      <li>Das Ersatzschaltbild stellt den Stromkreis mit idealisierten Bauelementen dar und macht ihn berechenbar. Die Spannungsquelle wird als ideale Quelle mit 230 V gezeichnet, die Leitung als Widerstand, der Schalter als idealer Schalter mit den Zuständen geschlossen und offen, und die Leuchte als Widerstand R_Last. Für die Ausschaltung ergibt sich damit ein geschlossener Kreis, in dem die Quellenspannung, der Leitungswiderstand des Außenleiters R_L, der Schalter, die Leuchte und der Leitungswiderstand des Neutralleiters R_N in Reihe liegen. Daraus folgen der Betriebsstrom I = U geteilt durch die Summe aus R_L, R_N und R_Last sowie der Spannungsfall auf der Leitung nach Delta U = I mal der Summe aus R_L und R_N, der bei langen Leitungen den Wert an der Leuchte merklich absenkt. Der Schutzleiter gehört nicht zum Betriebsstromkreis und wird deshalb gestrichelt außerhalb gezeichnet; er wird erst im Fehlerfall wirksam, wenn sich der Fehlerstromkreis über ihn schließt, und bestimmt dann mit der Schleifenimpedanz die Abschaltbedingung. Wichtig ist die Erkenntnis, die das Ersatzschaltbild liefert: Für den Betriebsstrom ist es gleichgültig, ob der Schalter im Außenleiter oder im Neutralleiter liegt, denn in beiden Fällen wird derselbe Kreis unterbrochen und die Leuchte erlischt. Der Unterschied zeigt sich erst, wenn man die Potenziale gegen Erde betrachtet, denn bei geschaltetem Außenleiter liegt die Leuchte im ausgeschalteten Zustand auf Erdpotenzial, bei geschaltetem Neutralleiter dagegen auf 230 V. Genau deshalb ist die Lage des Schalters eine Sicherheitsfrage und keine Frage der Funktion.</li>
     </ul>
       <figure class="bild">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
@@ -1302,6 +1304,143 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   <text x="381" y="248" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">Nachlauf einstellbar</text>
 </svg>
         <figcaption><strong>Stromstoßschaltung für die Treppenhausbeleuchtung</strong> Mehrere parallel geschaltete Taster steuern einen bistabilen Stromstoßschalter.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="6" y="6" width="448" height="248" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <line x1="230" y1="24" x2="230" y2="252" stroke="#dde1e6" stroke-width="2"/>
+
+  <text x="115" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">RICHTIG</text>
+  <text x="345" y="20" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">FALSCH</text>
+  <text x="16" y="33" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Schalter im Außenleiter</text>
+  <text x="236" y="33" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">Schalter im Neutralleiter</text>
+
+  <line x1="20" y1="58" x2="70" y2="58" stroke="#92400e" stroke-width="2"/>
+  <line x1="70" y1="58" x2="70" y2="80" stroke="#92400e" stroke-width="2"/>
+  <circle cx="70" cy="80" r="2.5" fill="#92400e"/>
+  <circle cx="88" cy="80" r="2.5" fill="#92400e"/>
+  <line x1="70" y1="80" x2="88" y2="68" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="88" y1="80" x2="100" y2="80" stroke="#92400e" stroke-width="2"/>
+  <line x1="100" y1="80" x2="100" y2="101" stroke="#92400e" stroke-width="2"/>
+  <line x1="98" y1="101" x2="102" y2="101" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="100" cy="119" r="18" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="88" y1="107" x2="112" y2="131" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="112" y1="107" x2="88" y2="131" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="98" y1="137" x2="102" y2="137" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="100" y1="137" x2="100" y2="167" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="100" y1="167" x2="26" y2="167" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="102" y1="137" x2="110" y2="137" stroke="#15803d" stroke-width="2"/>
+  <line x1="110" y1="137" x2="110" y2="203" stroke="#15803d" stroke-width="2"/>
+  <line x1="110" y1="203" x2="34" y2="203" stroke="#15803d" stroke-width="2"/>
+
+  <text x="16" y="50" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">L (braun)</text>
+  <text x="70" y="97" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">S offen</text>
+  <text x="16" y="160" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">N (blau)</text>
+  <text x="16" y="196" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">PE (grün-gelb)</text>
+  <text x="124" y="100" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">0 V</text>
+  <text x="124" y="146" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">0 V</text>
+  <polyline points="154,110 159,118 172,100" fill="none" stroke="#15803d" stroke-width="2"/>
+  <text x="124" y="160" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">0 V gegen Erde</text>
+  <text x="115" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">Schalter offen, Leuchte spannungsfrei</text>
+
+  <line x1="238" y1="58" x2="290" y2="58" stroke="#92400e" stroke-width="2"/>
+  <line x1="290" y1="58" x2="290" y2="101" stroke="#92400e" stroke-width="2"/>
+  <line x1="288" y1="101" x2="292" y2="101" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="290" cy="119" r="18" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="278" y1="107" x2="302" y2="131" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="302" y1="107" x2="278" y2="131" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="288" y1="137" x2="292" y2="137" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="290" y1="137" x2="290" y2="167" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="290" y1="167" x2="272" y2="167" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="272" cy="167" r="2.5" fill="#1d4ed8"/>
+  <circle cx="250" cy="167" r="2.5" fill="#1d4ed8"/>
+  <line x1="250" y1="167" x2="268" y2="157" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="250" y1="167" x2="240" y2="167" stroke="#1d4ed8" stroke-width="2"/>
+
+  <text x="236" y="50" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">L (braun) direkt</text>
+  <text x="236" y="185" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">N (blau)</text>
+  <text x="261" y="151" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">S offen</text>
+  <polygon points="310,119 318,114 318,124" fill="#dc2626"/>
+  <line x1="318" y1="119" x2="352" y2="119" stroke="#dc2626" stroke-width="2"/>
+  <text x="356" y="115" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">230 V</text>
+  <text x="356" y="129" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">gegen Erde</text>
+  <polygon points="345,198 356,218 334,218" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <line x1="345" y1="206" x2="345" y2="211" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="345" cy="214.5" r="1.5" fill="#dc2626"/>
+  <text x="345" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">Schalter offen, Leuchte steht</text>
+  <text x="345" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">trotzdem unter Spannung</text>
+</svg>
+        <figcaption><strong>Schalter im Außenleiter gegen Schalter im Neutralleiter</strong> Links die richtige Ausführung mit spannungsfreier Leuchte, rechts die falsche, bei der die Leuchte trotz ausgeschaltetem Schalter unter Spannung steht.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="6" y="6" width="448" height="248" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="24" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">Ersatzschaltbild einer Ausschaltung</text>
+
+  <!-- Betriebsstromkreis: Leitungen -->
+  <line x1="100" y1="62" x2="140" y2="62" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="180" y1="62" x2="216" y2="62" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="256" y1="62" x2="334" y2="62" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="358" y1="62" x2="420" y2="62" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="420" y1="62" x2="420" y2="146" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="420" y1="146" x2="268" y2="146" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="228" y1="146" x2="100" y2="146" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="100" y1="146" x2="100" y2="118" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="100" y1="90" x2="100" y2="62" stroke="#1b1f24" stroke-width="2"/>
+
+  <!-- R_L: Leitungswiderstand Aussenleiter (Rechteck) -->
+  <rect x="140" y="55" width="40" height="14" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+
+  <!-- R_N: Leitungswiderstand Neutralleiter (Rechteck) -->
+  <rect x="228" y="139" width="40" height="14" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+
+  <!-- S: idealer Schalter (unterbrochene Linie mit Kipphebel) -->
+  <line x1="256" y1="62" x2="226" y2="53" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="216" cy="62" r="2.5" fill="#1b1f24"/>
+  <circle cx="256" cy="62" r="2.5" fill="#1b1f24"/>
+
+  <!-- R_Last: Leuchte als Widerstand (Kreis mit Kreuz) -->
+  <circle cx="346" cy="62" r="12" fill="#f7f9fc" stroke="#92400e" stroke-width="2"/>
+  <line x1="337.5" y1="53.5" x2="354.5" y2="70.5" stroke="#92400e" stroke-width="2"/>
+  <line x1="354.5" y1="53.5" x2="337.5" y2="70.5" stroke="#92400e" stroke-width="2"/>
+
+  <!-- Spannungsquelle U = 230 V -->
+  <circle cx="100" cy="104" r="14" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M 87 104 q 6.5 -11 13 0 q 6.5 11 13 0" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+
+  <!-- Strompfeil I im Kreis -->
+  <line x1="155" y1="82" x2="370" y2="82" stroke="#1d4ed8" stroke-width="2"/>
+  <polygon points="370,82 359,76.5 359,87.5" fill="#1d4ed8"/>
+  <text x="378" y="87" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8">I</text>
+
+  <!-- Bezeichnungen der Bauelemente -->
+  <text x="160" y="44" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">R<tspan dy="3" font-size="9">L</tspan></text>
+  <text x="238" y="44" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">S</text>
+  <text x="346" y="44" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">R<tspan dy="3" font-size="9">Last</tspan></text>
+
+  <!-- Klemmen und Spannungswert der Quelle -->
+  <text x="88" y="78" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">L</text>
+  <text x="88" y="130" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">N</text>
+  <text x="82" y="110" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#1d4ed8">U = 230 V</text>
+
+  <!-- Beschriftungen der Bauelemente -->
+  <text x="225" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">Leitungswiderstand Au&#223;enleiter</text>
+  <text x="240" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">idealer Schalter</text>
+  <text x="344" y="136" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">Leuchte als Widerstand</text>
+  <text x="248" y="168" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672"><tspan fill="#1b1f24">R</tspan><tspan dy="3" font-size="9" fill="#1b1f24">N</tspan><tspan dy="-3" fill="#1b1f24">: </tspan>Leitungswiderstand Neutralleiter</text>
+
+  <!-- Schutzleiter PE: gestrichelt, ausserhalb des Betriebsstromkreises -->
+  <text x="100" y="184" font-family="system-ui, sans-serif" font-size="12" fill="#15803d"><tspan font-weight="bold">PE</tspan>: Schutzleiter &#8211; geh&#246;rt nicht zum Betriebsstrom</text>
+  <line x1="100" y1="194" x2="420" y2="194" stroke="#15803d" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <!-- Formeln -->
+  <text x="100" y="216" font-family="system-ui, sans-serif" font-size="12" fill="#1b1f24">I = U / (R<tspan dy="3" font-size="9">L</tspan><tspan dy="-3"> + R</tspan><tspan dy="3" font-size="9">N</tspan><tspan dy="-3"> + R</tspan><tspan dy="3" font-size="9">Last</tspan><tspan dy="-3">)</tspan></text>
+  <text x="100" y="236" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">&#916;U = I &#183; (R<tspan dy="3" font-size="9">L</tspan><tspan dy="-3"> + R</tspan><tspan dy="3" font-size="9">N</tspan><tspan dy="-3">)</tspan></text>
+  <text x="440" y="236" text-anchor="end" font-family="system-ui, sans-serif" font-size="12" fill="#5c6672">Spannungsfall auf der Leitung</text>
+</svg>
+        <figcaption><strong>Ersatzschaltbild einer Ausschaltung</strong> Quelle, Leitungswiderstände R_L und R_N, idealer Schalter und die Leuchte als R_Last in Reihe. Der Schutzleiter gehört nicht zum Betriebsstromkreis.</figcaption>
       </figure>
   </div>
   <div class="block erklaerung">
