@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 29 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 31 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -1028,11 +1028,175 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
       <h4>Tragschienen und Verteilereinbau</h4>
       <ul class="theorie">
         <li>Die Tragschiene, umgangssprachlich Hutschiene oder DIN-Schiene, ist eine genormte Metallschiene, auf der elektrische Betriebsmittel im Verteiler befestigt werden. Ihr Querschnittsprofil ähnelt einem Hut, daher der Name. Genormt ist sie in DIN EN 60715. Die Standardausführung ist die TS 35 mit 35 mm Breite und 7,5 mm Höhe, daneben gibt es die tiefere Ausführung TS 35 mit 15 mm Höhe sowie die schmaleren Schienen TS 15 und TS 32. Verwendet wird überwiegend verzinkter Stahl, bei höherer Beanspruchung auch Aluminium.</li>
-        <li>Der Vorteil der Normung ist die Austauschbarkeit: Geräte verschiedener Hersteller rasten mit einem federnden Rastfuß auf dieselbe Schiene, ohne Werkzeug. Die Breite von Einbaugeräten wird in Teilungseinheiten angegeben, eine Teilungseinheit entspricht 17,5 mm, ein dreipoliger Leitungsschutzschalter belegt also 3 TE. Die Tragschiene dient der mechanischen Befestigung und ist kein automatischer Schutzleiter; soll sie als Schutzleiter dienen, muss die Verbindung ausdrücklich hergestellt und geprüft werden.</li>
+        <li>Der Vorteil der Normung ist die Austauschbarkeit: Geräte verschiedener Hersteller rasten mit einem federnden Rastfuß auf dieselbe Schiene, ohne Werkzeug. Die Breite von Einbaugeräten wird in Teilungseinheiten angegeben, und eine Teilungseinheit entspricht 18 Millimetern. Ein einpoliger Leitungsschutzschalter belegt damit 1 TE, ein dreipoliger 3 TE und ein vierpoliger Fehlerstrom-Schutzschalter 4 TE. Ältere Unterlagen nennen teilweise noch 17,5 Millimeter, doch maßgeblich ist der heute gültige Wert von 18 Millimetern nach DIN 43880. Die Tragschiene dient der mechanischen Befestigung und ist kein automatischer Schutzleiter; soll sie als Schutzleiter dienen, muss die Verbindung ausdrücklich hergestellt und geprüft werden.</li>
         <li>Reihenklemmen werden auf der Tragschiene aufgereiht und verbinden die Leitungen im Verteiler, ohne dass jede Ader einzeln durchgeführt werden muss. Sie werden nach Querschnittsbereich, Nennstrom und Anschlussart ausgewählt, damit Leiter und Klemme thermisch und mechanisch zusammenpassen. Jede Klemme wird beschriftet, damit jede Ader eindeutig zuordenbar bleibt und die Zuordnung auch bei späteren Änderungen erhalten bleibt. Beim Aufrasten ist auf vollständiges Einrasten und auf ausreichenden Abstand zu benachbarten Klemmen zu achten.</li>
         <li>Sammelschienen und Phasenschienen verteilen die Außenleiter über mehrere Schutzgeräte auf der Schiene und ersetzen einzelne Brücken, die sonst aufwendig verdrahtet werden müssten. Sie müssen zum Nennstrom der vorgeschalteten Schutzeinrichtung passen, damit die Schiene selbst nicht zur Engstelle der Anlage wird. Nicht belegte Abschnitte und die Enden werden mit Endkappen abgedeckt, damit der Berührungsschutz erhalten bleibt und keine Kurzschlussgefahr durch abrutschende Werkzeuge entsteht. Beim Einbau ist außerdem darauf zu achten, dass die Schiene zur Geräteauswahl und zur Teilung der Schutzgeräte passt und sauber in den Klemmen sitzt.</li>
         <li>Wärmeabgabe und Kühlung: Jedes Schaltgerät gibt im Betrieb Verlustwärme ab, die sich im geschlossenen Gehäuse staut und über die Gehäuseoberfläche, Lüftungsöffnungen oder eingebaute Lüfter abgeführt werden muss. Die Verlustleistung und die zulässige Umgebungstemperatur stehen im Datenblatt, und beide Werte gelten nur für definierte Einbaubedingungen, die in der Praxis oft enger sind als zunächst angenommen. Bei zu enger Bestückung oder fehlender Kühlung steigt die Innentemperatur, und dadurch sinkt die Belastbarkeit aller Geräte im Schrank, weil thermische und magnetische Auslöser früher ansprechen und die Isolierstoffe schneller altern. Deshalb wird die zu erwartende Verlustleistung aller eingebauten Geräte vor dem Aufbau addiert und dem Kühlvermögen der gewählten Aufstellungsart gegenübergestellt, wobei auch die Umgebungstemperatur des Raums und die Wärmeeinstrahlung benachbarter Betriebsmittel einzurechnen sind. Reicht die natürliche Konvektion nicht aus, kommen Lüftungsgitter, Filterlüfter oder Zwangslüftung in Betracht, und in staubiger oder feuchter Umgebung muss die Kühlung so ausgeführt werden, dass die Schutzart des Gehäuses erhalten bleibt. Der Einbau mit ausreichenden Abständen und einer durchdachten Anordnung der wärmeempfindlichen Geräte ist daher kein Schönheitsfehler, sondern die Voraussetzung dafür, dass die Anlage dauerhaft innerhalb ihrer Grenzwerte betrieben werden kann.</li>
+        <li>Für den Aufbau eines Verteilers gehört zur Tragschiene weiteres Zubehör. Endhalter an beiden Enden der Schiene verhindern, dass sich die aufgerasteten Geräte seitlich verschieben. Phasen- oder Sammelschienen verbinden die Leitungsschutzschalter untereinander und ersetzen die einzelnen Brückenleitungen; sie sind so bemessen, dass sie den Summenstrom führen können. Trennwände schaffen Abstände zwischen Gruppen unterschiedlicher Stromkreise. Für den Schutzleiter gilt: Nutzt ein Gerät den Kontakt zur Schiene als Schutzleiteranschluss, so muss die Schiene selbst metallisch blank und mit dem Schutzleiter der Anlage verbunden sein. Lackierte, beschichtete oder stark oxidierte Schienen sind dafür ungeeignet, weil der Übergangswiderstand zu hoch wird, und ein solcher Zustand ist ein typischer Prüfbefund. Bei Geräten, deren Hersteller einen eigenen Schutzleiteranschluss vorschreibt, darf der Schienenkontakt nicht der einzige Schutzleiterweg sein. Die Verbindung der Schiene zum Schutzleiter wird bei der Erstprüfung mit einem Prüfstrom von mindestens 200 Milliampere auf Durchgang geprüft, und die Geräte müssen vollständig eingerastet und unverrückbar sitzen.</li>
       </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="254" fill="none" stroke="#dde1e6" stroke-width="2"/>
+
+  <text x="20" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">H1</text>
+  <text x="230" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24">Hutschienen-Profile (DIN EN 60715)</text>
+  <line x1="20" y1="40" x2="440" y2="40" stroke="#dde1e6" stroke-width="2"/>
+
+  <g stroke="#1b1f24" stroke-width="2" fill="#9aa3ad" fill-opacity="0.25" stroke-linejoin="round">
+    <polygon points="36,100 120,100 120,94 104,94 104,82 52,82 52,94 36,94"/>
+    <polygon points="188,100 272,100 272,94 256,94 256,64 204,64 204,94 188,94"/>
+    <polygon points="348,100 384,100 384,96 377,96 377,86.8 355,86.8 355,96 348,96"/>
+  </g>
+
+  <g stroke="#5c6672" stroke-width="1">
+    <line x1="36" y1="102" x2="36" y2="122"/>
+    <line x1="120" y1="102" x2="120" y2="122"/>
+    <line x1="188" y1="102" x2="188" y2="122"/>
+    <line x1="272" y1="102" x2="272" y2="122"/>
+    <line x1="348" y1="102" x2="348" y2="122"/>
+    <line x1="384" y1="102" x2="384" y2="122"/>
+    <line x1="120" y1="82" x2="134" y2="82"/>
+    <line x1="120" y1="100" x2="134" y2="100"/>
+    <line x1="272" y1="64" x2="286" y2="64"/>
+    <line x1="272" y1="100" x2="286" y2="100"/>
+    <line x1="384" y1="86.8" x2="396" y2="86.8"/>
+    <line x1="384" y1="100" x2="396" y2="100"/>
+  </g>
+
+  <g stroke="#1b1f24" stroke-width="1">
+    <line x1="36" y1="118" x2="120" y2="118"/>
+    <line x1="188" y1="118" x2="272" y2="118"/>
+    <line x1="348" y1="118" x2="384" y2="118"/>
+    <line x1="130" y1="82" x2="130" y2="100"/>
+    <line x1="282" y1="64" x2="282" y2="100"/>
+    <line x1="392" y1="86.8" x2="392" y2="100"/>
+    <polygon points="36,118 43,115 43,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="120,118 113,115 113,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="188,118 195,115 195,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="272,118 265,115 265,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="348,118 355,115 355,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="384,118 377,115 377,121" fill="#1b1f24" stroke="none"/>
+    <polygon points="130,82 127.5,87 132.5,87" fill="#1b1f24" stroke="none"/>
+    <polygon points="130,100 127.5,95 132.5,95" fill="#1b1f24" stroke="none"/>
+    <polygon points="282,64 279,71 285,71" fill="#1b1f24" stroke="none"/>
+    <polygon points="282,100 279,93 285,93" fill="#1b1f24" stroke="none"/>
+    <polygon points="392,86.8 389.5,90.3 394.5,90.3" fill="#1b1f24" stroke="none"/>
+    <polygon points="392,100 389.5,96.5 394.5,96.5" fill="#1b1f24" stroke="none"/>
+  </g>
+
+  <g font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">
+    <text x="78" y="115">35 mm</text>
+    <text x="230" y="115">35 mm</text>
+    <text x="366" y="115">15 mm</text>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">
+    <text x="136" y="95">7,5 mm</text>
+    <text x="288" y="86">15 mm</text>
+    <text x="397" y="97">5,5 mm</text>
+  </g>
+
+  <g font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">
+    <text x="78" y="74">TS 35 &#215; 7,5</text>
+    <text x="230" y="56">TS 35 &#215; 15</text>
+    <text x="366" y="79">TS 15 &#215; 5,5</text>
+  </g>
+
+  <g font-family="system-ui, sans-serif" font-size="11" fill="#5c6672" text-anchor="middle">
+    <text x="78" y="142">Standard in der</text>
+    <text x="78" y="156">Installation</text>
+    <text x="230" y="142">schwere Ger&#228;te im</text>
+    <text x="230" y="156">Schaltschrank</text>
+    <text x="366" y="149">kleine Klemmen</text>
+  </g>
+
+  <rect x="30" y="172" width="400" height="50" rx="6" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="191" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">Genormt in DIN EN 60715,</text>
+  <text x="230" y="207" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#15803d">Ger&#228;te rasten werkzeuglos ein.</text>
+</svg>
+        <figcaption><strong>Tragschienenprofile nach DIN EN 60715</strong> TS 35 × 7,5 als Standard, TS 35 × 15 für schwere Geräte und TS 15 × 5,5 für kleine Klemmen.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="254" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="20" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">H2</text>
+  <text x="230" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1b1f24">Best&#252;ckung einer Hutschiene</text>
+
+  <rect x="40" y="132" width="380" height="12" fill="#dbe2ea"/>
+  <polygon points="40,132 30,128 30,160 40,144" fill="#dbe2ea" stroke="#5c6672" stroke-width="2"/>
+  <polygon points="420,132 430,128 430,160 420,144" fill="#dbe2ea" stroke="#5c6672" stroke-width="2"/>
+  <line x1="30" y1="132" x2="430" y2="132" stroke="#5c6672" stroke-width="2"/>
+  <line x1="30" y1="144" x2="430" y2="144" stroke="#5c6672" stroke-width="2"/>
+  <line x1="40" y1="138" x2="420" y2="138" stroke="#9aa3ad" stroke-width="2"/>
+
+  <rect x="88" y="84" width="30" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="86" y="80" width="12" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="92" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="92" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5c6672">EH</text>
+  <line x1="92" y1="73" x2="92" y2="78" stroke="#5c6672" stroke-width="2"/>
+
+  <rect x="148" y="84" width="62" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="100" y="80" width="72" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="130" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="130" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#dc2626">FI</text>
+  <line x1="100" y1="110" x2="172" y2="110" stroke="#dde1e6" stroke-width="2"/>
+  <text x="130" y="126" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">4 TE</text>
+
+  <rect x="184" y="84" width="28" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="174" y="80" width="36" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="185" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="192" y="114" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">LS</text>
+
+  <rect x="220" y="84" width="28" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="212" y="80" width="36" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="223" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="230" y="114" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">LS</text>
+
+  <rect x="256" y="84" width="28" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="250" y="80" width="36" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="261" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="268" y="114" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">LS</text>
+
+  <rect x="328" y="84" width="56" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="288" y="80" width="60" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="311" y="132" width="14" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="301" cy="92" r="3" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="318" cy="92" r="3" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+  <circle cx="335" cy="92" r="3" fill="#f7f9fc" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="318" y="102" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">Reihen-</text>
+  <text x="318" y="114" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">klemmen</text>
+
+  <rect x="386" y="84" width="14" height="14" fill="#9aa3ad" stroke="#5c6672" stroke-width="2"/>
+  <rect x="386" y="80" width="13" height="58" fill="#dbe2ea" stroke="#1b1f24" stroke-width="2"/>
+  <rect x="386" y="132" width="13" height="4" fill="#9aa3ad" stroke="#1b1f24" stroke-width="2"/>
+  <text x="392" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#5c6672">EH</text>
+  <line x1="392" y1="73" x2="392" y2="78" stroke="#5c6672" stroke-width="2"/>
+  <line x1="330" y1="80" x2="330" y2="130" stroke="#dde1e6" stroke-width="2"/>
+  <line x1="352" y1="80" x2="352" y2="130" stroke="#dde1e6" stroke-width="2"/>
+  <line x1="374" y1="80" x2="374" y2="130" stroke="#dde1e6" stroke-width="2"/>
+
+  <text x="33" y="162" font-family="system-ui, sans-serif" font-size="11" fill="#5c6672">Hutschiene</text>
+  <line x1="33" y1="153" x2="33" y2="146" stroke="#5c6672" stroke-width="2"/>
+
+  <line x1="130" y1="157" x2="130" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <line x1="202" y1="157" x2="202" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <line x1="130" y1="166" x2="202" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <polygon points="130,163.5 134.5,166 130,168.5" fill="#5c6672"/>
+  <polygon points="202,163.5 197.5,166 202,168.5" fill="#5c6672"/>
+  <text x="166" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">4 TE = 72 mm</text>
+  <line x1="296" y1="157" x2="296" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <line x1="332" y1="157" x2="332" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <line x1="296" y1="166" x2="332" y2="166" stroke="#5c6672" stroke-width="2"/>
+  <polygon points="296,163.5 300.5,166 296,168.5" fill="#5c6672"/>
+  <polygon points="332,163.5 327.5,166 332,168.5" fill="#5c6672"/>
+  <text x="314" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24">1 TE = 18 mm</text>
+
+  <line x1="20" y1="174" x2="440" y2="174" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="197" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#15803d">Merksatz: Ger&#228;tebreiten werden in Teilungseinheiten (TE) angegeben.</text>
+</svg>
+        <figcaption><strong>Bestückung einer Hutschiene</strong> Gerätebreiten werden in Teilungseinheiten angegeben; eine Teilungseinheit entspricht 18 mm.</figcaption>
+      </figure>
     </div>
     <div class="unterkapitel">
       <h4>Verteiler und Schaltanlagen</h4>
