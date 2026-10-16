@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 28 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 29 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -1049,6 +1049,94 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
         <li>Aus der Bezeichnung lässt sich ableiten, wo eine Leitung verlegt werden darf. NYM-J ist eine Mantelleitung für feste Verlegung in trockenen, feuchten und nassen Räumen, auf und in Putz sowie in Beton, aber nicht für die Verlegung in Erde. NYY-J ist ein Erdkabel mit PVC-Isolierung und PVC-Mantel für die Verlegung in Erde und Wasser, NYCWY besitzt zusätzlich einen konzentrischen Kupferleiter, und NAYY-J führt Aluminiumleiter. NHXMH-J und N2XH sind halogenfrei ausgeführt und werden dort eingesetzt, wo im Brandfall keine korrosiven und giftigen Gase entstehen dürfen, etwa in Fluchtwegen, Versammlungsstätten und Rechenzentren. Für das Verdrahten in Rohren und im Verteiler dienen Adern wie H07V-U als eindrähtige, H07V-R als mehrdrähtige und H07V-K als feindrähtige Ausführung, und Gummischlauchleitungen wie H07RN-F sind für raue Bedingungen auf Baustellen und im Freien bestimmt. Zur vollständigen Angabe gehören außerdem die Leiterklasse nach DIN EN 60228 und die Aderfarben, die bei drei Adern grün-gelb, blau und braun lauten und sich bei vier und fünf Adern um schwarz und grau erweitern.</li>
         <li>Eine flexible Leitung unterscheidet sich von einer starren Leitung vor allem durch den Aufbau ihres Leiters. Während eine starre Leitung wie NYM-J eindrähtige Leiter der Leiterklasse 1 nach DIN EN 60228, früher VDE 0295, besitzt, besteht der Leiter einer flexiblen Leitung aus vielen dünnen Einzeldrähten, die verseilt sind und je nach Ausführung den Leiterklassen 5 oder 6 zugeordnet werden. Diese feindrähtige Ausführung ist der Grund für die Biegsamkeit: Beim Biegen gleiten die vielen dünnen Drähte gegeneinander, sodass sich die Verformung über den gesamten Querschnitt verteilt. Ein eindrähtiger Leiter wird dagegen an der Biegestelle kaltverfestigt und bricht nach verhältnismäßig wenigen Biegewechseln durch, weshalb starre Leitungen ausschließlich für die Festverlegung bestimmt sind und nicht für bewegte Anschlüsse. Flexible Leitungen werden deshalb überall dort verwendet, wo ein Anschluss bewegt, umgesteckt, aufgewickelt oder Erschütterungen ausgesetzt wird, also bei ortsveränderlichen Geräten, Elektrowerkzeugen, Verlängerungsleitungen, Maschinenanschlüssen und Prüfleitungen; typische Vertreter sind H05VV-F als Haushaltsleitung und H07RN-F als Gummischlauchleitung für Baustelle und Freien. Beim Anklemmen feindrähtiger Leiter sind Aderendhülsen erforderlich, die mit einer Crimpzange aufgepresst werden, denn ohne Hülse kann eine Klemmschraube einzelne Drähte abscheren oder zur Seite drücken, wodurch sich der wirksame Querschnitt verringert und die Klemmstelle heiß wird. Federkraft- und Push-in-Klemmen nehmen feindrähtige Leiter teilweise auch ohne Hülse auf, maßgeblich sind jedoch die Angaben des Herstellers. Bei ortsveränderlichen Geräten und Verlängerungsleitungen ist außerdem eine Zugentlastung vorgeschrieben, damit Zugkräfte nicht auf die Anschlussklemmen wirken, und der Schutzleiter ist so zu führen, dass er bei einer Zugbelastung erst nach den aktiven Leitern abreißt.</li>
       </ul>
+    </div>
+    <div class="unterkapitel">
+      <h4>Nennquerschnitt und Querschnittsreihe</h4>
+      <ul class="theorie">
+        <li>Der Nennquerschnitt ist die genormte Bezeichnung des Leiterquerschnitts in Quadratmillimetern, mit der Leitungen und Adern benannt werden, zum Beispiel 1,5 bei NYM-J 3x1,5 oder 2,5 bei H07V-K. Es handelt sich ausdrücklich um eine Bezeichnung und nicht um ein gemessenes Maß, und genau deshalb heißt er Nennquerschnitt. Festgelegt ist er in DIN EN 60228, früher VDE 0295, und zwar nicht über eine exakte Geometrie, sondern über den zulässigen Höchstwert des Leiterwiderstandes bei 20 Grad Celsius sowie über die Mindestzahl der Einzeldrähte bei den flexiblen Leiterklassen. Die genormte Reihe lautet 0,5 – 0,75 – 1 – 1,5 – 2,5 – 4 – 6 – 10 – 16 – 25 – 35 – 50 – 70 – 95 – 120 – 150 – 185 – 240 und darüber hinaus. Die Stufen folgen keiner willkürlichen Wahl, sondern bilden eine geometrische Reihe mit Schritten von etwa dem 1,5- bis 1,6-fachen, weil die Belastbarkeit eines Leiters nicht proportional zu seinem Querschnitt wächst; gleich große relative Schritte ergeben deshalb eine sinnvolle Abstufung.</li>
+        <li>Bei einem eindrähtigen Leiter der Klasse 1 entspricht der Nennquerschnitt ungefähr der geometrischen Kreisfläche. Bei einem mehrdrähtigen oder feindrähtigen Leiter dagegen ist der Nennquerschnitt die Summe der Querschnitte aller Einzeldrähte, also der metallische Querschnitt ohne die Zwischenräume. Da sich runde Drähte nicht lückenlos aneinanderlegen lassen, bleibt zwischen ihnen ein erheblicher Anteil Hohlraum, und der Außendurchmesser des verseilten Leiters ist deshalb größer als der eines massiven Leiters gleichen Nennquerschnitts. Daraus folgt ein häufiger Fehler in der Praxis: Wer den Durchmesser eines feindrähtigen Leiters misst und daraus die Kreisfläche berechnet, erhält einen zu großen Wert und hält die Leitung für dicker als sie ist. Verlässlich geprüft wird ein Leiter deshalb nicht über seine Abmessung, sondern über seinen Widerstand: Für Kupfer mit 1,5 Quadratmillimeter Nennquerschnitt liegt der Höchstwert bei etwa 12,1 Ohm je Kilometer, für 2,5 Quadratmillimeter bei etwa 7,4 Ohm je Kilometer. Diese Werte passen zur Rechnung mit der Leitfähigkeit von rund 56 Metern je Ohm und Quadratmillimeter, denn 1000 geteilt durch 56 mal 1,5 ergibt rund 11,9 Ohm je Kilometer.</li>
+        <li>Der Nennquerschnitt ist die zentrale Rechen- und Auswahlgröße in der Installation, denn er geht in fast alle Nachweise ein: in die Strombelastbarkeit nach VDE 0298-4, in den Spannungsfall über die Beziehung Delta U = 2 · l · I geteilt durch Kappa · A, in die Kurzschlussfestigkeit als thermische Prüfung, in den zulässigen Höchststrom der vorgeschalteten Schutzeinrichtung, in den Schutzleiterquerschnitt, der sich nach der Regel S geteilt durch 2 mit einem Mindestwert von 10 Quadratmillimetern aus dem Außenleiter ableitet, sowie in die Auswahl von Klemmen, Aderendhülsen und Kabelverschraubungen. Außerdem schreibt die Norm Mindestquerschnitte vor, die nicht unterschritten werden dürfen: für Beleuchtungsstromkreise 1,5 Quadratmillimeter und für Stromkreise mit Steckdosen 2,5 Quadratmillimeter. Wird der Querschnitt zu klein gewählt, entstehen zu hohe Erwärmung, zu großer Spannungsfall und im Kurzschlussfall eine Gefährdung, weil die vorgeschaltete Schutzeinrichtung nicht mehr sicher innerhalb der geforderten Zeit abschaltet. Ein zu großer Querschnitt kostet dagegen Material und Geld, verschlechtert die Kurzschlussbedingungen durch einen höheren Kurzschlussstrom und passt häufig nicht in die vorgesehenen Klemmen.</li>
+      </ul>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="300" fill="#f7f9fc"/>
+  <rect x="3" y="3" width="454" height="294" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="20" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8" text-anchor="middle">Vergleich: eindr&#228;htig und feindrahtig bei 1,5 mm&#178;</text>
+  <text x="105.0" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">Nennquerschnitt 1,5 mm&#178;</text>
+  <text x="340.0" y="38" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">Nennquerschnitt 1,5 mm&#178;</text>
+  <circle cx="105" cy="104" r="37" fill="#b45309" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="340" cy="104" r="55.5" fill="#f7f9fc" stroke="#1b1f24" stroke-width="2"/>
+  <g fill="#b45309" stroke="#1b1f24" stroke-width="2">
+    <circle cx="340" cy="104" r="6.5"/>
+    <circle cx="357" cy="104" r="6.5"/>
+    <circle cx="348.5" cy="89.28" r="6.5"/>
+    <circle cx="331.5" cy="89.28" r="6.5"/>
+    <circle cx="323" cy="104" r="6.5"/>
+    <circle cx="331.5" cy="118.72" r="6.5"/>
+    <circle cx="348.5" cy="118.72" r="6.5"/>
+    <circle cx="371.88" cy="95.46" r="6.5"/>
+    <circle cx="363.33" cy="80.67" r="6.5"/>
+    <circle cx="348.54" cy="72.12" r="6.5"/>
+    <circle cx="331.46" cy="72.12" r="6.5"/>
+    <circle cx="316.67" cy="80.67" r="6.5"/>
+    <circle cx="308.12" cy="95.46" r="6.5"/>
+    <circle cx="308.12" cy="112.54" r="6.5"/>
+    <circle cx="316.67" cy="127.33" r="6.5"/>
+    <circle cx="331.46" cy="135.88" r="6.5"/>
+    <circle cx="348.54" cy="135.88" r="6.5"/>
+    <circle cx="363.33" cy="127.33" r="6.5"/>
+    <circle cx="371.88" cy="112.54" r="6.5"/>
+    <circle cx="388.26" cy="95.49" r="6.5"/>
+    <circle cx="382.44" cy="79.5" r="6.5"/>
+    <circle cx="371.5" cy="66.46" r="6.5"/>
+    <circle cx="356.76" cy="57.96" r="6.5"/>
+    <circle cx="340" cy="55" r="6.5"/>
+    <circle cx="323.24" cy="57.96" r="6.5"/>
+    <circle cx="308.5" cy="66.46" r="6.5"/>
+    <circle cx="297.56" cy="79.5" r="6.5"/>
+    <circle cx="291.74" cy="95.49" r="6.5"/>
+    <circle cx="291.74" cy="112.51" r="6.5"/>
+    <circle cx="297.56" cy="128.5" r="6.5"/>
+    <circle cx="308.5" cy="141.54" r="6.5"/>
+    <circle cx="323.24" cy="150.04" r="6.5"/>
+    <circle cx="340" cy="153" r="6.5"/>
+    <circle cx="356.76" cy="150.04" r="6.5"/>
+    <circle cx="371.5" cy="141.54" r="6.5"/>
+    <circle cx="382.44" cy="128.5" r="6.5"/>
+    <circle cx="388.26" cy="112.51" r="6.5"/>
+  </g>
+  <rect x="160" y="72" width="116" height="70" rx="5" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="218" y="87" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">gleicher</text>
+  <text x="218" y="101" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">Nennquerschnitt,</text>
+  <text x="218" y="115" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">gr&#246;&#223;erer</text>
+  <text x="218" y="129" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">Au&#223;endurchmesser</text>
+  <line x1="286.38" y1="59" x2="296.14" y2="67.2" stroke="#dc2626" stroke-width="2"/>
+  <polygon points="303.03,72.98 293.57,70.26 298.71,64.13" fill="#dc2626"/>
+  <text x="282.38" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#dc2626" text-anchor="end">Hohlraum</text>
+  <line x1="68" y1="104" x2="68" y2="178" stroke="#5c6672" stroke-width="2"/>
+  <line x1="142" y1="104" x2="142" y2="178" stroke="#5c6672" stroke-width="2"/>
+  <line x1="68" y1="174" x2="142" y2="174" stroke="#1b1f24" stroke-width="2"/>
+  <polygon points="68,174 77,170 77,178" fill="#1b1f24"/>
+  <polygon points="142,174 133,170 133,178" fill="#1b1f24"/>
+  <text x="105.0" y="191" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">&#216; 1,4 mm</text>
+  <line x1="284.5" y1="104" x2="284.5" y2="178" stroke="#5c6672" stroke-width="2"/>
+  <line x1="395.5" y1="104" x2="395.5" y2="178" stroke="#5c6672" stroke-width="2"/>
+  <line x1="284.5" y1="174" x2="395.5" y2="174" stroke="#1b1f24" stroke-width="2"/>
+  <polygon points="284.5,174 293.5,170 293.5,178" fill="#1b1f24"/>
+  <polygon points="395.5,174 386.5,170 386.5,178" fill="#1b1f24"/>
+  <text x="340.0" y="191" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">&#216; ca. 2,0 mm</text>
+  <text x="105.0" y="205" font-family="system-ui, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">eindr&#228;htig, Leiterklasse 1</text>
+  <text x="340.0" y="205" font-family="system-ui, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">feindrahtig, Leiterklasse 5</text>
+  <rect x="14" y="210" width="432" height="30" rx="4" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="224" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">Der Nennquerschnitt ist die Summe der</text>
+  <text x="230" y="237" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">Querschnitte aller Einzeldr&#228;hte.</text>
+  <rect x="14" y="244" width="432" height="30" rx="4" fill="#ffffff" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="258" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">Zwischen den runden Dr&#228;hten bleiben Hohlr&#228;ume,</text>
+  <text x="230" y="271" font-family="system-ui, sans-serif" font-size="11" fill="#1b1f24" text-anchor="middle">deshalb ist der Au&#223;endurchmesser gr&#246;&#223;er.</text>
+  <text x="230" y="289" font-family="system-ui, sans-serif" font-size="11" fill="#5c6672" text-anchor="middle">Normreihe (mm&#178;): <tspan fill="#1b1f24" font-weight="600">1,5 &#8211; 2,5 &#8211; 4 &#8211; 6 &#8211; 10 &#8211; 16 &#8211; 25 &#8211; 35 &#8211; 50</tspan></text>
+</svg>
+        <figcaption><strong>Nennquerschnitt bei eindrähtigem und feindrähtigem Leiter</strong> Gleicher Nennquerschnitt, größerer Außendurchmesser: Zwischen den runden Einzeldrähten bleiben Hohlräume.</figcaption>
+      </figure>
     </div>
     <div class="unterkapitel">
       <h4>Biegeradius und Verlegung</h4>
