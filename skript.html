@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 42 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 43 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -952,6 +952,8 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
         <li>Der magnetische Auslöser, auch Kurzschlussauslöser genannt, ist ein Elektromagnet im Stromweg: Der Betriebsstrom durchfließt eine Spule, in deren Feld ein beweglicher Anker sitzt, der von einer Feder zurückgehalten wird. Die Kraft auf den Anker wächst mit dem Quadrat des Stromes, sodass sie bei einem Kurzschlussstrom, der ein Vielfaches des Bemessungsstroms beträgt, die Federkraft schlagartig überwindet. Der Anker wird eingezogen und trifft unmittelbar auf die Auslöseklinke, die die Kontakte freigibt; eine gespannte Feder reißt die Kontakte in wenigen Millisekunden auseinander. Entscheidend ist, dass dieser Weg rein elektromagnetisch und mechanisch abläuft: Es muss nichts erwärmt werden und nichts abkühlen, deshalb wirkt die Auslösung praktisch verzögerungsfrei, und der Schalter ist nach dem Auslösen sofort wieder einschaltbar. Die Höhe der Auslöseschwelle wird allein durch die Federspannung festgelegt, weshalb sich die Charakteristiken B, C und D bei gleicher Grundmechanik nur durch eine unterschiedlich starke Feder unterscheiden. Beim Öffnen der Kontakte entsteht ein Lichtbogen, der in einer Löschkammer mit Blechen gekühlt, geteilt und gelöscht wird; bei Wechselstrom erlischt er zusätzlich im Nulldurchgang. Viele Geräte arbeiten strombegrenzend, das heißt sie unterbrechen den Kurzschlussstrom bereits während seines Anstiegs, bevor er seinen ersten Scheitelwert erreicht, wodurch das hohe Schaltvermögen von beispielsweise 6000 A in einem so kleinen Gerät überhaupt möglich wird.</li>
         <li>Das Zusammenspiel beider Auslöser erklärt das Verhalten im Betrieb. Bei einem Kurzschlussstrom oberhalb der magnetischen Schwelle spricht der magnetische Auslöser in Millisekunden an, und der thermische Auslöser kommt gar nicht zum Zug. Bei einer Überlast dagegen bleibt der Strom unterhalb der magnetischen Schwelle, sodass allein das Bimetall wirkt und der Schalter erst nach Sekunden bis Minuten abschaltet; der thermische Auslöser wirkt dabei wie ein thermisches Gedächtnis, denn er reagiert auf das Zeitintegral des Quadrats des Stromes und damit auf die Erwärmung. Deshalb hängt seine Auslöseschwelle von der Umgebungstemperatur und von einer möglichen Vorerwärmung ab, während der magnetische Auslöser davon weitgehend unabhängig arbeitet. Nach einer Überlastauslösung muss das Bimetall erst abkühlen, bevor der Schalter wieder eingeschaltet werden kann; nach einer magnetischen Auslösung ist er sofort wieder einschaltbar. Für die Praxis folgt daraus die entscheidende Frage, ob der Fehlerstrom überhaupt ausreicht, um den magnetischen Auslöser zu betätigen. Ist die Schleifenimpedanz zu groß, etwa wegen einer langen oder dünnen Leitung, dann wird die magnetische Schwelle nicht erreicht, der Schalter löst nicht schnell aus, und es bleibt nur die viel zu langsame thermische Auslösung. Deshalb verlangt die Abschaltbedingung ein ausreichend kleines Zs, und deshalb wird der gemessene Wert zusätzlich auf zwei Drittel des rechnerischen Grenzwerts begrenzt.</li>
         <li>Die Angaben auf einem Leitungsschutzschalter ergeben zusammen seine Kenndaten. Die wichtigste Angabe ist die Kombination aus Charakteristik und Bemessungsstrom, zum Beispiel B16: Der Buchstabe B steht für die Charakteristik und damit für die Höhe der magnetischen Auslöseschwelle, die Zahl 16 für den Bemessungsstrom in Ampere. Daneben stehen die Bemessungsspannung, meist als 230 geteilt durch 400 Volt mit dem Zeichen für Wechselspannung, und die Bemessungsfrequenz, üblicherweise 50 und 60 Hertz. Das Bemessungsschaltvermögen wird in einem Rechteck angegeben und beträgt bei Haushaltsgeräten meist 6000 Ampere, also 6 Kiloampere; es gibt an, welchen Kurzschlussstrom das Gerät noch sicher abschalten kann. Beim Schaltvermögen werden zwei Werte unterschieden: Der Bemessungskurzschlussstrom Icn ist der Wert, den das Gerät sicher abschaltet, und der Bemessungsbetriebskurzschlussstrom Ics ist der Wert, nach dessen Abschaltung das Gerät weiter betriebsfähig bleibt; er ist kleiner oder gleich Icn und wird häufig als Bruchteil angegeben, etwa als 100 oder 75 Prozent. In einem Quadrat steht die Energiebegrenzungsklasse mit den Werten 1, 2 oder 3, wobei 3 die beste Begrenzung der Durchlassenergie bedeutet und damit die nachgeschaltete Anlage am wirksamsten entlastet. Außerdem sind die Norm angegeben, nach der das Gerät geprüft ist, in der Regel DIN EN 60898-1, sowie Hersteller, Typenbezeichnung und Prüfzeichen. Zwei Angaben stehen oft nicht auf der Front, sondern auf der Seite oder im Datenblatt: der Anschlussquerschnittsbereich der Klemmen und das Anzugsmoment. Wichtig ist außerdem, dass der Bemessungsstrom für eine Umgebungstemperatur von 30 Grad Celsius gilt; wird das Gerät in einem wärmeren Schrank betrieben, muss der Strom nach der Tabelle des Herstellers reduziert werden, weil der thermische Auslöser dann früher anspricht.</li>
+        <li>Das Bemessungsschaltvermögen ist der größte Kurzschlussstrom, den ein Schaltgerät bei seiner Bemessungsspannung und einem festgelegten Leistungsfaktor noch sicher abschalten kann. Es muss mindestens so groß sein wie der am Einbauort zu erwartende prospektive Kurzschlussstrom, denn wird es überschritten, kann das Gerät den Lichtbogen nicht mehr beherrschen; die Folgen reichen von verschweißten Kontakten über ein Bersten des Gehäuses bis zur Gefährdung von Personen und Anlage. Deshalb wird der Kurzschlussstrom an der Einbaustelle berechnet und das Gerät danach ausgewählt. Dabei ist zu beachten, dass der Kurzschlussstrom mit der Entfernung vom Einspeisepunkt abnimmt, weil die Schleifenimpedanz mit der Leitungslänge wächst: Am Hausanschluss können mehrere Kiloampere auftreten, am Ende einer langen Steckdosenleitung dagegen nur einige hundert Ampere. Bei Leitungsschutzschaltern nach DIN EN 60898-1 sind Werte von 3000, 4500, 6000 und 10 000 Ampere üblich, wobei 6000 Ampere den Standard im Haushalt darstellt.</li>
+        <li>Beim Schaltvermögen sind zwei Werte zu unterscheiden. Der Bemessungskurzschlussstrom Icn ist der Wert, den das Gerät sicher abschaltet, wobei es danach nicht mehr weiterverwendet werden muss. Der Bemessungsbetriebskurzschlussstrom Ics ist der Wert, nach dessen Abschaltung das Gerät weiter betriebsfähig bleibt; er ist kleiner oder gleich Icn und wird als Bruchteil angegeben, häufig als 100, 75 oder 50 Prozent, wobei die Norm für jedes Icn einen Mindestwert festlegt. In der Industrie gilt statt DIN EN 60898-1 die Norm DIN EN 60947-2 mit abweichenden Bezeichnungen: Dort heißt das Bemessungsschaltvermögen Icu und der Betriebswert ebenfalls Ics, ergänzt um das Bemessungs-Kurzschluss-Einschaltvermögen Icm, das den Spitzenwert angibt, den das Gerät beim Einschalten auf einen Kurzschluss noch beherrscht. Geprüft wird das Schaltvermögen mit einer festgelegten Folge von Schaltvorgängen bei definiertem Leistungsfaktor; anschließend müssen Isolationsprüfung, Nachweis der Auslösefähigkeit und bei Ics zusätzlich die Temperaturerhöhungsprüfung bestanden werden. Ist der Kurzschlussstrom an der Einbaustelle größer als das Schaltvermögen des vorgesehenen Geräts, kann ein übergeordnetes Gerät mit ausreichendem Schaltvermögen die Abschaltung übernehmen. Diese als Kaskadierung oder Backup-Schutz bezeichnete Lösung ist nur mit vom Hersteller geprüften und freigegebenen Gerätekombinationen zulässig, weil sie nicht frei berechnet werden darf.</li>
       </ul>
       <figure class="bild">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
@@ -1071,6 +1073,96 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
   <text x="165" y="312" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">stehen im Datenblatt.</text>
 </svg>
         <figcaption><strong>Angaben auf einem Leitungsschutzschalter</strong> B16 als Charakteristik und Bemessungsstrom, Spannung, Frequenz, Schaltvermögen im Rechteck und Energiebegrenzungsklasse im Quadrat.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="260" fill="#f7f9fc"/>
+  <rect x="4" y="4" width="452" height="252" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <text x="230" y="16" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#1b1f24">Der Kurzschlussstrom nimmt mit der Leitungslange ab</text>
+
+  <!-- ===== Pfeile: Kurzschlussstrom an jedem Punkt ===== -->
+  <g stroke="#dc2626" stroke-width="2" fill="none">
+    <line x1="58" y1="38" x2="58" y2="57"/>
+    <line x1="158" y1="38" x2="158" y2="57"/>
+    <line x1="262" y1="38" x2="262" y2="57"/>
+    <line x1="396" y1="38" x2="396" y2="57"/>
+  </g>
+  <g fill="#dc2626">
+    <polygon points="54,54 62,54 58,64"/>
+    <polygon points="154,54 162,54 158,64"/>
+    <polygon points="258,54 266,54 262,64"/>
+    <polygon points="392,54 400,54 396,64"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#dc2626">
+    <text x="58" y="32">6 kA</text>
+    <text x="158" y="32">4 kA</text>
+    <text x="262" y="32">1,5 kA</text>
+    <text x="396" y="32">0,4 kA</text>
+  </g>
+
+  <!-- ===== Kette der Anlage ===== -->
+  <g stroke-width="2" fill="none">
+    <line x1="88" y1="82" x2="124" y2="82" stroke="#1b1f24"/>
+    <line x1="192" y1="82" x2="226" y2="82" stroke="#1b1f24"/>
+    <line x1="298" y1="82" x2="372" y2="82" stroke="#1d4ed8"/>
+  </g>
+  <text x="335" y="76" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#1d4ed8">lange Leitung</text>
+
+  <g fill="#dbe2ea" stroke="#1b1f24" stroke-width="2">
+    <rect x="28" y="68" width="60" height="28" rx="2"/>
+    <rect x="124" y="68" width="68" height="28" rx="2"/>
+    <rect x="226" y="68" width="72" height="28" rx="2"/>
+    <rect x="372" y="68" width="48" height="28" rx="2"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#1b1f24">
+    <text x="58" y="86">HAK</text>
+    <text x="158" y="86">HV</text>
+    <text x="262" y="86">UV</text>
+  </g>
+  <g stroke="#1b1f24" stroke-width="2" fill="none">
+    <circle cx="388" cy="82" r="3.5"/>
+    <circle cx="404" cy="82" r="3.5"/>
+  </g>
+
+  <g font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#1b1f24">
+    <text x="58" y="112">Hausanschlusskasten</text>
+    <text x="158" y="112">Hauptverteilung</text>
+    <text x="262" y="112">Unterverteilung</text>
+    <text x="396" y="112">Steckdose</text>
+  </g>
+
+  <!-- ===== Ausreichendes Schaltvermoegen je Einbaustelle ===== -->
+  <g font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">
+    <text x="58" y="127">6 kA</text>
+    <text x="158" y="127">6 kA</text>
+    <text x="262" y="127">3 kA</text>
+    <text x="396" y="127">3 kA</text>
+  </g>
+
+  <!-- ===== Fallende Linie: Kurzschlussstrom sinkt ===== -->
+  <polyline points="58,142 158,150 262,164 396,190" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <g fill="#dc2626">
+    <circle cx="58" cy="142" r="3"/>
+    <circle cx="158" cy="150" r="3"/>
+    <circle cx="262" cy="164" r="3"/>
+    <circle cx="396" cy="190" r="3"/>
+  </g>
+  <text x="403" y="194" font-family="system-ui, sans-serif" font-size="10" fill="#dc2626">Ik</text>
+
+  <!-- ===== Legende ===== -->
+  <line x1="58" y1="207" x2="80" y2="207" stroke="#dc2626" stroke-width="2"/>
+  <text x="84" y="211" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Kurzschlussstrom</text>
+  <rect x="210" y="201" width="10" height="10" rx="1" fill="#15803d"/>
+  <text x="224" y="211" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Schaltvermoegen</text>
+
+  <!-- ===== Merksatz ===== -->
+  <rect x="12" y="226" width="436" height="32" rx="3" fill="#f7f9fc" stroke="#dde1e6" stroke-width="2"/>
+  <g font-family="system-ui, sans-serif" font-size="10" text-anchor="middle" fill="#1b1f24">
+    <text x="230" y="239">Merksatz: Das Schaltvermoegen muss mindestens so gross sein</text>
+    <text x="230" y="252">wie der Kurzschlussstrom an der Einbaustelle.</text>
+  </g>
+</svg>
+        <figcaption><strong>Kurzschlussstrom und Schaltvermögen entlang der Anlage</strong> Der prospektive Kurzschlussstrom nimmt mit der Leitungslänge ab — das Schaltvermögen muss an jeder Einbaustelle ausreichen.</figcaption>
       </figure>
     </div>
     <div class="unterkapitel">
