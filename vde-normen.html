@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VDE-Normen · Übersicht für die Elektro-Prüfung</title>
+<style>
+  :root{--bg:#f4f5f7;--panel:#fff;--ink:#1b1f24;--muted:#5c6672;--line:#dde1e6;
+        --accent:#1d4ed8;--ok:#15803d;--okbg:#eaf7ef;--warn:#6b5410;--warnbg:#fff8e6;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:900px;margin:0 auto;padding:26px 18px 70px;}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-.01em;}
+  .unter{color:var(--muted);margin:0 0 16px;}
+  .hinweis{background:var(--warnbg);border:1px solid #f0dfae;color:var(--warn);border-radius:9px;
+           padding:11px 15px;font-size:13.5px;margin:0 0 22px;}
+  h2{font-size:18px;margin:32px 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink);}
+  h3{font-size:14px;margin:22px 0 8px;}
+  p{margin:0 0 12px;}
+  .karte{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin:0 0 16px;}
+  .antwort{background:#eef3ff;border:1px solid #c9d8fb;border-radius:11px;padding:16px 18px;margin:0 0 22px;}
+  .antwort strong{color:var(--accent);}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+        border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 8px;font-size:14.5px;}
+  th{background:#f0f2f5;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;
+     color:var(--muted);padding:9px 12px;border-bottom:1px solid var(--line);}
+  td{padding:9px 12px;border-bottom:1px solid #eef0f3;vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td.nr{font-weight:700;white-space:nowrap;color:var(--accent);}
+  .kern td.nr{color:var(--ok);}
+  .stern{display:inline-block;background:var(--okbg);color:var(--ok);font-size:10.5px;font-weight:700;
+         padding:2px 6px;border-radius:5px;margin-left:6px;vertical-align:1px;}
+  ul{margin:0 0 12px;padding-left:20px;}
+  li{margin-bottom:5px;}
+  .merk{background:var(--panel);border-left:4px solid var(--accent);border-radius:0 9px 9px 0;
+        padding:12px 16px;margin:0 0 14px;}
+  .merk b{color:var(--accent);}
+  footer{margin-top:38px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);}
+  @media print{
+    body{background:#fff;font-size:10.5pt;}
+    .wrap{max-width:none;padding:0;}
+    h2{break-before:auto;page-break-after:avoid;}
+    table,.karte,.antwort,.merk{break-inside:avoid;page-break-inside:avoid;}
+    .karte,.antwort,.merk{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>VDE-Normen · Übersicht</h1>
+  <p class="unter">Was du wirklich wissen musst, was du nachschlägst — und wo es steht.</p>
+
+  <div class="hinweis">
+    Normnummern und Titel ändern sich mit jeder Überarbeitung. Diese Übersicht gibt die Systematik und die
+    gebräuchlichen Zuordnungen wieder; vor der Anwendung immer die aktuelle Ausgabe beziehungsweise das
+    Tabellenbuch prüfen.
+  </div>
+
+  <div class="antwort">
+    <p><strong>Welche Norm regelt den Schutz gegen elektrischen Schlag?</strong><br>
+    DIN VDE 0100-410 — Errichten von Niederspannungsanlagen, Teil 4-41: Schutzmaßnahmen,
+    Schutz gegen elektrischen Schlag. Sie regelt Basisschutz, Fehlerschutz und Zusatzschutz.</p>
+    <p style="margin-bottom:0"><strong>Muss ich alle VDE-Normen auswendig kennen?</strong><br>
+    Nein. Verlangt wird die <em>Systematik</em>: du erkennst an der Aufgabe, welche Normenfamilie und
+    welcher Teil gilt, und schlägst den Rest nach. In Prüfung und Praxis arbeitest du mit Tabellenbuch
+    und Normenauszügen. Auswendig brauchst du nur das Kernset unten.</p>
+  </div>
+
+  <h2>1 · Das Kernset — diese solltest du im Kopf haben</h2>
+  <table class="kern">
+    <tr><th style="width:150px">Norm</th><th>Wofür</th></tr>
+    <tr><td class="nr">DIN VDE 0100-410</td><td>Schutz gegen elektrischen Schlag: Basisschutz, Fehlerschutz, Zusatzschutz, RCD-Pflichten</td></tr>
+    <tr><td class="nr">DIN VDE 0100-540</td><td>Erdung, Schutzleiter, Schutzpotenzialausgleich — auch die PE-Querschnittstabelle</td></tr>
+    <tr><td class="nr">DIN VDE 0100-600</td><td>Erstprüfung: Besichtigen, Erproben, Messen</td></tr>
+    <tr><td class="nr">DIN VDE 0100-520</td><td>Kabel- und Leitungsanlagen: Auswahl, Verlegung, Biegeradien</td></tr>
+    <tr><td class="nr">DIN VDE 0298-4</td><td>Strombelastbarkeit von Leitungen und Kabeln — die Querschnittstabelle</td></tr>
+    <tr><td class="nr">DIN VDE 0105-100</td><td>Betrieb elektrischer Anlagen, Wiederholungsprüfungen, Arbeitsschutz beim Betrieb</td></tr>
+    <tr><td class="nr">DIN VDE 0701-0702</td><td>Prüfung elektrischer Geräte: nach Instandsetzung und als Wiederholungsprüfung</td></tr>
+    <tr><td class="nr">DIN VDE 1000-10</td><td>Wer darf was: Elektrofachkraft, elektrotechnisch unterwiesene Person</td></tr>
+  </table>
+  <p style="font-size:13.5px;color:var(--muted)">Acht Normen. Wenn du nur acht Nummern sicher zuordnen kannst, dann diese.</p>
+
+  <h2>2 · Die Systematik — so merkst du dir den Rest</h2>
+  <p>Die VDE-Nummern sind gruppiert. Wenn du die Familie erkennst, hast du die Nummer fast schon:</p>
+  <table>
+    <tr><th style="width:150px">Familie</th><th>Thema</th><th style="width:34%">Wichtige Teile</th></tr>
+    <tr><td class="nr">VDE 0100</td><td>Errichten von Niederspannungsanlagen</td>
+        <td>100 Grundsätze · 410 Schutz gegen elektrischen Schlag · 420 Brandschutz · 430 Überstromschutz · 442/443/444 Überspannungsschutz · 510 Auswahl Betriebsmittel · 520 Leitungen · 530 Schaltgeräte · 540 Erdung/Schutzleiter · 560 Sicherheitsstromversorgung · 600 Prüfungen</td></tr>
+    <tr><td class="nr">VDE 0100-7xx</td><td>Besondere Anlagen, Räume und Bereiche</td>
+        <td>siehe Abschnitt 3</td></tr>
+    <tr><td class="nr">VDE 0105</td><td>Betrieb elektrischer Anlagen</td>
+        <td>100 Allgemeines · weitere Teile für Sonderbereiche</td></tr>
+    <tr><td class="nr">VDE 0700er</td><td>Elektrische Geräte</td>
+        <td>0701-0702 Prüfung von Geräten · 0700-xxx Gerätesicherheit</td></tr>
+    <tr><td class="nr">VDE 0298</td><td>Leitungen und Kabel</td>
+        <td>4 Strombelastbarkeit (die wichtigste) · weitere Teile für Werkstoffe und Verlegung</td></tr>
+    <tr><td class="nr">VDE 0185-305</td><td>Blitzschutz (entspricht DIN EN 62305)</td>
+        <td>1 Grundlagen · 2 Risikoanalyse · 3 Schutz von baulichen Anlagen · 4 Schutz informationstechnischer Systeme</td></tr>
+    <tr><td class="nr">VDE 0833</td><td>Gefahrenmeldeanlagen</td>
+        <td>1 Allgemeines · 2 Brandmeldeanlagen · 3 Einbruchmeldeanlagen</td></tr>
+    <tr><td class="nr">VDE 0413</td><td>Prüf- und Messgeräte für Schutzmaßnahmen</td>
+        <td>Anforderungen an Installationstester und Isolationsmessgeräte</td></tr>
+    <tr><td class="nr">VDE 0641 / 0664</td><td>Schutzschalter</td>
+        <td>0641 Leitungsschutzschalter (EN 60898) · 0664 Fehlerstrom-Schutzschalter (EN 61008/61009)</td></tr>
+  </table>
+
+  <div class="merk">
+    <b>Merkhilfe zur Familienlogik:</b> <em>0100</em> sagt, wie du <b>errichtest</b> · <em>0105</em> sagt, wie du
+    <b>betreibst und prüfst</b> · <em>0701/0702</em> sagt, wie du <b>Geräte prüfst</b>.
+  </div>
+
+  <h2>3 · Besondere Anlagen — Teil 7 der VDE 0100</h2>
+  <p>Das ist der Teil, der in Prüfungsaufgaben am häufigsten abgefragt wird: Zu jedem Sonderfall gehört eine eigene Teilnummer.</p>
+  <table>
+    <tr><th style="width:130px">Teil</th><th>Bereich</th></tr>
+    <tr><td class="nr">0100-701</td><td>Räume mit Badewanne oder Dusche (Schutzbereiche 0, 1, 2)</td></tr>
+    <tr><td class="nr">0100-702</td><td>Schwimmbäder und Becken</td></tr>
+    <tr><td class="nr">0100-704</td><td>Baustellen und Montagestellen</td></tr>
+    <tr><td class="nr">0100-705</td><td>Landwirtschaftliche und gartenbauliche Betriebsstätten</td></tr>
+    <tr><td class="nr">0100-710</td><td>Medizinisch genutzte Bereiche (OP, Intensiv)</td></tr>
+    <tr><td class="nr">0100-712</td><td>Photovoltaik-Stromversorgungssysteme</td></tr>
+    <tr><td class="nr">0100-717</td><td>Fahrzeuge, mobile und ortsveränderliche Einheiten</td></tr>
+    <tr><td class="nr">0100-722</td><td>Ladeeinrichtungen für Elektrofahrzeuge (Wallbox)</td></tr>
+  </table>
+  <p style="font-size:13.5px;color:var(--muted)">Faustregel: Sobald die Aufgabe einen besonderen Raum oder eine besondere Nutzung nennt, gilt zusätzlich ein Teil-7-Abschnitt — und der verschärft fast immer die Anforderungen (meist RCD 30 mA).</p>
+
+  <h2>4 · Netzanschluss — VDE-Anwendungsregeln</h2>
+  <p>Keine klassischen VDE-0xxx-Normen, sondern Anwendungsregeln, die den Anschluss an das Netz regeln. Für die Eintragung ins Installateurverzeichnis und für deine Prüftätigkeit zentral:</p>
+  <table>
+    <tr><th style="width:150px">Regel</th><th>Inhalt</th></tr>
+    <tr><td class="nr">VDE-AR-N 4100</td><td>Anschluss von Kundenanlagen an das Niederspannungsnetz (TAB). Hier stehen die Anmelde- und Genehmigungsschwellen, auch für Ladeinfrastruktur.</td></tr>
+    <tr><td class="nr">VDE-AR-N 4105</td><td>Erzeugungsanlagen am Niederspannungsnetz: Photovoltaik, Speicher, NA-Schutz</td></tr>
+    <tr><td class="nr">VDE-AR-N 4110</td><td>Anschluss an das Mittelspannungsnetz</td></tr>
+  </table>
+  <p style="font-size:13.5px;color:var(--muted)">Die konkreten Schwellenwerte legt jeder Netzbetreiber in seinen technischen Anschlussbedingungen fest. Vor jedem Auftrag dort prüfen.</p>
+
+  <h2>5 · Kein VDE — aber prüfungsrelevant</h2>
+  <table>
+    <tr><th style="width:190px">Regelwerk</th><th>Thema</th></tr>
+    <tr><td class="nr">DGUV Vorschrift 3</td><td>Elektrische Anlagen und Betriebsmittel: Prüffristen, befähigte Personen (früher BGV A3)</td></tr>
+    <tr><td class="nr">BetrSichV</td><td>Betriebssicherheitsverordnung: Gefährdungsbeurteilung, Prüfung von Arbeitsmitteln</td></tr>
+    <tr><td class="nr">ArbSchG</td><td>Arbeitsschutzgesetz: Grundpflichten des Arbeitgebers</td></tr>
+    <tr><td class="nr">EnWG</td><td>Energiewirtschaftsgesetz: anerkannter Stand der Technik als Maßstab</td></tr>
+    <tr><td class="nr">NAV</td><td>Niederspannungsanschlussverordnung: Rechte und Pflichten am Netzanschluss</td></tr>
+    <tr><td class="nr">ElektroG</td><td>Entsorgung von Elektro- und Elektronikaltgeräten</td></tr>
+    <tr><td class="nr">HwO / AEVO</td><td>Handwerksordnung, Ausbildereignungsverordnung (Meisterebene)</td></tr>
+  </table>
+
+  <h2>6 · Lernstrategie</h2>
+  <div class="karte">
+    <ul>
+      <li><b>Erst die Familie, dann die Nummer.</b> Wenn du weißt, dass es um Errichtung geht, ist die 0100 gesetzt — nur der Teil fehlt noch.</li>
+      <li><b>Zahlen als Thema lesen:</b> 410 ist Schutz gegen Schlag, 540 ist Erdung, 600 ist Prüfung, 701 ist Bad, 722 ist Wallbox. Vier Zahlen decken einen Großteil der Prüfungsfragen ab.</li>
+      <li><b>Nicht zitieren, sondern anwenden.</b> Gefragt wird fast immer „Wie ist zu verfahren?", nicht „Wie lautet die Nummer?". Die Nummer ist die Begründung, nicht die Antwort.</li>
+      <li><b>Eine Ausnahme merken:</b> Der Spannungsbereich. Die 0100 gilt bis AC 1000 V und DC 1500 V — darunter Niederspannung, darüber Mittel- und Hochspannung mit eigenen Regelwerken.</li>
+      <li><b>Immer die aktuelle Ausgabe.</b> Normen werden überarbeitet, Grenzwerte ändern sich. Im Zweifel im Tabellenbuch oder beim Netzbetreiber nachsehen.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Selbst erstellte Lernübersicht zur Veranschaulichung, keine offiziellen Prüfungsunterlagen.
+    Normnummern und Grenzwerte vor der Anwendung gegen die aktuelle Ausgabe prüfen.
+  </footer>
+</div>
+</body>
+</html>
