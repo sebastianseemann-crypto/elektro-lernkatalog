@@ -129,24 +129,34 @@
   .exp { margin: 0; font-size: 14.5px; color: #33404d; }
   .exp::before { content: "Erklärung: "; font-weight: 700; color: var(--muted); }
 
-  body.hide-answers .card:not(.open) .answers { display: none; }
-  body.hide-answers .card:not(.open) .mark { display: none; }
-  body.hide-answers .card:not(.open) li.correct {
+  /* Antworten sind immer verdeckt und werden nur je Frage aufgedeckt */
+  .card:not(.open) .answers { display: none; }
+  .card:not(.open) .mark { display: none; }
+  .card:not(.open) li.correct {
     background: #fbfcfd; border-color: var(--line); font-weight: inherit;
   }
-  body.hide-answers .card:not(.open) li.correct .letter { color: var(--muted); }
-  body.hide-answers .card:not(.open) li.correct > span:nth-child(2) { font-weight: inherit; }
-  body.hide-answers .card:not(.open) { cursor: pointer; }
+  .card:not(.open) li.correct .letter { color: var(--muted); }
+  .card:not(.open) li.correct > span:nth-child(2) { font-weight: inherit; }
+  .card:not(.open) { cursor: pointer; }
+  .card:not(.open)::after {
+    content: "Antippen zeigt die Antwort"; display: block; margin-top: 11px;
+    font-size: 12.5px; color: var(--muted);
+  }
 
-  .merken {
-    margin-left: auto; flex: 0 0 auto; font: inherit; font-size: 12px;
+  .merken, .wv {
+    flex: 0 0 auto; font: inherit; font-size: 12px;
     padding: 4px 11px; border-radius: 999px; cursor: pointer;
     border: 1px solid var(--line); background: #fff; color: var(--muted);
   }
-  .merken:hover { border-color: #b9c1cb; }
+  .wv { margin-left: auto; }
+  .merken:hover, .wv:hover { border-color: #b9c1cb; }
   .card.beantwortet .merken { background: var(--ok-bg); border-color: #b6e0c8; color: var(--ok); font-weight: 600; }
   .card.beantwortet { opacity: .78; border-left-color: var(--ok); }
   .card.beantwortet .q { color: var(--muted); }
+  .card.wiedervorlage { border-left-color: #d97706; }
+  .card.wiedervorlage .wv {
+    background: #fef3c7; border-color: #fcd34d; color: #92400e; font-weight: 600;
+  }
 
   .fortschritt { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
   .fortschritt .row { gap: 8px; }
@@ -166,10 +176,7 @@
     .controls { display: none !important; }
     .wrap { max-width: none; padding: 0; }
     .card { box-shadow: none; }
-    body.hide-answers .card .answers { display: block !important; }
-    body.hide-answers .card .mark { display: inline !important; }
-    body.hide-answers .card li.correct { background: var(--ok-bg) !important; border-color: #b6e0c8 !important; }
-    body.hide-answers .card li.correct .letter { color: var(--ok) !important; }
+    .card:not(.open)::after { display: none !important; }
     .merken, .fortschritt { display: none !important; }
     .card.beantwortet { opacity: 1 !important; }
     .card.beantwortet .q { color: var(--ink) !important; }
@@ -188,7 +195,6 @@
   <div class="controls" id="controls">
     <div class="row">
       <input id="search" type="search" placeholder="Suchen in Frage, Antworten und Erklärung ...">
-      <button id="toggle">Antworten verbergen</button>
       <button id="print">Drucken</button>
     </div>
 
@@ -218,7 +224,9 @@
     <div class="fortschritt">
       <div class="row">
         <button id="alle-merken">Alle sichtbaren als beantwortet</button>
-        <button id="zuruecksetzen">Markierungen löschen</button>
+        <button id="alle-wv">Alle sichtbaren auf Wiedervorlage</button>
+        <button id="wv-leeren">Wiedervorlage leeren</button>
+        <button id="zuruecksetzen">Alles zurücksetzen</button>
         <button id="exportieren">Stand sichern</button>
         <button id="importieren">Stand laden</button>
       </div>
@@ -254,24 +262,32 @@ const topicsEl = document.getElementById("topics");
 const countEl  = document.getElementById("count");
 const searchEl = document.getElementById("search");
 const emptyEl  = document.getElementById("empty");
-const toggleEl = document.getElementById("toggle");
 
 let activeStufe = "Alle";
 let activeTopic = "Alle";
 let activeStand = "Alle";
 
-// ---- Lernstand ----------------------------------------------------------
+// ---- Lernstand: beantwortet und Wiedervorlage ---------------------------
 const STORE_KEY = "em1nd3r-lernstand-v1";
+const WV_KEY = "em1nd3r-wiedervorlage-v1";
 let fortschritt = {};
+let wiedervorlage = {};
 
 function ladeLernstand() {
   try {
     const roh = localStorage.getItem(STORE_KEY);
     fortschritt = roh ? JSON.parse(roh) : {};
   } catch (e) { fortschritt = {}; }
+  try {
+    const roh = localStorage.getItem(WV_KEY);
+    wiedervorlage = roh ? JSON.parse(roh) : {};
+  } catch (e) { wiedervorlage = {}; }
 }
 function speichereLernstand() {
   try { localStorage.setItem(STORE_KEY, JSON.stringify(fortschritt)); } catch (e) {}
+}
+function speichereWiedervorlage() {
+  try { localStorage.setItem(WV_KEY, JSON.stringify(wiedervorlage)); } catch (e) {}
 }
 function istBeantwortet(id) { return fortschritt[String(id)] === true; }
 function setzeBeantwortet(id, wert) {
@@ -279,17 +295,25 @@ function setzeBeantwortet(id, wert) {
   if (wert) { fortschritt[k] = true; } else { delete fortschritt[k]; }
   speichereLernstand();
 }
+function istWiedervorlage(id) { return wiedervorlage[String(id)] === true; }
+function setzeWiedervorlage(id, wert) {
+  const k = String(id);
+  if (wert) { wiedervorlage[k] = true; } else { delete wiedervorlage[k]; }
+  speichereWiedervorlage();
+}
 function anzahlBeantwortet() {
   return DATA.questions.filter(q => istBeantwortet(q.id)).length;
 }
+function anzahlWiedervorlage() {
+  return DATA.questions.filter(q => istWiedervorlage(q.id)).length;
+}
 
-// Kompakter Stand-Text, z. B. "1-3,7,12-20" - kurz genug zum Verschicken
-function standAlsText() {
-  const ids = DATA.questions.map(q => q.id).filter(id => istBeantwortet(id))
-    .sort((a, b) => a - b);
+// Kompakter Stand-Text, z. B. "B:1-3,7;W:4,9" - kurz genug zum Verschicken
+function bereichsText(ids) {
+  const sortiert = ids.slice().sort((a, b) => a - b);
   const teile = [];
   let start = null, vor = null;
-  ids.forEach(id => {
+  sortiert.forEach(id => {
     if (start === null) { start = vor = id; return; }
     if (id === vor + 1) { vor = id; return; }
     teile.push(start === vor ? String(start) : start + "-" + vor);
@@ -301,7 +325,7 @@ function standAlsText() {
 
 function textAlsIds(text) {
   const ids = [];
-  String(text).split(/[,\s;]+/).forEach(teil => {
+  String(text).split(/[,\s]+/).forEach(teil => {
     const bereich = teil.match(/^(\d+)-(\d+)$/);
     if (bereich) {
       const a = parseInt(bereich[1], 10), b = parseInt(bereich[2], 10);
@@ -312,23 +336,55 @@ function textAlsIds(text) {
   });
   return ids;
 }
+
+function standAlsText() {
+  const b = bereichsText(DATA.questions.map(q => q.id).filter(id => istBeantwortet(id)));
+  const w = bereichsText(DATA.questions.map(q => q.id).filter(id => istWiedervorlage(id)));
+  const teile = [];
+  if (b) teile.push("B:" + b);
+  if (w) teile.push("W:" + w);
+  return teile.join(";");
+}
+
+// Liest "B:1-3;W:4" - und auch das alte Format ohne Kennbuchstaben
+function textAlsStand(text) {
+  const b = [], w = [];
+  String(text).split(";").forEach(abschnitt => {
+    const t = abschnitt.trim();
+    if (!t) return;
+    const m = t.match(/^([BWbw])\s*:\s*(.*)$/);
+    if (m) {
+      const ziel = (m[1].toUpperCase() === "W") ? w : b;
+      textAlsIds(m[2]).forEach(id => ziel.push(id));
+    } else {
+      textAlsIds(t).forEach(id => b.push(id));
+    }
+  });
+  return { beantwortet: b, wiedervorlage: w };
+}
 function aktualisiereKarte(card, id) {
   const ja = istBeantwortet(id);
   card.classList.toggle("beantwortet", ja);
   const knopf = card.querySelector(".merken");
   if (knopf) knopf.textContent = ja ? "✓ beantwortet" : "○ beantwortet";
+
+  const wv = istWiedervorlage(id);
+  card.classList.toggle("wiedervorlage", wv);
+  const wvKnopf = card.querySelector(".wv");
+  if (wvKnopf) wvKnopf.textContent = wv ? "↻ Auf Wiedervorlage" : "↻ Wiedervorlage";
 }
 ladeLernstand();
 
-// Stand aus der Adresse uebernehmen, z. B. fragen.html#stand=1-3,7
+// Stand aus der Adresse uebernehmen, z. B. fragen.html#stand=B:1-3;W:4
 (function () {
-  const treffer = /stand=([0-9,\-\s]+)/.exec(location.hash || "");
+  const treffer = /stand=([^&\s]+)/.exec(location.hash || "");
   if (!treffer) return;
   const gueltig = new Set(DATA.questions.map(q => q.id));
-  textAlsIds(treffer[1]).forEach(id => {
-    if (gueltig.has(id)) fortschritt[String(id)] = true;
-  });
+  const s = textAlsStand(decodeURIComponent(treffer[1]));
+  s.beantwortet.forEach(id => { if (gueltig.has(id)) fortschritt[String(id)] = true; });
+  s.wiedervorlage.forEach(id => { if (gueltig.has(id)) wiedervorlage[String(id)] = true; });
   speichereLernstand();
+  speichereWiedervorlage();
 })();
 
 DATA.questions.forEach((item, idx) => {
@@ -356,6 +412,19 @@ DATA.questions.forEach((item, idx) => {
   badge.className = "badge";
   badge.textContent = item.topic;
 
+  const wvKnopf = document.createElement("button");
+  wvKnopf.type = "button";
+  wvKnopf.className = "wv";
+  wvKnopf.textContent = "↻ Wiedervorlage";
+  wvKnopf.title = "Für eine spätere Wiederholung vormerken";
+  wvKnopf.addEventListener("click", ev => {
+    ev.stopPropagation();
+    setzeWiedervorlage(item.id, !istWiedervorlage(item.id));
+    aktualisiereKarte(card, item.id);
+    aufbauStandChips();
+    if (activeStand !== "Alle") { apply(); } else { aktualisiereZaehlerStand(); }
+  });
+
   const merken = document.createElement("button");
   merken.type = "button";
   merken.className = "merken";
@@ -369,7 +438,7 @@ DATA.questions.forEach((item, idx) => {
     if (activeStand !== "Alle") { apply(); } else { aktualisiereZaehlerStand(); }
   });
 
-  head.append(num, stufe, badge, merken);
+  head.append(num, stufe, badge, wvKnopf, merken);
 
   const q = document.createElement("h3");
   q.className = "q";
@@ -407,7 +476,16 @@ DATA.questions.forEach((item, idx) => {
   answers.append(exp);
 
   card.append(head, q, opts, answers);
-  card.addEventListener("click", () => card.classList.toggle("open"));
+  // Das Aufdecken der Antwort gilt automatisch als beantwortet
+  card.addEventListener("click", () => {
+    const offen = card.classList.toggle("open");
+    if (offen && !istBeantwortet(item.id)) {
+      setzeBeantwortet(item.id, true);
+      aktualisiereKarte(card, item.id);
+      aufbauStandChips();
+      if (activeStand === "Offen") { apply(); } else { aktualisiereZaehlerStand(); }
+    }
+  });
   aktualisiereKarte(card, item.id);
   listEl.append(card);
 });
@@ -444,7 +522,8 @@ function aufbauStandChips() {
   const werte = [
     ["Alle", DATA.questions.length],
     ["Offen", DATA.questions.length - anzahlBeantwortet()],
-    ["Beantwortet", anzahlBeantwortet()]
+    ["Beantwortet", anzahlBeantwortet()],
+    ["Auf Wiedervorlage", anzahlWiedervorlage()]
   ];
   standEl.innerHTML = "";
   werte.forEach(eintrag => {
@@ -473,7 +552,8 @@ function apply() {
     const beantwortet = istBeantwortet(card.dataset.id);
     const okStand = activeStand === "Alle"
       || (activeStand === "Beantwortet" && beantwortet)
-      || (activeStand === "Offen" && !beantwortet);
+      || (activeStand === "Offen" && !beantwortet)
+      || (activeStand === "Auf Wiedervorlage" && istWiedervorlage(card.dataset.id));
     const visible = okStufe && okTopic && okSearch && okStand;
     card.style.display = visible ? "" : "none";
     if (visible) shown++;
@@ -518,18 +598,13 @@ function aktualisiereZaehlerStand(shown) {
   }
   countEl.textContent = shown + " von " + DATA.questions.length + " Fragen sichtbar · "
     + anzahlBeantwortet() + " beantwortet · "
-    + (DATA.questions.length - anzahlBeantwortet()) + " offen";
+    + (DATA.questions.length - anzahlBeantwortet()) + " offen · "
+    + anzahlWiedervorlage() + " auf Wiedervorlage";
 }
 
 aufbauChips(stufenEl, DATA.stufen, "stufe", activeStufe, w => { activeStufe = w; });
 aufbauChips(topicsEl, DATA.topics, "topic", activeTopic, w => { activeTopic = w; });
 searchEl.addEventListener("input", apply);
-
-toggleEl.addEventListener("click", () => {
-  const hidden = document.body.classList.toggle("hide-answers");
-  toggleEl.textContent = hidden ? "Antworten anzeigen" : "Antworten verbergen";
-  listEl.querySelectorAll(".card.open").forEach(c => c.classList.remove("open"));
-});
 
 document.getElementById("print").addEventListener("click", () => window.print());
 
@@ -550,56 +625,86 @@ document.getElementById("alle-merken").addEventListener("click", () => {
   tippEl.textContent = n + " sichtbare Fragen als beantwortet markiert.";
 });
 
-document.getElementById("zuruecksetzen").addEventListener("click", () => {
-  if (!window.confirm("Alle Markierungen löschen?")) return;
-  fortschritt = {};
-  speichereLernstand();
+document.getElementById("alle-wv").addEventListener("click", () => {
+  let n = 0;
+  listEl.querySelectorAll(".card").forEach(card => {
+    if (card.style.display === "none") return;
+    setzeWiedervorlage(card.dataset.id, true);
+    aktualisiereKarte(card, card.dataset.id);
+    n++;
+  });
+  aufbauStandChips();
+  aktualisiereZaehlerStand();
+  tippEl.textContent = n + " sichtbare Fragen auf Wiedervorlage gesetzt.";
+});
+
+document.getElementById("wv-leeren").addEventListener("click", () => {
+  wiedervorlage = {};
+  speichereWiedervorlage();
   listEl.querySelectorAll(".card").forEach(c => aktualisiereKarte(c, c.dataset.id));
   aufbauStandChips();
   apply();
-  tippEl.textContent = "Alle Markierungen gelöscht.";
+  tippEl.textContent = "Wiedervorlage geleert.";
+});
+
+document.getElementById("zuruecksetzen").addEventListener("click", () => {
+  if (!window.confirm("Beantwortet und Wiedervorlage komplett zurücksetzen?")) return;
+  fortschritt = {};
+  wiedervorlage = {};
+  speichereLernstand();
+  speichereWiedervorlage();
+  listEl.querySelectorAll(".card").forEach(c => aktualisiereKarte(c, c.dataset.id));
+  aufbauStandChips();
+  apply();
+  tippEl.textContent = "Alles zurückgesetzt.";
 });
 
 document.getElementById("exportieren").addEventListener("click", () => {
   feldEl.value = standAlsText();
   feldEl.select();
-  tippEl.textContent = anzahlBeantwortet() + " Markierungen im Feld. Diesen kurzen Text "
-    + "kopieren und auf dem anderen Gerät über den Knopf Stand laden einfügen.";
+  tippEl.textContent = anzahlBeantwortet() + " beantwortet, " + anzahlWiedervorlage()
+    + " auf Wiedervorlage. Diesen kurzen Text kopieren und auf dem anderen Gerät "
+    + "über den Knopf Stand laden einfügen.";
 });
 
 document.getElementById("importieren").addEventListener("click", () => {
   const roh = feldEl.value.trim();
   if (!roh) { tippEl.textContent = "Das Feld ist leer."; return; }
-  let ids = [];
+  let s;
   try {
     if (roh.charAt(0) === "{") {                       // alte JSON-Sicherung
       const daten = JSON.parse(roh);
       if (typeof daten !== "object" || daten === null || Array.isArray(daten)) {
         throw new Error("kein gültiges Format");
       }
-      ids = Object.keys(daten).filter(k => daten[k] === true).map(Number);
-    } else {                                            // kurzer Text, z. B. 1-3,7
-      ids = textAlsIds(roh);
+      s = { beantwortet: Object.keys(daten).filter(k => daten[k] === true).map(Number),
+            wiedervorlage: [] };
+    } else {                                            // "B:1-3;W:4" oder alte Zahlenliste
+      s = textAlsStand(roh);
     }
   } catch (e) {
     tippEl.textContent = "Laden nicht möglich: " + e.message;
     return;
   }
   const gueltig = new Set(DATA.questions.map(q => q.id));
-  let neu = 0, schon = 0, unbekannt = 0;
-  ids.forEach(id => {
+  let neuB = 0, neuW = 0, unbekannt = 0;
+  s.beantwortet.forEach(id => {
     if (!gueltig.has(id)) { unbekannt++; return; }
-    if (istBeantwortet(id)) { schon++; return; }
-    fortschritt[String(id)] = true;
-    neu++;
+    if (!istBeantwortet(id)) { fortschritt[String(id)] = true; neuB++; }
+  });
+  s.wiedervorlage.forEach(id => {
+    if (!gueltig.has(id)) { unbekannt++; return; }
+    if (!istWiedervorlage(id)) { wiedervorlage[String(id)] = true; neuW++; }
   });
   speichereLernstand();
+  speichereWiedervorlage();
   listEl.querySelectorAll(".card").forEach(c => aktualisiereKarte(c, c.dataset.id));
   aufbauStandChips();
   apply();
-  tippEl.textContent = neu + " neu übernommen, " + schon + " waren schon markiert"
+  tippEl.textContent = neuB + " neu als beantwortet und " + neuW + " neu auf Wiedervorlage"
     + (unbekannt ? ", " + unbekannt + " unbekannte Nummern ignoriert" : "")
-    + ". Zusammen " + anzahlBeantwortet() + " beantwortet.";
+    + ". Zusammen " + anzahlBeantwortet() + " beantwortet, "
+    + anzahlWiedervorlage() + " auf Wiedervorlage.";
 });
 
 // Startzustand: gemerkte Wahl, sonst auf schmalen Bildschirmen zugeklappt
