@@ -91,6 +91,31 @@ body.ohne-loesung li.aufgabe:not(.offen)::after{content:"Lösung anzeigen";displ
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
        font-size:13.5px;color:var(--muted);}
 
+/* Formelsammlung */
+.formelsammlung{margin-top:42px;padding-top:22px;border-top:2px solid var(--line);}
+.formelsammlung>h2{font-size:22px;margin:0 0 6px;}
+.formelsammlung .unter{margin:0 0 18px;color:var(--muted);font-size:14px;}
+.fs-abschnitt{margin:0 0 18px;break-inside:avoid;page-break-inside:avoid;}
+.fs-abschnitt h3{font-size:15px;margin:0 0 8px;padding-left:9px;border-left:3px solid var(--accent);}
+.fs-liste{display:grid;gap:7px;}
+.fs-formel{border:1px solid var(--line);border-radius:8px;padding:8px 11px;background:#fff;
+           break-inside:avoid;page-break-inside:avoid;}
+.fs-name{font-size:12.5px;color:var(--muted);margin-bottom:3px;}
+.fs-ausdruck{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;
+             font-weight:600;color:var(--ink);}
+.fs-umstellung{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+               color:var(--muted);margin-top:2px;}
+.fs-groessen{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.4;}
+.fs-tabellen{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px;}
+table.fs{width:100%;border-collapse:collapse;font-size:13px;}
+table.fs th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;
+            color:var(--muted);border-bottom:1px solid var(--line);padding:5px 6px;}
+table.fs td{padding:4px 6px;border-bottom:1px solid #eef1f5;vertical-align:top;}
+table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+                                font-weight:600;white-space:nowrap;}
+@media (max-width:700px){ .fs-tabellen{grid-template-columns:1fr;} }
+.fs-sprung{margin:18px 0 0;font-size:14px;}
+
 @media print{
   body{background:#fff;font-size:11.5pt;}
   .wrap{max-width:none;padding:0;}
@@ -5574,7 +5599,364 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
     </ol>
   </div>
 </section>
-<footer>Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.<br>Erstellt am 16.10.2026.</footer>
+<section class="formelsammlung" id="formelsammlung">
+  <h2>Formelsammlung</h2>
+  <p class="unter">Alle Rechenbeziehungen aus den Modulen, dazu die Formelzeichen und die typischen Werte.</p>
+  <div class="fs-abschnitt">
+    <h3>Grundgrößen</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Ohmsches Gesetz</div>
+        <div class="fs-ausdruck">U = R · I</div>
+        <div class="fs-umstellung">I = U / R</div>
+        <div class="fs-umstellung">R = U / I</div>
+        <div class="fs-groessen">U Spannung in V · R Widerstand in Ω · I Strom in A</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Elektrische Leistung</div>
+        <div class="fs-ausdruck">P = U · I</div>
+        <div class="fs-umstellung">P = I² · R</div>
+        <div class="fs-umstellung">P = U² / R</div>
+        <div class="fs-groessen">P Leistung in W</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Elektrische Arbeit</div>
+        <div class="fs-ausdruck">W = P · t</div>
+        <div class="fs-groessen">W Arbeit in Wh oder kWh · t Zeit in h</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Periodendauer</div>
+        <div class="fs-ausdruck">T = 1 / f</div>
+        <div class="fs-umstellung">f = 1 / T</div>
+        <div class="fs-groessen">T Periodendauer in s · f Frequenz in Hz (Netz: 50 Hz)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Verlustleistung an einer Klemmstelle</div>
+        <div class="fs-ausdruck">P = I² · R_Ü</div>
+        <div class="fs-groessen">R_Ü Übergangswiderstand in Ω — die Wärme entsteht genau an dieser Stelle.</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Schaltungen</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Reihenschaltung</div>
+        <div class="fs-ausdruck">R_ges = R1 + R2 + R3</div>
+        <div class="fs-groessen">Der Strom ist überall gleich, die Spannungen addieren sich.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Parallelschaltung</div>
+        <div class="fs-ausdruck">1 / R_ges = 1 / R1 + 1 / R2 + 1 / R3</div>
+        <div class="fs-umstellung">R_ges = (R1 · R2) / (R1 + R2)  für zwei Widerstände</div>
+        <div class="fs-groessen">Die Spannung ist überall gleich, die Ströme addieren sich.</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Stromkreis berechnen</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Betriebsstrom im Ersatzschaltbild</div>
+        <div class="fs-ausdruck">I = U / (R_L + R_N + R_Last)</div>
+        <div class="fs-groessen">R_L Leitungswiderstand Außenleiter · R_N Leitungswiderstand Neutralleiter · R_Last Verbraucher</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Spannungsfall im Ersatzschaltbild</div>
+        <div class="fs-ausdruck">ΔU = I · (R_L + R_N)</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Leiter und Widerstand</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Leiterwiderstand</div>
+        <div class="fs-ausdruck">R = ρ · l / A</div>
+        <div class="fs-umstellung">R = l / (κ · A)</div>
+        <div class="fs-umstellung">A = l / (κ · R)</div>
+        <div class="fs-groessen">ρ spezifischer Widerstand in Ω·mm²/m · κ Leitfähigkeit in m/(Ω·mm²) · l Länge in m · A Querschnitt in mm²</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Zusammenhang ρ und κ</div>
+        <div class="fs-ausdruck">κ = 1 / ρ</div>
+        <div class="fs-groessen">Kupfer: ρ = 0,0178 Ω·mm²/m, κ = 56 m/(Ω·mm²)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Temperaturabhängigkeit</div>
+        <div class="fs-ausdruck">R = R20 · (1 + α · ΔT)</div>
+        <div class="fs-groessen">R20 Widerstand bei 20 °C · α Temperaturkoeffizient (Kupfer 0,0039 1/K) · ΔT Temperaturdifferenz in K</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Dehnung beim Biegen</div>
+        <div class="fs-ausdruck">ε ≈ D / (2 · R)</div>
+        <div class="fs-umstellung">R_min = D / (2 · ε_zul)</div>
+        <div class="fs-groessen">D Außendurchmesser · R Biegeradius · ε Dehnung der äußersten Faser</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Leitungsdimensionierung</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Betriebsstrom einphasig</div>
+        <div class="fs-ausdruck">I = P / (U · cos φ)</div>
+        <div class="fs-groessen">I in A · P in W · U = 230 V · cos φ Leistungsfaktor</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Betriebsstrom dreiphasig</div>
+        <div class="fs-ausdruck">I = P / (√3 · U · cos φ)</div>
+        <div class="fs-groessen">U = 400 V (Außenleiterspannung)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Spannungsfall einphasig</div>
+        <div class="fs-ausdruck">ΔU = 2 · l · I / (κ · A)</div>
+        <div class="fs-groessen">Der Faktor 2 erfasst Hin- und Rückweg über Außen- und Neutralleiter.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Spannungsfall dreiphasig</div>
+        <div class="fs-ausdruck">ΔU = √3 · l · I / (κ · A)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Spannungsfall mit Leistungsfaktor</div>
+        <div class="fs-ausdruck">ΔU = 2 · l · I · cos φ / (κ · A)</div>
+        <div class="fs-groessen">Bei ohmscher Last ist cos φ = 1, bei Motoren etwa 0,8.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Spannungsfall in Prozent</div>
+        <div class="fs-ausdruck">ΔU % = ΔU / U · 100</div>
+        <div class="fs-groessen">Zulässig: 3 % bei Beleuchtung, 5 % bei sonstigen Verbrauchern (nach Einspeisestelle).</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Querschnitt aus dem Spannungsfall, einphasig</div>
+        <div class="fs-ausdruck">A ≥ 2 · l · I · cos φ / (κ · ΔU_zul)</div>
+        <div class="fs-groessen">ΔU_zul in Volt einsetzen, nicht in Prozent.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Querschnitt aus dem Spannungsfall, dreiphasig</div>
+        <div class="fs-ausdruck">A ≥ √3 · l · I · cos φ / (κ · ΔU_zul)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Kurzschlussfestigkeit</div>
+        <div class="fs-ausdruck">k² · S² ≥ I² · t</div>
+        <div class="fs-groessen">k Werkstofffaktor · S Querschnitt in mm² · I Kurzschlussstrom in A · t Abschaltzeit in s</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Mindestquerschnitt aus der Kurzschlussfestigkeit</div>
+        <div class="fs-ausdruck">S ≥ I_k · √t / k</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Bedingung für die Schutzeinrichtung</div>
+        <div class="fs-ausdruck">I_B ≤ I_n ≤ I_z</div>
+        <div class="fs-groessen">I_B Betriebsstrom · I_n Bemessungsstrom der Schutzeinrichtung · I_z Belastbarkeit der Leitung</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Schutz und Fehlerstrom</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Abschaltbedingung</div>
+        <div class="fs-ausdruck">Z_s ≤ U_0 / I_a</div>
+        <div class="fs-groessen">Z_s Schleifenimpedanz in Ω · U_0 Spannung gegen Erde (230 V) · I_a Auslösestrom der Schutzeinrichtung</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Kurzschlussstrom einphasig</div>
+        <div class="fs-ausdruck">I_k = U_0 / Z_s</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Kurzschlussstrom dreiphasig</div>
+        <div class="fs-ausdruck">I_k = c · U_n / (√3 · Z_k)</div>
+        <div class="fs-groessen">c Spannungsfaktor, meist 1,05 · U_n Nennspannung · Z_k Impedanz bis zur Fehlerstelle</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Erderwiderstand im TT-System</div>
+        <div class="fs-ausdruck">R_E ≤ U_L / I_Δn</div>
+        <div class="fs-groessen">U_L zulässige Berührungsspannung (50 V) · I_Δn Bemessungsfehlerstrom</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Isolationswiderstand und Leckstrom</div>
+        <div class="fs-ausdruck">R_iso = U / I_Leck</div>
+        <div class="fs-umstellung">I_Leck = U / R_iso</div>
+        <div class="fs-groessen">Beispiel: 230 V durch 1 MΩ ergeben 0,23 mA — deshalb gilt 1 MΩ als Mindestwert.</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Wechselstrom</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Scheitelwert bei Sinusgrößen</div>
+        <div class="fs-ausdruck">û = u · √2</div>
+        <div class="fs-umstellung">u = û / √2</div>
+        <div class="fs-groessen">û Scheitelwert · u Effektivwert (230 V Effektivwert entspricht 325 V Scheitelwert)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Scheinleistung einphasig</div>
+        <div class="fs-ausdruck">S = U · I</div>
+        <div class="fs-groessen">S in VA</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Wirkleistung einphasig</div>
+        <div class="fs-ausdruck">P = S · cos φ</div>
+        <div class="fs-groessen">P in W</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Blindleistung einphasig</div>
+        <div class="fs-ausdruck">Q = S · sin φ</div>
+        <div class="fs-groessen">Q in var</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Leistungsdreieck</div>
+        <div class="fs-ausdruck">S² = P² + Q²</div>
+        <div class="fs-umstellung">cos φ = P / S</div>
+        <div class="fs-umstellung">sin φ = Q / S</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Drehstrom</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Scheinleistung</div>
+        <div class="fs-ausdruck">S = √3 · U · I</div>
+        <div class="fs-groessen">S in VA · U Außenleiterspannung · I Außenleiterstrom</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Wirkleistung</div>
+        <div class="fs-ausdruck">P = √3 · U · I · cos φ</div>
+        <div class="fs-groessen">P in W</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Blindleistung</div>
+        <div class="fs-ausdruck">Q = √3 · U · I · sin φ</div>
+        <div class="fs-groessen">Q in var</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Sternschaltung</div>
+        <div class="fs-ausdruck">U_Strang = U_Leiter / √3</div>
+        <div class="fs-groessen">Der Strangstrom ist gleich dem Leiterstrom.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Dreieckschaltung</div>
+        <div class="fs-ausdruck">I_Strang = I_Leiter / √3</div>
+        <div class="fs-groessen">Die Strangspannung ist gleich der Leiterspannung.</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Antriebe</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Synchrondrehzahl</div>
+        <div class="fs-ausdruck">n_s = f · 60 / p</div>
+        <div class="fs-groessen">n_s in 1/min · f in Hz · p Polpaarzahl (nicht Polzahl)</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Schlupf</div>
+        <div class="fs-ausdruck">s = (n_s − n) / n_s</div>
+        <div class="fs-umstellung">n = n_s · (1 − s)</div>
+        <div class="fs-groessen">s Schlupf als Verhältnis oder in Prozent</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Mechanische Leistung</div>
+        <div class="fs-ausdruck">P = 2 · π · n · M / 60</div>
+        <div class="fs-groessen">n in 1/min · M Drehmoment in Nm · P in W</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Wirkungsgrad</div>
+        <div class="fs-ausdruck">η = P_ab / P_zu</div>
+        <div class="fs-umstellung">P_zu = P_ab / η</div>
+        <div class="fs-groessen">η als Verhältnis oder in Prozent</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Beleuchtung</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Lichtausbeute</div>
+        <div class="fs-ausdruck">η_L = Φ / P</div>
+        <div class="fs-groessen">Φ Lichtstrom in lm · P Leistung in W · Ergebnis in lm/W</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Beleuchtungsstärke</div>
+        <div class="fs-ausdruck">E = Φ / A</div>
+        <div class="fs-groessen">E in lx · Φ in lm · A beleuchtete Fläche in m²</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Farbtemperatur und Lichtfarbe</div>
+        <div class="fs-ausdruck">warmweiß 2700–3300 K · neutralweiß 3300–5300 K · tageslichtweiß über 5300 K</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-abschnitt">
+    <h3>Meisterprüfung</h3>
+    <div class="fs-liste">
+      <div class="fs-formel">
+        <div class="fs-name">Gesamtergebnis Teil I</div>
+        <div class="fs-ausdruck">G = (2/3) · ((3 · P + 1 · F) / 4) + (1/3) · S</div>
+        <div class="fs-groessen">P Projektpunkte · F Fachgespräch · S Situationsaufgabe</div>
+      </div>
+    </div>
+  </div>
+  <div class="fs-tabellen">
+    <div><h3>Formelzeichen und Einheiten</h3>
+      <table class="fs zeichen"><thead><tr><th>Zeichen</th><th>Bedeutung</th><th>Einheit</th></tr></thead><tbody>
+        <tr><td>U</td><td>Spannung</td><td>V</td></tr>
+        <tr><td>I</td><td>Strom</td><td>A</td></tr>
+        <tr><td>R</td><td>Widerstand</td><td>Ω</td></tr>
+        <tr><td>P</td><td>Wirkleistung</td><td>W</td></tr>
+        <tr><td>S</td><td>Scheinleistung</td><td>VA</td></tr>
+        <tr><td>Q</td><td>Blindleistung</td><td>var</td></tr>
+        <tr><td>W</td><td>Arbeit, Energie</td><td>Wh, kWh</td></tr>
+        <tr><td>f</td><td>Frequenz</td><td>Hz</td></tr>
+        <tr><td>T</td><td>Periodendauer</td><td>s</td></tr>
+        <tr><td>l</td><td>Leitungslänge (einfach)</td><td>m</td></tr>
+        <tr><td>A</td><td>Querschnitt</td><td>mm²</td></tr>
+        <tr><td>ρ</td><td>spezifischer Widerstand</td><td>Ω·mm²/m</td></tr>
+        <tr><td>κ</td><td>Leitfähigkeit</td><td>m/(Ω·mm²)</td></tr>
+        <tr><td>ΔU</td><td>Spannungsfall</td><td>V</td></tr>
+        <tr><td>Z_s</td><td>Schleifenimpedanz</td><td>Ω</td></tr>
+        <tr><td>Z_k</td><td>Impedanz bis zur Fehlerstelle</td><td>Ω</td></tr>
+        <tr><td>U_0</td><td>Spannung gegen Erde</td><td>V</td></tr>
+        <tr><td>I_a</td><td>Auslösestrom der Schutzeinrichtung</td><td>A</td></tr>
+        <tr><td>I_k</td><td>Kurzschlussstrom</td><td>A</td></tr>
+        <tr><td>I_Δn</td><td>Bemessungsfehlerstrom</td><td>mA</td></tr>
+        <tr><td>U_L</td><td>zulässige Berührungsspannung</td><td>V</td></tr>
+        <tr><td>cos φ</td><td>Leistungsfaktor</td><td>—</td></tr>
+        <tr><td>n</td><td>Drehzahl</td><td>1/min</td></tr>
+        <tr><td>M</td><td>Drehmoment</td><td>Nm</td></tr>
+        <tr><td>η</td><td>Wirkungsgrad</td><td>—</td></tr>
+        <tr><td>Φ</td><td>Lichtstrom</td><td>lm</td></tr>
+        <tr><td>E</td><td>Beleuchtungsstärke</td><td>lx</td></tr>
+        <tr><td>k</td><td>Werkstofffaktor Kurzschluss</td><td>—</td></tr>
+        <tr><td>c</td><td>Spannungsfaktor</td><td>—</td></tr>
+      </tbody></table></div>
+    <div><h3>Typische Werte</h3>
+      <table class="fs"><thead><tr><th>Größe</th><th>Wert</th><th>Einheit</th></tr></thead><tbody>
+        <tr><td>Leitfähigkeit Kupfer</td><td>κ = 56</td><td>m/(Ω·mm²)</td></tr>
+        <tr><td>Leitfähigkeit Aluminium</td><td>κ = 35</td><td>m/(Ω·mm²)</td></tr>
+        <tr><td>Spezifischer Widerstand Kupfer</td><td>ρ = 0,0178</td><td>Ω·mm²/m</td></tr>
+        <tr><td>Temperaturkoeffizient Kupfer</td><td>α = 0,0039</td><td>1/K</td></tr>
+        <tr><td>Werkstofffaktor Kupfer, PVC</td><td>k = 115</td><td>—</td></tr>
+        <tr><td>Werkstofffaktor Kupfer, XLPE</td><td>k = 143</td><td>—</td></tr>
+        <tr><td>Werkstofffaktor Aluminium, PVC</td><td>k = 76</td><td>—</td></tr>
+        <tr><td>Werkstofffaktor Aluminium, XLPE</td><td>k = 94</td><td>—</td></tr>
+        <tr><td>Spannungsfaktor</td><td>c = 1,05</td><td>—</td></tr>
+        <tr><td>Zulässiger Spannungsfall, Beleuchtung</td><td>3</td><td>%</td></tr>
+        <tr><td>Zulässiger Spannungsfall, sonstige Verbraucher</td><td>5</td><td>%</td></tr>
+        <tr><td>Zusatzschutz durch RCD</td><td>I_Δn = 30</td><td>mA</td></tr>
+        <tr><td>Brandschutz durch RCD</td><td>I_Δn = 300</td><td>mA</td></tr>
+        <tr><td>Grenze für glatten Gleichfehlerstrom bei Typ A</td><td>6</td><td>mA</td></tr>
+        <tr><td>Teilungseinheit auf der Tragschiene</td><td>1 TE = 18</td><td>mm</td></tr>
+        <tr><td>Netzfrequenz Europa</td><td>50</td><td>Hz</td></tr>
+        <tr><td>Netzspannung einphasig</td><td>230</td><td>V</td></tr>
+        <tr><td>Netzspannung dreiphasig</td><td>400</td><td>V</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+<footer>Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.<br>Erstellt am 17.10.2026.</footer>
 </div>
 <script>
 const liste = document.getElementById("module");
