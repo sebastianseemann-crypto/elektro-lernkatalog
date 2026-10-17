@@ -133,7 +133,7 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
 <body>
 <div class="wrap">
 <h1>Skript und Übungsaufgaben</h1>
-<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 50 Zeichnungen</p>
+<p class="unter">Theorie und Übungsaufgaben mit Lösungen je Modul · 18 Module · 108 Aufgaben · 51 Zeichnungen</p>
 <div class="hinweis">Dieses Skript enthält selbst erstellte Theorie und selbst erstellte Übungsaufgaben zur Veranschaulichung. Es sind keine offiziellen Prüfungsfragen. Grenzwerte vor der Anwendung immer gegen die aktuelle VDE-Norm beziehungsweise die Angaben des Netzbetreibers prüfen. Alle Zeichnungen sind eigene technische Darstellungen und keine Fotos.</div>
 <div class="steuerung">
 <select id="module"><option value="">Zu einem Modul springen …</option>
@@ -3516,6 +3516,7 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <li>Die Auslöseschwelle liegt zwischen dem halben und dem vollen Bemessungsfehlerstrom, der auch Bemessungsdifferenzstrom genannt wird, weil die Einrichtung einerseits zuverlässig auslösen soll, andererseits aber nicht bei jedem unvermeidlichen Ableitstrom eines Betriebsmittels anspricht. Der Auslösestrom ist der tatsächlich fließende Fehlerstrom, bei dem die Einrichtung abschaltet, und er kann je nach Exemplar, Temperatur und Vorbelastung innerhalb des zulässigen Bereiches streuen. Die Auslösecharakteristik beschreibt den Zusammenhang zwischen Fehlerstrom und Auslösezeit, sodass sich aus ihr ablesen lässt, wie schnell die Abschaltung bei einem bestimmten Fehlerstrom erfolgt. Diese drei Begriffe sind in der Praxis sorgfältig zu trennen, weil eine Fehlerstrom-Schutzeinrichtung kein stufenlos arbeitendes Messgerät ist, sondern ein Schutzelement mit einem Toleranzband. Wer sie sicher unterscheidet, kann bei einer Wiederholungsprüfung beurteilen, ob ein Ausbleiben der Auslösung ein Defekt ist oder ein Fall außerhalb der Auslöseschwelle vorliegt.</li>
         <li>Differenzstrommessung: Eine Differenzstromzange umschließt alle aktiven Leiter eines Stromkreises, also Außenleiter und Neutralleiter, und misst die Differenz der Ströme, also den Fehlerstrom gegen Erde. Im fehlerfreien Betrieb heben sich die Ströme in den umfassten Leitern magnetisch auf, sodass der Messwert nahezu null ist, während ein über den Schutzleiter oder die Erde abfließender Anteil als Restfeld sichtbar bleibt. Damit lassen sich Ableitströme im Betrieb messen und Stromkreise eingrenzen, ohne die Anlage abzuschalten, was die Fehlersuche in bestehenden Anlagen erheblich erleichtert. Der Messwert bleibt jedoch ein Hinweis und ersetzt nicht die normgerechte Abschaltprüfung, weil die Zange nur das umfasste Leiterbündel bewertet und Fehler außerhalb dieses Bündels nicht erfasst. Sauber gemessen wird nur, wenn alle aktiven Leiter vollständig umschlossen und der Neutralleiter nicht vergessen wird.</li>
         <li>Die Einteilung der Fehlerstrom-Schutzeinrichtungen in die Typen AC, A, F, B und B+ ist an anderer Stelle beschrieben; hier ist der Grund wichtig, warum diese Unterscheidung überhaupt nötig ist. Der Summenstromwandler arbeitet mit einem weichmagnetischen Kern, der durch einen Gleichanteil im Fehlerstrom vormagnetisiert wird. Überschreitet dieser Gleichanteil etwa 6 Milliampere, kann der Kern in die Sättigung geraten, und die Einrichtung verliert ihre Empfindlichkeit, sodass sie trotz vorhandenen Fehlerstroms nicht mehr auslöst; sie wird in diesem Zustand als blind bezeichnet. Genau das können Frequenzumrichter, Photovoltaik-Wechselrichter, Ladeeinrichtungen, unterbrechungsfreie Stromversorgungen und Schaltnetzteile verursachen, weshalb dort ein Typ B oder B+ erforderlich ist; ein vorgeschalteter Typ A reicht nicht aus. Die Typen sind in IEC 60755 beschrieben, die Anforderungen an Typ B und Typ F regelt zusätzlich DIN EN 62423. Neben dem Typ sind die Ausführungen zu unterscheiden: Die unverzögerte Ausführung löst ohne Verzögerung aus, die selektive Ausführung, gekennzeichnet mit dem Buchstaben S, hat eine eingebaute Kurzzeitverzögerung und dient der Staffelung, damit bei einem Fehler die nachgeordnete Einrichtung zuerst abschaltet, und die ortsveränderliche Ausführung, kurz PRCD, ist ein Zwischenstecker mit eigener Fehlerstromüberwachung für Baustellen und ortsveränderliche Geräte im Freien.</li>
+        <li>Der Summenstromwandler ist ein Ringkern mit einem offenen Fenster in der Mitte, durch das die aktiven Leiter geführt werden. Der Kern besteht aus einem aufgewickelten Band aus ferromagnetischem Werkstoff, meist einer Eisen-Nickel-Legierung, die als Mu-Metall bekannt ist und eine sehr hohe Permeabilität hat; im Querschnitt erkennt man deshalb die vielen dünnen Lagen des Bandes. Auf dem Kern sitzt die Sekundärwicklung mit mehreren hundert bis über tausend Windungen aus sehr dünnem Draht, deren Enden zur Auslöseelektronik führen. Das Gehäuse eines Fehlerstrom-Schutzschalters ist nur wenige Teilungseinheiten breit, und der Wandler darin hat einen Durchmesser von etwa 20 bis 30 Millimetern, sodass er in der Hand klein wirkt und leicht für ein unbedeutendes Bauteil gehalten wird. Entscheidend ist, dass die Leiter nicht an den Kern angeschlossen, sondern nur durch das Fenster geführt werden: Der Wandler greift das Magnetfeld der Leiter berührungslos ab und trennt damit die Messung galvanisch von der Anlage. Bei Geräten für Gleichfehlerströme nach Typ B sitzt zusätzlich eine eigene Erfassung für den Gleichanteil im Gehäuse, weil der Ringkern allein einen gleichförmigen Fluss nicht übertragen kann.</li>
       </ul>
       <figure class="bild">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
@@ -3582,6 +3583,193 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
   <text x="180" y="248" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626">PE wird nicht durch den Wandler gef&#252;hrt.</text>
 </svg>
         <figcaption><strong>Aufbau einer Fehlerstrom-Schutzeinrichtung</strong> Der Summenstromwandler vergleicht die Ströme aller aktiven Leiter; der Schutzleiter wird nicht durch den Wandler geführt.</figcaption>
+      </figure>
+      <figure class="bild">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="100%" role="img">
+  <rect x="0" y="0" width="460" height="300" fill="#f7f9fc"/>
+  <rect x="6" y="6" width="448" height="288" fill="none" stroke="#dde1e6" stroke-width="2"/>
+  <!-- Summenstromwandler: Ringkern mit Bandkern-Struktur -->
+  <line x1="116" y1="38" x2="116" y2="250" stroke="#92400e" stroke-width="2"/>
+  <line x1="160" y1="38" x2="160" y2="250" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M 56 155 A 82 82 0 1 0 220 155 A 82 82 0 1 0 56 155 Z M 94 155 A 44 44 0 1 1 182 155 A 44 44 0 1 1 94 155 Z" fill="#f7f9fc" fill-rule="evenodd"/>
+  <line x1="182.4" y1="155" x2="219.6" y2="155" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="182.23" y1="158.87" x2="219.29" y2="162.11" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="181.73" y1="162.71" x2="218.36" y2="169.17" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="180.89" y1="166.49" x2="216.82" y2="176.12" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="179.72" y1="170.19" x2="214.68" y2="182.91" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="178.24" y1="173.76" x2="211.95" y2="189.49" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="176.45" y1="177.2" x2="208.67" y2="195.8" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="174.37" y1="180.47" x2="204.84" y2="201.8" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="172.01" y1="183.54" x2="200.51" y2="207.45" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="169.4" y1="186.4" x2="195.7" y2="212.7" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="166.54" y1="189.01" x2="190.45" y2="217.51" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="163.47" y1="191.37" x2="184.8" y2="221.84" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="160.2" y1="193.45" x2="178.8" y2="225.67" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="156.76" y1="195.24" x2="172.49" y2="228.95" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="153.19" y1="196.72" x2="165.91" y2="231.68" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="149.49" y1="197.89" x2="159.12" y2="233.82" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="145.71" y1="198.73" x2="152.17" y2="235.36" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="141.87" y1="199.23" x2="145.11" y2="236.29" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="138" y1="199.4" x2="138" y2="236.6" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="134.13" y1="199.23" x2="130.89" y2="236.29" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="130.29" y1="198.73" x2="123.83" y2="235.36" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="126.51" y1="197.89" x2="116.88" y2="233.82" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="122.81" y1="196.72" x2="110.09" y2="231.68" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="119.24" y1="195.24" x2="103.51" y2="228.95" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="115.8" y1="193.45" x2="97.2" y2="225.67" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="112.53" y1="191.37" x2="91.2" y2="221.84" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="109.46" y1="189.01" x2="85.55" y2="217.51" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="106.6" y1="186.4" x2="80.3" y2="212.7" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="103.99" y1="183.54" x2="75.49" y2="207.45" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="101.63" y1="180.47" x2="71.16" y2="201.8" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="99.55" y1="177.2" x2="67.33" y2="195.8" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="97.76" y1="173.76" x2="64.05" y2="189.49" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="96.28" y1="170.19" x2="61.32" y2="182.91" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="95.11" y1="166.49" x2="59.18" y2="176.12" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="94.27" y1="162.71" x2="57.64" y2="169.17" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="93.77" y1="158.87" x2="56.71" y2="162.11" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="93.6" y1="155" x2="56.4" y2="155" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="93.77" y1="151.13" x2="56.71" y2="147.89" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="94.27" y1="147.29" x2="57.64" y2="140.83" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="95.11" y1="143.51" x2="59.18" y2="133.88" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="96.28" y1="139.81" x2="61.32" y2="127.09" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="97.76" y1="136.24" x2="64.05" y2="120.51" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="99.55" y1="132.8" x2="67.33" y2="114.2" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="101.63" y1="129.53" x2="71.16" y2="108.2" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="103.99" y1="126.46" x2="75.49" y2="102.55" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="106.6" y1="123.6" x2="80.3" y2="97.3" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="109.46" y1="120.99" x2="85.55" y2="92.49" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="112.53" y1="118.63" x2="91.2" y2="88.16" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="115.8" y1="116.55" x2="97.2" y2="84.33" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="119.24" y1="114.76" x2="103.51" y2="81.05" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="122.81" y1="113.28" x2="110.09" y2="78.32" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="126.51" y1="112.11" x2="116.88" y2="76.18" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="130.29" y1="111.27" x2="123.83" y2="74.64" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="134.13" y1="110.77" x2="130.89" y2="73.71" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="138" y1="110.6" x2="138" y2="73.4" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="141.87" y1="110.77" x2="145.11" y2="73.71" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="145.71" y1="111.27" x2="152.17" y2="74.64" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="149.49" y1="112.11" x2="159.12" y2="76.18" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="153.19" y1="113.28" x2="165.91" y2="78.32" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="156.76" y1="114.76" x2="172.49" y2="81.05" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="160.2" y1="116.55" x2="178.8" y2="84.33" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="163.47" y1="118.63" x2="184.8" y2="88.16" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="166.54" y1="120.99" x2="190.45" y2="92.49" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="169.4" y1="123.6" x2="195.7" y2="97.3" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="172.01" y1="126.46" x2="200.51" y2="102.55" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="174.37" y1="129.53" x2="204.84" y2="108.2" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="176.45" y1="132.8" x2="208.67" y2="114.2" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="178.24" y1="136.24" x2="211.95" y2="120.51" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="179.72" y1="139.81" x2="214.68" y2="127.09" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="180.89" y1="143.51" x2="216.82" y2="133.88" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="181.73" y1="147.29" x2="218.36" y2="140.83" stroke="#9aa3ad" stroke-width="0.8"/>
+  <line x1="182.23" y1="151.13" x2="219.29" y2="147.89" stroke="#9aa3ad" stroke-width="0.8"/>
+  <circle cx="138" cy="155" r="82" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="138" cy="155" r="44" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <!-- Sekundaerwicklung als viele Schlaufen -->
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(0 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(20 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(40 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(60 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(80 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(100 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(120 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(140 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(160 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(180 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(200 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(220 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(240 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(260 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(280 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(300 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(320 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="201" cy="155" rx="13" ry="3.4" transform="rotate(340 138 155)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <path d="M 181.4 92.5 L 214 88 L 235 88 L 235 116 L 238 116" fill="none" stroke="#15803d" stroke-width="2"/>
+  <path d="M 181.4 217.5 L 214 222 L 235 222 L 235 140 L 238 140" fill="none" stroke="#15803d" stroke-width="2"/>
+  <rect x="238" y="107" width="12" height="42" rx="3" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <circle cx="244" cy="116" r="3" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <circle cx="244" cy="140" r="3" fill="#f7f9fc" stroke="#15803d" stroke-width="2"/>
+  <text x="258" y="132" font-family="system-ui, sans-serif" font-size="9" fill="#15803d">zur Ausl&#246;seelektronik</text>
+  <line x1="220" y1="54" x2="196" y2="97" stroke="#5c6672" stroke-width="2"/>
+  <text x="222" y="48" font-family="system-ui, sans-serif" font-size="10" fill="#15803d">Sekund&#228;rwicklung</text>
+  <polygon points="116,190 109,177 123,177" fill="#92400e"/>
+  <polygon points="160,190 153,177 167,177" fill="#1d4ed8"/>
+  <text x="116" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#92400e">L</text>
+  <text x="160" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8">N</text>
+  <text x="106" y="49" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#92400e">I<tspan font-size="9" dy="2">L</tspan></text>
+  <text x="170" y="49" font-family="system-ui, sans-serif" font-size="11" fill="#1d4ed8">I<tspan font-size="9" dy="2">N</tspan></text>
+  <text x="138" y="267" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#5c6672">Im Normalfall heben sich die beiden Felder auf,<tspan x="138" dy="12">im Kern entsteht kein Fluss.</tspan></text>
+  <!-- Nebenzeichnung: Fehlerfall mit Fehlerstrom nach Erde -->
+  <text x="378" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#1b1f24">Fehlerfall</text>
+  <line x1="370" y1="39" x2="370" y2="126" stroke="#92400e" stroke-width="2"/>
+  <line x1="386" y1="39" x2="386" y2="117" stroke="#1d4ed8" stroke-width="2"/>
+  <path d="M 344 86 A 34 34 0 1 0 412 86 A 34 34 0 1 0 344 86 Z M 361 86 A 17 17 0 1 1 395 86 A 17 17 0 1 1 361 86 Z" fill="#f7f9fc" fill-rule="evenodd"/>
+  <line x1="395.4" y1="86" x2="411.6" y2="86" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="395.14" y1="89.02" x2="411.09" y2="91.83" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="394.35" y1="91.95" x2="409.57" y2="97.49" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="393.07" y1="94.7" x2="407.1" y2="102.8" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="391.33" y1="97.18" x2="403.74" y2="107.6" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="389.18" y1="99.33" x2="399.6" y2="111.74" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="386.7" y1="101.07" x2="394.8" y2="115.1" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="383.95" y1="102.35" x2="389.49" y2="117.57" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="381.02" y1="103.14" x2="383.83" y2="119.09" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="378" y1="103.4" x2="378" y2="119.6" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="374.98" y1="103.14" x2="372.17" y2="119.09" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="372.05" y1="102.35" x2="366.51" y2="117.57" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="369.3" y1="101.07" x2="361.2" y2="115.1" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="366.82" y1="99.33" x2="356.4" y2="111.74" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="364.67" y1="97.18" x2="352.26" y2="107.6" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="362.93" y1="94.7" x2="348.9" y2="102.8" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="361.65" y1="91.95" x2="346.43" y2="97.49" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="360.86" y1="89.02" x2="344.91" y2="91.83" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="360.6" y1="86" x2="344.4" y2="86" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="360.86" y1="82.98" x2="344.91" y2="80.17" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="361.65" y1="80.05" x2="346.43" y2="74.51" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="362.93" y1="77.3" x2="348.9" y2="69.2" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="364.67" y1="74.82" x2="352.26" y2="64.4" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="366.82" y1="72.67" x2="356.4" y2="60.26" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="369.3" y1="70.93" x2="361.2" y2="56.9" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="372.05" y1="69.65" x2="366.51" y2="54.43" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="374.98" y1="68.86" x2="372.17" y2="52.91" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="378" y1="68.6" x2="378" y2="52.4" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="381.02" y1="68.86" x2="383.83" y2="52.91" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="383.95" y1="69.65" x2="389.49" y2="54.43" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="386.7" y1="70.93" x2="394.8" y2="56.9" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="389.18" y1="72.67" x2="399.6" y2="60.26" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="391.33" y1="74.82" x2="403.74" y2="64.4" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="393.07" y1="77.3" x2="407.1" y2="69.2" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="394.35" y1="80.05" x2="409.57" y2="74.51" stroke="#9aa3ad" stroke-width="0.7"/>
+  <line x1="395.14" y1="82.98" x2="411.09" y2="80.17" stroke="#9aa3ad" stroke-width="0.7"/>
+  <circle cx="378" cy="86" r="34" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <circle cx="378" cy="86" r="17" fill="none" stroke="#1b1f24" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(0 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(30 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(60 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(90 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(120 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(150 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(180 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(210 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(240 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(270 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(300 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <ellipse cx="403.5" cy="86" rx="7" ry="2.2" transform="rotate(330 378 86)" fill="none" stroke="#15803d" stroke-width="2"/>
+  <text x="366" y="36" text-anchor="end" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">L</text>
+  <text x="390" y="36" text-anchor="start" font-family="system-ui, sans-serif" font-size="9" fill="#1d4ed8">N</text>
+  <polygon points="370,99 366,90 374,90" fill="#92400e"/>
+  <polygon points="386,99 382,90 390,90" fill="#1d4ed8"/>
+  <path d="M 370 126 L 422 126 L 422 138" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="370" cy="126" r="2.5" fill="#92400e"/>
+  <polygon points="422,140 416,128 428,128" fill="#dc2626"/>
+  <line x1="412" y1="143" x2="432" y2="143" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="416" y1="147" x2="428" y2="147" stroke="#1b1f24" stroke-width="2"/>
+  <line x1="419" y1="151" x2="425" y2="151" stroke="#1b1f24" stroke-width="2"/>
+  <text x="422" y="162" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#dc2626">Fehlerstrom</text>
+  <text x="422" y="173" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#dc2626">nach Erde</text>
+  <text x="382" y="188" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#5c6672">Jetzt bleibt ein Restfeld,<tspan x="382" dy="11">das in der Wicklung eine</tspan><tspan x="382" dy="11">Spannung induziert.</tspan></text>
+</svg>
+        <figcaption><strong>Der Summenstromwandler im Aufbau</strong> Ringkern mit Sekundärwicklung — die Leiter werden nur durch das Fenster geführt, im Normalfall heben sich die Felder auf.</figcaption>
       </figure>
     </div>
     <div class="unterkapitel">
@@ -4674,6 +4862,9 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <li>Die gängigen Netzsysteme heißen TN-C, TN-S, TN-C-S und TT, das seltene IT-System wird nur in Sonderfällen eingesetzt; sie unterscheiden sich vor allem im Erdungs- und Schutzleiterkonzept.</li>
         <li>Im TN-C-System sind Neutralleiter und Schutzleiter in einem gemeinsamen Leiter (PEN) zusammengefasst, im TN-S-System werden N und PE getrennt geführt, und im TT-System hat der Verbraucher eine eigene Erdung ohne durchgehenden Schutzleiter zum Netz.</li>
         <li>Im IT-System ist der Sternpunkt des speisenden Transformators nicht geerdet oder nur über eine hochohmige Einrichtung mit dem Schutzleiter verbunden. Deshalb schließt der erste Isolationsfehler gegen Erde keinen Fehlerstromkreis, und die Anlage darf nicht abschalten, weil ein plötzlicher Versorgungsausfall in sensiblen Bereichen gefährlicher wäre als der Fehler selbst. Eine Isolationsüberwachungseinrichtung misst stattdessen den Isolationswiderstand der Anlage gegen Erde und meldet den ersten Fehler optisch und akustisch, damit er vor einem zweiten Fehler behoben wird. Erst der zweite Fehler in einem anderen Außenleiter führt zu einem Kurzschluss, den die Schutzeinrichtung dann abschaltet. Wegen dieser hohen Verfügbarkeit wird das IT-System in medizinisch genutzten Bereichen, in Rechenzentren und in Anlagen mit hoher Versorgungszuverlässigkeit eingesetzt.</li>
+        <li>Die Bezeichnung der Netzsysteme folgt einem festen Buchstabenschema, das in DIN VDE 0100-410 festgelegt ist. Der erste Buchstabe beschreibt die Erdung der Stromquelle: T steht für das französische Terre und bedeutet, dass der Sternpunkt des Transformators unmittelbar geerdet ist, während I für Isolé steht und bedeutet, dass die Stromquelle von Erde getrennt oder nur über eine hochohmige Einrichtung verbunden ist. Der zweite Buchstabe beschreibt die Erdung der Körper, also der berührbaren Metallgehäuse: T bedeutet wieder unmittelbare Erdung mit einem eigenen Erder vor Ort, N bedeutet, dass die Körper über den Schutzleiter mit dem geerdeten Punkt der Stromquelle verbunden sind. Die folgenden Buchstaben beschreiben die Anordnung von Neutralleiter und Schutzleiter: S steht für Separate und bedeutet getrennt geführte Leiter, C steht für Combined und bedeutet, dass beide Funktionen in einem gemeinsamen Leiter, dem PEN, zusammengefasst sind. Aus diesen Buchstaben ergeben sich die Systeme TN-S, TN-C, TN-C-S, TT und IT.</li>
+        <li>Im TN-System sind Schutzleiter und Neutralleiter über die gesamte Anlage getrennt geführt. Der Sternpunkt des Transformators ist geerdet, und alle Körper sind über den Schutzleiter mit diesem Punkt verbunden. Ein Fehler zwischen einem Außenleiter und einem Körper wird damit zu einem Kurzschluss zwischen Außenleiter und Schutzleiter, sodass ein hoher Fehlerstrom fließt und der Leitungsschutzschalter schnell abschaltet. Im TN-C-System ist der PEN nur im Bereich der Einspeisung bis zum Hausanschluss gemeinschaftlich geführt und wird dort in getrennte Leiter für Schutz und Neutralleiter aufgetrennt; ab der Trennstelle gilt das TN-S-Prinzip. Diese Bauform ist in Deutschland die übliche, weil sie dem Netzbetreiber eine Ader spart und dem Anlagenbetreiber die getrennte Führung im Gebäude ermöglicht. Das alte TN-C-System, bei dem der PEN auch innerhalb des Gebäudes geführt wurde, ist für Neuanlagen nicht mehr zulässig, weil ein Bruch des PEN den Schutz aufhebt und die Gehäuse unter Spannung setzen kann.</li>
+        <li>Im TT-System ist der Sternpunkt des Transformators zwar geerdet, aber die Körper der Verbraucher haben einen eigenen Erder, der keine leitende Verbindung zum geerdeten Punkt der Stromquelle hat. Ein Fehler zwischen Außenleiter und Körper schließt deshalb keinen metallischen Kreis, sondern der Strom fließt über die Erde zurück, und der Erdungswiderstand begrenzt ihn auf wenige Ampere. Ein Leitungsschutzschalter löst dabei nicht aus, weil der Strom viel zu klein ist. Deshalb ist im TT-System eine Fehlerstrom-Schutzeinrichtung zwingend erforderlich, und für den Erder gilt die Bedingung, dass sein Widerstand höchstens die zulässige Berührungsspannung geteilt durch den Bemessungsfehlerstrom betragen darf, bei 50 Volt und 30 Milliampere also rund 1667 Ohm. Im IT-System ist die Stromquelle von Erde getrennt, sodass der erste Isolationsfehler keinen Fehlerstromkreis schließt und die Anlage weiterbetrieben werden darf; dafür ist eine Isolationsüberwachung vorgeschrieben, die den ersten Fehler meldet, weil ein zweiter Fehler zum Kurzschluss führt. Daraus folgt die Kernaussage: Das Netzsystem entscheidet darüber, welche Schutzeinrichtung überhaupt wirkt. Im TN-System schützt der Überstromschutz, im TT-System zwingend die Fehlerstrom-Schutzeinrichtung, und im IT-System ist die Isolationsüberwachung die tragende Maßnahme.</li>
       </ul>
       <figure class="bild">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
@@ -5811,6 +6002,32 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <div class="fs-ausdruck">S² = P² + Q²</div>
         <div class="fs-umstellung">cos φ = P / S</div>
         <div class="fs-umstellung">sin φ = Q / S</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Effektivwert, allgemein</div>
+        <div class="fs-ausdruck">U_eff = √( (1/T) · ∫ u² dt )</div>
+        <div class="fs-groessen">Quadratischer Mittelwert über eine Periode — der Wert, der an einem ohmschen Widerstand dieselbe Wärme erzeugt wie eine gleich große Gleichspannung.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Effektivwert bei Sinusgrößen</div>
+        <div class="fs-ausdruck">u = û / √2 ≈ 0,707 · û</div>
+        <div class="fs-umstellung">û = u · √2 ≈ 1,414 · u</div>
+        <div class="fs-groessen">230 V Effektivwert entsprechen 325 V Scheitelwert, Spitze-Spitze rund 650 V.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Scheitelfaktor</div>
+        <div class="fs-ausdruck">k_s = û / u = √2 ≈ 1,414</div>
+        <div class="fs-groessen">Verhältnis von Scheitelwert zu Effektivwert, gilt so nur für den reinen Sinus.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Formfaktor</div>
+        <div class="fs-ausdruck">k_f = u / ū = 1,11</div>
+        <div class="fs-groessen">Verhältnis von Effektivwert zu Gleichrichtwert; ū = (2/π) · û ≈ 0,637 · û.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Effektivwert bei Oberschwingungen</div>
+        <div class="fs-ausdruck">U_eff = √(U1² + U2² + U3² + …)</div>
+        <div class="fs-groessen">Grundschwingung und Oberschwingungen addieren sich geometrisch — deshalb zeigen nicht echt effektivwertbildende Geräte bei verzerrten Kurven falsche Werte.</div>
       </div>
     </div>
   </div>
