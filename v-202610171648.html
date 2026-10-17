@@ -204,7 +204,7 @@
   <header>
     <h1>Elektro-Prüfungsfragen</h1>
     <p class="sub">Eigener Übungsfragenkatalog zur Vorbereitung auf die Gesellenprüfung</p>
-    <p class="fassung">Fassung vom 17.10.2026 um 13:02 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
+    <p class="fassung">Fassung vom 17.10.2026 um 16:48 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
@@ -245,6 +245,7 @@
         <button id="wv-leeren">Wiedervorlage leeren</button>
         <button id="zuruecksetzen">Alles zurücksetzen</button>
         <button id="exportieren">Stand sichern</button>
+        <button id="link">Stand als Link</button>
         <button id="importieren">Stand laden</button>
       </div>
       <textarea id="fortschritt-feld" placeholder="Hier erscheint der Stand als kurzer Text, zum Beispiel B:1-3,7;W:4. Diesen Text kannst du auf ein anderes Gerät übertragen."></textarea>
@@ -714,6 +715,24 @@ document.getElementById("zuruecksetzen").addEventListener("click", () => {
   aufbauStandChips();
   apply();
   tippEl.textContent = "Alles zurückgesetzt.";
+});
+
+document.getElementById("link").addEventListener("click", () => {
+  const stand = standAlsText();
+  if (!stand) {
+    tippEl.textContent = "Es ist noch nichts markiert. Markiere zuerst Fragen.";
+    return;
+  }
+  const basis = location.href.split("#")[0].split("?")[0];
+  const link = basis + "#stand=" + encodeURIComponent(stand);
+  feldEl.value = link;
+  feldEl.select();
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(link).catch(() => {});
+  }
+  tippEl.textContent = "Link mit " + anzahlBeantwortet() + " beantworteten und "
+    + anzahlWiedervorlage() + " vorgemerkten Fragen erzeugt. Schicke ihn dir selbst und "
+    + "öffne ihn auf dem Handy – dort wird der Stand automatisch übernommen und gespeichert.";
 });
 
 document.getElementById("exportieren").addEventListener("click", () => {
