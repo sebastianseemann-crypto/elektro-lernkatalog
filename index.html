@@ -176,6 +176,13 @@
     background: #fbfcfd; color: var(--ink);
   }
   .fortschritt .tipp { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .sync { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .sync-kopf { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .sync input { flex: 1 1 220px; min-width: 160px; font-family: inherit; font-size: 13px;
+    padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; background: #fff; }
+  .sync .tipp { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+  .sync .tipp.gut { color: var(--ok); }
+  .sync .tipp.schlecht { color: var(--bad); }
 
   .fassung { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
   .uebernommen { margin: 10px 0 0; padding: 10px 13px; border-radius: 8px;
@@ -207,7 +214,7 @@
   <header>
     <h1>Elektro-Prüfungsfragen</h1>
     <p class="sub">Eigener Übungsfragenkatalog zur Vorbereitung auf die Gesellenprüfung</p>
-    <p class="fassung">Fassung vom 18.10.2026 um 16:39 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
+    <p class="fassung">Fassung vom 18.10.2026 um 16:51 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
@@ -253,6 +260,17 @@
       </div>
       <textarea id="fortschritt-feld" placeholder="Hier erscheint der Stand als kurzer Text, zum Beispiel B:1-3,7;W:4. Diesen Text kannst du auf ein anderes Gerät übertragen."></textarea>
       <div class="tipp" id="fortschritt-tipp">Der Lernstand wird automatisch im Browser gespeichert. Über „Stand sichern" bekommst du einen kurzen Text, den du auf dem Handy oder einem anderen Rechner wieder laden kannst — beim Laden wird zusammengeführt, nichts wird überschrieben.</div>
+
+      <div class="sync">
+        <div class="sync-kopf">Gemeinsamer Stand für alle Geräte</div>
+        <div class="row">
+          <input id="token" type="password" autocomplete="off" spellcheck="false"
+                 placeholder="GitHub-Token – wird nur auf diesem Gerät gespeichert">
+          <button id="token-speichern">Token merken</button>
+          <button id="sync-sichern">Für alle Geräte sichern</button>
+        </div>
+        <div class="tipp" id="sync-status">Ohne Token lässt sich nur auf diesem Gerät speichern. Mit Token wird der Stand in eine gemeinsame Datei geschrieben, die jedes Gerät beim Öffnen übernimmt.</div>
+      </div>
     </div>
 
     </div>
@@ -819,6 +837,118 @@ document.getElementById("importieren").addEventListener("click", () => {
 
 aufbauStandChips();
 apply();
+
+// ---- Gemeinsamer Stand ueber das Repository ----
+const REPO = "sebastianseemann-crypto/elektro-lernkatalog";
+const STAND_DATEI = "stand.json";
+const TOKEN_KEY = "em1nd3r-token-v1";
+const tokenEl = document.getElementById("token");
+const syncStatusEl = document.getElementById("sync-status");
+
+function ladeToken() {
+  try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (e) { return ""; }
+}
+function setzeSyncStatus(text, art) {
+  syncStatusEl.textContent = text;
+  syncStatusEl.className = "tipp" + (art ? " " + art : "");
+}
+function b64utf8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let roh = "";
+  for (let i = 0; i < bytes.length; i++) roh += String.fromCharCode(bytes[i]);
+  return btoa(roh);
+}
+
+if (ladeToken()) {
+  tokenEl.value = ladeToken();
+  setzeSyncStatus("Token hinterlegt. „Für alle Geräte sichern\" schreibt den Stand in die "
+    + "gemeinsame Datei; jedes Gerät übernimmt ihn beim Öffnen.");
+}
+
+document.getElementById("token-speichern").addEventListener("click", () => {
+  const t = tokenEl.value.trim();
+  try {
+    if (t) { localStorage.setItem(TOKEN_KEY, t); }
+    else { localStorage.removeItem(TOKEN_KEY); }
+  } catch (e) {
+    setzeSyncStatus("Der Browser erlaubt keine Speicherung des Tokens.", "schlecht");
+    return;
+  }
+  setzeSyncStatus(t ? "Token auf diesem Gerät gespeichert." : "Token entfernt.", t ? "gut" : "");
+});
+
+document.getElementById("sync-sichern").addEventListener("click", async () => {
+  const token = ladeToken();
+  if (!token) {
+    setzeSyncStatus("Kein Token hinterlegt. Ohne Token kann nichts in das Repository "
+      + "geschrieben werden, trage ihn oben ein und drücke Token merken.", "schlecht");
+    return;
+  }
+  const stand = standAlsText();
+  if (!stand) {
+    setzeSyncStatus("Es ist noch nichts markiert.", "schlecht");
+    return;
+  }
+  const inhalt = JSON.stringify({ stand: stand,
+    zeit: new Date().toLocaleString("de-DE") }, null, 1);
+  const url = "https://api.github.com/repos/" + REPO + "/contents/" + STAND_DATEI;
+  const kopf = { Authorization: "Bearer " + token, Accept: "application/vnd.github+json" };
+  setzeSyncStatus("Wird gesichert ...");
+  try {
+    let sha = null;
+    const r1 = await fetch(url + "?t=" + Date.now(), { headers: kopf, cache: "no-store" });
+    if (r1.ok) { const j1 = await r1.json(); sha = j1.sha; }
+    else if (r1.status !== 404) {
+      throw new Error("Lesen fehlgeschlagen (HTTP " + r1.status
+        + "). Stimmt der Token und hat er Schreibrecht auf Inhalte?");
+    }
+    const rumpf = { message: "Lernstand sichern", content: b64utf8(inhalt) };
+    if (sha) rumpf.sha = sha;
+    const r2 = await fetch(url, {
+      method: "PUT",
+      headers: Object.assign({ "Content-Type": "application/json" }, kopf),
+      body: JSON.stringify(rumpf)
+    });
+    if (!r2.ok) {
+      const t2 = await r2.text();
+      throw new Error("Schreiben fehlgeschlagen (HTTP " + r2.status + "): " + t2.slice(0, 140));
+    }
+    setzeSyncStatus("Gesichert um "
+      + new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
+      + " - jedes Gerät übernimmt den Stand beim nächsten Öffnen.", "gut");
+  } catch (e) {
+    setzeSyncStatus("Fehler: " + e.message, "schlecht");
+  }
+});
+
+// Beim Oeffnen den gemeinsamen Stand holen und zusammenfuehren
+(async function () {
+  let daten = null;
+  try {
+    const r = await fetch(STAND_DATEI + "?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) return;
+    daten = await r.json();
+  } catch (e) { return; }
+  const stand = daten && daten.stand ? daten.stand : "";
+  if (!stand) return;
+  const gueltig = new Set(DATA.questions.map(q => q.id));
+  const s2 = textAlsStand(stand);
+  let neu = 0;
+  s2.beantwortet.forEach(id => {
+    if (gueltig.has(id) && !istBeantwortet(id)) { fortschritt[String(id)] = true; neu++; }
+  });
+  s2.wiedervorlage.forEach(id => {
+    if (gueltig.has(id) && !istWiedervorlage(id)) { wiedervorlage[String(id)] = true; neu++; }
+  });
+  if (!neu) return;
+  speichereLernstand();
+  speichereWiedervorlage();
+  document.querySelectorAll(".card").forEach(c => aktualisiereKarte(c, c.dataset.id));
+  aufbauStandChips();
+  apply();
+  setzeSyncStatus(neu + " Einträge aus dem gemeinsamen Stand übernommen"
+    + (daten.zeit ? " (zuletzt gesichert: " + daten.zeit + ")" : "") + ".", "gut");
+})();
 </script>
 </body>
 </html>
