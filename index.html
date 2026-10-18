@@ -178,6 +178,9 @@
   .fortschritt .tipp { font-size: 12px; color: var(--muted); margin-top: 6px; }
 
   .fassung { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+  .uebernommen { margin: 10px 0 0; padding: 10px 13px; border-radius: 8px;
+    font-size: 13.5px; line-height: 1.45; background: #eefaf2;
+    border: 1px solid #9dd8b6; color: #14532d; }
   .warnung {
     margin-top: 10px; padding: 10px 12px; border-radius: 8px; font-size: 13px;
     background: #fff4e5; border: 1px solid #f0c48a; color: #8a4b00;
@@ -204,7 +207,7 @@
   <header>
     <h1>Elektro-Prüfungsfragen</h1>
     <p class="sub">Eigener Übungsfragenkatalog zur Vorbereitung auf die Gesellenprüfung</p>
-    <p class="fassung">Fassung vom 17.10.2026 um 16:49 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
+    <p class="fassung">Fassung vom 18.10.2026 um 16:39 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
@@ -421,6 +424,22 @@ ladeLernstand();
   s.wiedervorlage.forEach(id => { if (gueltig.has(id)) wiedervorlage[String(id)] = true; });
   speichereLernstand();
   speichereWiedervorlage();
+
+  // Sichtbar bestaetigen, dass der Stand uebernommen wurde
+  const anzahlB = s.beantwortet.filter(id => gueltig.has(id)).length;
+  const anzahlW = s.wiedervorlage.filter(id => gueltig.has(id)).length;
+  const banner = document.createElement("div");
+  banner.className = "uebernommen";
+  banner.innerHTML = "<strong>Stand aus dem Link übernommen:</strong> "
+    + anzahlB + " beantwortet, " + anzahlW + " auf Wiedervorlage. "
+    + "Der Stand ist jetzt auf diesem Gerät gespeichert - die normale Adresse genügt ab jetzt.";
+  const kopfEl = document.querySelector("header");
+  if (kopfEl) kopfEl.append(banner);
+
+  // Adresse bereinigen, damit ein Neuladen nicht erneut zusammenfuehrt
+  if (history.replaceState) {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
 })();
 
 DATA.questions.forEach((item, idx) => {
@@ -721,6 +740,11 @@ document.getElementById("link").addEventListener("click", () => {
   const stand = standAlsText();
   if (!stand) {
     tippEl.textContent = "Es ist noch nichts markiert. Markiere zuerst Fragen.";
+    return;
+  }
+  if (location.protocol === "file:") {
+    tippEl.textContent = "Achtung: Die Seite läuft als lokale Datei. Ein Link daraus "
+      + "funktioniert nur auf diesem Rechner. Für das Handy die veröffentlichte Adresse öffnen.";
     return;
   }
   const basis = location.href.split("#")[0].split("?")[0];
