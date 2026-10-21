@@ -3535,6 +3535,8 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <li>Differenzstrommessung: Eine Differenzstromzange umschließt alle aktiven Leiter eines Stromkreises, also Außenleiter und Neutralleiter, und misst die Differenz der Ströme, also den Fehlerstrom gegen Erde. Im fehlerfreien Betrieb heben sich die Ströme in den umfassten Leitern magnetisch auf, sodass der Messwert nahezu null ist, während ein über den Schutzleiter oder die Erde abfließender Anteil als Restfeld sichtbar bleibt. Damit lassen sich Ableitströme im Betrieb messen und Stromkreise eingrenzen, ohne die Anlage abzuschalten, was die Fehlersuche in bestehenden Anlagen erheblich erleichtert. Der Messwert bleibt jedoch ein Hinweis und ersetzt nicht die normgerechte Abschaltprüfung, weil die Zange nur das umfasste Leiterbündel bewertet und Fehler außerhalb dieses Bündels nicht erfasst. Sauber gemessen wird nur, wenn alle aktiven Leiter vollständig umschlossen und der Neutralleiter nicht vergessen wird.</li>
         <li>Die Einteilung der Fehlerstrom-Schutzeinrichtungen in die Typen AC, A, F, B und B+ ist an anderer Stelle beschrieben; hier ist der Grund wichtig, warum diese Unterscheidung überhaupt nötig ist. Der Summenstromwandler arbeitet mit einem weichmagnetischen Kern, der durch einen Gleichanteil im Fehlerstrom vormagnetisiert wird. Überschreitet dieser Gleichanteil etwa 6 Milliampere, kann der Kern in die Sättigung geraten, und die Einrichtung verliert ihre Empfindlichkeit, sodass sie trotz vorhandenen Fehlerstroms nicht mehr auslöst; sie wird in diesem Zustand als blind bezeichnet. Genau das können Frequenzumrichter, Photovoltaik-Wechselrichter, Ladeeinrichtungen, unterbrechungsfreie Stromversorgungen und Schaltnetzteile verursachen, weshalb dort ein Typ B oder B+ erforderlich ist; ein vorgeschalteter Typ A reicht nicht aus. Die Typen sind in IEC 60755 beschrieben, die Anforderungen an Typ B und Typ F regelt zusätzlich DIN EN 62423. Neben dem Typ sind die Ausführungen zu unterscheiden: Die unverzögerte Ausführung löst ohne Verzögerung aus, die selektive Ausführung, gekennzeichnet mit dem Buchstaben S, hat eine eingebaute Kurzzeitverzögerung und dient der Staffelung, damit bei einem Fehler die nachgeordnete Einrichtung zuerst abschaltet, und die ortsveränderliche Ausführung, kurz PRCD, ist ein Zwischenstecker mit eigener Fehlerstromüberwachung für Baustellen und ortsveränderliche Geräte im Freien.</li>
         <li>Der Summenstromwandler ist ein Ringkern mit einem offenen Fenster in der Mitte, durch das die aktiven Leiter geführt werden. Der Kern besteht aus einem aufgewickelten Band aus ferromagnetischem Werkstoff, meist einer Eisen-Nickel-Legierung, die als Mu-Metall bekannt ist und eine sehr hohe Permeabilität hat; im Querschnitt erkennt man deshalb die vielen dünnen Lagen des Bandes. Auf dem Kern sitzt die Sekundärwicklung mit mehreren hundert bis über tausend Windungen aus sehr dünnem Draht, deren Enden zur Auslöseelektronik führen. Das Gehäuse eines Fehlerstrom-Schutzschalters ist nur wenige Teilungseinheiten breit, und der Wandler darin hat einen Durchmesser von etwa 20 bis 30 Millimetern, sodass er in der Hand klein wirkt und leicht für ein unbedeutendes Bauteil gehalten wird. Entscheidend ist, dass die Leiter nicht an den Kern angeschlossen, sondern nur durch das Fenster geführt werden: Der Wandler greift das Magnetfeld der Leiter berührungslos ab und trennt damit die Messung galvanisch von der Anlage. Bei Geräten für Gleichfehlerströme nach Typ B sitzt zusätzlich eine eigene Erfassung für den Gleichanteil im Gehäuse, weil der Ringkern allein einen gleichförmigen Fluss nicht übertragen kann.</li>
+        <li>Bei der Auswahl ist zwischen dem Typ nach der Fehlerstromart und der Polzahl zu unterscheiden, weil beides auf dem Gerät steht und leicht verwechselt wird. Der Typ beschreibt, welche Fehlerströme das Gerät sicher erfasst, also AC, A, F, B oder B+; die Polzahl beschreibt, wie viele Leiter es schaltet, zum Beispiel zwei-, drei- oder vierpolig beziehungsweise dreipolig mit geschaltetem Neutralleiter, abgekürzt 3P+N. Eine eigene Typenbezeichnung mit dem Buchstaben N gibt es in der Einteilung nach der Fehlerstromart nicht; wer auf einem Gerät ein N liest, sieht in der Regel den Hinweis auf den mitgeführten Neutralleiter. Maßgeblich für die Auswahl ist die Norm für Errichtung und Auswahl von Fehlerstrom-Schutzeinrichtungen nach DIN VDE 0100-530, die festlegt, welcher Typ bei welchem Verbraucher mindestens erforderlich ist. Typ AC ist für neue Anlagen nicht mehr zulässig, Typ A ist der Mindeststandard, und Typ F sowie Typ B kommen dort hinzu, wo Frequenzumrichter oder Gleichanteile auftreten können.</li>
+        <li>Für Ladestationen für Elektrofahrzeuge gibt es eine eigene Geräteart, die keinen Fehlerstrom-Schutzschalter ersetzt, sondern ihn ergänzt. Die Gleichstrom-Fehlerstrom-Erkennung nach IEC 62955, abgekürzt RDC-DD, überwacht den Ladestromkreis auf einen glatten Gleichfehlerstrom und trennt ab etwa 6 Milliampere. Damit wird verhindert, dass ein vorgeschalteter Fehlerstrom-Schutzschalter vom Typ A durch einen Gleichanteil blind wird. In der Kombination aus einem Typ A und einer solchen Erkennung darf eine Ladestation netzseitig mit einem Typ A betrieben werden, sofern die Erkennung die Abschaltung sicher übernimmt; die Einzelheiten ergeben sich aus der Norm für Ladeeinrichtungen und den Angaben des Herstellers.</li>
       </ul>
       <figure class="bild">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" role="img">
@@ -6087,6 +6089,29 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <div class="fs-ausdruck">U_eff = √(U1² + U2² + U3² + …)</div>
         <div class="fs-groessen">Grundschwingung und Oberschwingungen addieren sich geometrisch — deshalb zeigen nicht echt effektivwertbildende Geräte bei verzerrten Kurven falsche Werte.</div>
       </div>
+      <div class="fs-formel">
+        <div class="fs-name">Kapazitiver Blindwiderstand</div>
+        <div class="fs-ausdruck">X_C = 1 / (2 · π · f · C)</div>
+        <div class="fs-umstellung">C = 1 / (2 · π · f · X_C)</div>
+        <div class="fs-umstellung">f = 1 / (2 · π · X_C · C)</div>
+        <div class="fs-groessen">X_C in Ω · f in Hz · C in F. Bei 50 Hz gilt als Merkregel: X_C ≈ 3183 Ω geteilt durch C in µF.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Induktiver Blindwiderstand</div>
+        <div class="fs-ausdruck">X_L = 2 · π · f · L</div>
+        <div class="fs-umstellung">L = X_L / (2 · π · f)</div>
+        <div class="fs-groessen">X_L in Ω · f in Hz · L in H. Bei 50 Hz gilt als Merkregel: X_L ≈ 314 Ω je Henry.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Wechselstromwiderstand (Impedanz)</div>
+        <div class="fs-ausdruck">Z = √( R² + (X_L − X_C)² )</div>
+        <div class="fs-groessen">Z in Ω. Bei Resonanz heben sich X_L und X_C auf, dann ist Z = R und der Strom wird allein vom Wirkwiderstand begrenzt.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Blindleistung am Blindwiderstand</div>
+        <div class="fs-ausdruck">Q = U² / X = I² · X</div>
+        <div class="fs-groessen">Q in var · X der jeweilige Blindwiderstand in Ω. Ein idealer Blindwiderstand setzt keine Wirkleistung um.</div>
+      </div>
     </div>
   </div>
   <div class="fs-abschnitt">
@@ -6197,6 +6222,12 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <tr><td>E</td><td>Beleuchtungsstärke</td><td>lx</td></tr>
         <tr><td>k</td><td>Werkstofffaktor Kurzschluss</td><td>—</td></tr>
         <tr><td>c</td><td>Spannungsfaktor</td><td>—</td></tr>
+        <tr><td>X_C</td><td>kapazitiver Blindwiderstand</td><td>Ω</td></tr>
+        <tr><td>X_L</td><td>induktiver Blindwiderstand</td><td>Ω</td></tr>
+        <tr><td>Z</td><td>Impedanz (Wechselstromwiderstand)</td><td>Ω</td></tr>
+        <tr><td>C</td><td>Kapazität</td><td>F</td></tr>
+        <tr><td>L</td><td>Induktivität</td><td>H</td></tr>
+        <tr><td>ω</td><td>Kreisfrequenz (2 · π · f)</td><td>1/s</td></tr>
       </tbody></table></div>
     <div><h3>Typische Werte</h3>
       <table class="fs"><thead><tr><th>Größe</th><th>Wert</th><th>Einheit</th></tr></thead><tbody>

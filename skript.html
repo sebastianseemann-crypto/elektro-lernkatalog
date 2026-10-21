@@ -6089,6 +6089,29 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <div class="fs-ausdruck">U_eff = √(U1² + U2² + U3² + …)</div>
         <div class="fs-groessen">Grundschwingung und Oberschwingungen addieren sich geometrisch — deshalb zeigen nicht echt effektivwertbildende Geräte bei verzerrten Kurven falsche Werte.</div>
       </div>
+      <div class="fs-formel">
+        <div class="fs-name">Kapazitiver Blindwiderstand</div>
+        <div class="fs-ausdruck">X_C = 1 / (2 · π · f · C)</div>
+        <div class="fs-umstellung">C = 1 / (2 · π · f · X_C)</div>
+        <div class="fs-umstellung">f = 1 / (2 · π · X_C · C)</div>
+        <div class="fs-groessen">X_C in Ω · f in Hz · C in F. Bei 50 Hz gilt als Merkregel: X_C ≈ 3183 Ω geteilt durch C in µF.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Induktiver Blindwiderstand</div>
+        <div class="fs-ausdruck">X_L = 2 · π · f · L</div>
+        <div class="fs-umstellung">L = X_L / (2 · π · f)</div>
+        <div class="fs-groessen">X_L in Ω · f in Hz · L in H. Bei 50 Hz gilt als Merkregel: X_L ≈ 314 Ω je Henry.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Wechselstromwiderstand (Impedanz)</div>
+        <div class="fs-ausdruck">Z = √( R² + (X_L − X_C)² )</div>
+        <div class="fs-groessen">Z in Ω. Bei Resonanz heben sich X_L und X_C auf, dann ist Z = R und der Strom wird allein vom Wirkwiderstand begrenzt.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Blindleistung am Blindwiderstand</div>
+        <div class="fs-ausdruck">Q = U² / X = I² · X</div>
+        <div class="fs-groessen">Q in var · X der jeweilige Blindwiderstand in Ω. Ein idealer Blindwiderstand setzt keine Wirkleistung um.</div>
+      </div>
     </div>
   </div>
   <div class="fs-abschnitt">
@@ -6199,6 +6222,12 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <tr><td>E</td><td>Beleuchtungsstärke</td><td>lx</td></tr>
         <tr><td>k</td><td>Werkstofffaktor Kurzschluss</td><td>—</td></tr>
         <tr><td>c</td><td>Spannungsfaktor</td><td>—</td></tr>
+        <tr><td>X_C</td><td>kapazitiver Blindwiderstand</td><td>Ω</td></tr>
+        <tr><td>X_L</td><td>induktiver Blindwiderstand</td><td>Ω</td></tr>
+        <tr><td>Z</td><td>Impedanz (Wechselstromwiderstand)</td><td>Ω</td></tr>
+        <tr><td>C</td><td>Kapazität</td><td>F</td></tr>
+        <tr><td>L</td><td>Induktivität</td><td>H</td></tr>
+        <tr><td>ω</td><td>Kreisfrequenz (2 · π · f)</td><td>1/s</td></tr>
       </tbody></table></div>
     <div><h3>Typische Werte</h3>
       <table class="fs"><thead><tr><th>Größe</th><th>Wert</th><th>Einheit</th></tr></thead><tbody>
