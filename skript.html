@@ -82,23 +82,26 @@ figure.bild figcaption strong{color:var(--ink);}
                 padding:3px 9px;border-radius:6px;margin-right:9px;}
 
 ol.aufgaben{list-style:none;margin:0;padding:0;counter-reset:aufg;}
-li.aufgabe{counter-increment:aufg;border:1px solid var(--line);border-radius:9px;
-           padding:13px 15px;margin-bottom:11px;background:#fcfdfe;
+li.aufgabe{counter-increment:aufg;border:1px solid var(--line);border-radius:8px;
+           padding:8px 11px;margin-bottom:6px;background:#fcfdfe;font-size:13.5px;line-height:1.45;
            break-inside:avoid;page-break-inside:avoid;}
-li.aufgabe .frage{display:flex;gap:10px;font-weight:600;margin-bottom:9px;}
+li.aufgabe .frage{display:flex;gap:8px;font-weight:600;font-size:13.5px;line-height:1.45;}
 li.aufgabe .frage::before{content:counter(aufg) ".";flex:0 0 auto;color:var(--muted);font-weight:700;}
-.niveau{flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-        padding:2px 7px;border-radius:5px;height:fit-content;margin-top:3px;}
+.niveau{flex:0 0 auto;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+        padding:2px 6px;border-radius:4px;height:fit-content;margin-top:2px;}
 .niveau.grund{background:#e8eef9;color:#30507f;}
 .niveau.fortg{background:#f3e8fd;color:#6b21a8;}
-.loesung{display:flex;gap:10px;font-size:14.5px;background:var(--okbg);
-         border-radius:7px;padding:9px 12px;color:#14532d;}
-.loesung-label{flex:0 0 auto;font-weight:700;font-size:11.5px;text-transform:uppercase;
+.loesung{display:flex;gap:8px;font-size:13px;line-height:1.5;background:var(--okbg);
+         border-radius:6px;padding:7px 10px;color:#14532d;margin-top:7px;}
+.loesung-label{flex:0 0 auto;font-weight:700;font-size:10.5px;text-transform:uppercase;
                letter-spacing:.05em;color:var(--ok);margin-top:2px;}
-body.ohne-loesung li.aufgabe:not(.offen) .loesung{display:none;}
-body.ohne-loesung li.aufgabe:not(.offen){cursor:pointer;}
-body.ohne-loesung li.aufgabe:not(.offen)::after{content:"Lösung anzeigen";display:block;
-        font-size:12px;color:var(--muted);margin-top:2px;}
+/* Loesungen sind zugeklappt; jede Aufgabe einzeln aufklappbar */
+body.loesungen-aus li.aufgabe:not(.offen) .loesung{display:none;}
+body.loesungen-aus li.aufgabe{cursor:pointer;}
+body.loesungen-aus li.aufgabe:not(.offen)::after{content:"+ Lösung anzeigen";display:block;
+        font-size:11px;font-weight:600;color:var(--accent);margin-top:5px;}
+body.loesungen-aus li.aufgabe.offen::after{content:"− Lösung verbergen";display:block;
+        font-size:11px;font-weight:600;color:var(--muted);margin-top:5px;}
 
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
        font-size:13.5px;color:var(--muted);}
@@ -136,8 +139,8 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
   .modul:first-of-type{break-before:auto;page-break-before:auto;}
   .teil{break-before:page;page-break-before:always;}
   .teil:first-of-type{break-before:auto;page-break-before:auto;}
-  body.ohne-loesung li.aufgabe .loesung{display:flex !important;}
-  body.ohne-loesung li.aufgabe::after{content:none !important;}
+  body.loesungen-aus li.aufgabe .loesung{display:flex !important;}
+  body.loesungen-aus li.aufgabe::after{content:none !important;}
   .merkregel,.loesung,.erklaerung p{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
 </style>
@@ -6396,13 +6399,33 @@ liste.addEventListener("change", () => {
   if (liste.value) { location.hash = liste.value; }
 });
 const knopf = document.getElementById("toggle");
+const LOESUNG_KEY = "em1nd3r-loesungen-v1";
+
+function setzeLoesungen(aus) {
+  document.body.classList.toggle("loesungen-aus", aus);
+  knopf.textContent = aus ? "Alle Lösungen anzeigen" : "Alle Lösungen verbergen";
+  if (!aus) {
+    document.querySelectorAll("li.aufgabe.offen").forEach(el => el.classList.remove("offen"));
+  }
+  try { localStorage.setItem(LOESUNG_KEY, aus ? "0" : "1"); } catch (e) {}
+}
+
 knopf.addEventListener("click", () => {
-  const ohne = document.body.classList.toggle("ohne-loesung");
-  knopf.textContent = ohne ? "Lösungen anzeigen" : "Lösungen verbergen";
-  document.querySelectorAll("li.aufgabe.offen").forEach(el => el.classList.remove("offen"));
+  setzeLoesungen(!document.body.classList.contains("loesungen-aus"));
 });
+
+let loesungenGemerkt = "0";
+try {
+  const g = localStorage.getItem(LOESUNG_KEY);
+  if (g === "0" || g === "1") loesungenGemerkt = g;
+} catch (e) {}
+setzeLoesungen(loesungenGemerkt === "0");
+
 document.querySelectorAll("li.aufgabe").forEach(el => {
-  el.addEventListener("click", () => el.classList.toggle("offen"));
+  el.addEventListener("click", () => {
+    if (!document.body.classList.contains("loesungen-aus")) return;
+    el.classList.toggle("offen");
+  });
 });
 document.getElementById("drucken").addEventListener("click", () => window.print());
 

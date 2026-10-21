@@ -241,6 +241,15 @@ body{background:var(--app-bg);color:var(--app-ink);
 #tab-skript .toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;}
 #tab-skript .toc a:hover{border-bottom-color:var(--accent);color:var(--accent);}
 #tab-skript .toc .nr{display:inline-block;min-width:44px;color:var(--muted);font-weight:600;font-size:13px;}
+#tab-skript .toc-kopf{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+          font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+          font-weight:700;margin:0 0 10px;}
+#tab-skript .toc-kopf button{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600;padding:5px 10px;}
+#tab-skript .toc-kap{list-style:none;margin:4px 0 9px;padding:0 0 0 44px;}
+#tab-skript .toc-kap li{margin:2px 0;font-size:13px;line-height:1.45;}
+#tab-skript .toc-kap a{color:var(--muted);}
+#tab-skript .toc-kap a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+#tab-skript #toc.ohne-kap .toc-kap{display:none;}
 #tab-skript .teil{margin:38px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);}
 #tab-skript .teil h2{font-size:20px;margin:0 0 4px;}
 #tab-skript .teil p{margin:0;color:var(--muted);font-size:14px;}
@@ -276,23 +285,25 @@ body{background:var(--app-bg);color:var(--app-ink);
                 font-weight:700;letter-spacing:.05em;text-transform:uppercase;
                 padding:3px 9px;border-radius:6px;margin-right:9px;}
 #tab-skript ol.aufgaben{list-style:none;margin:0;padding:0;counter-reset:aufg;}
-#tab-skript li.aufgabe{counter-increment:aufg;border:1px solid var(--line);border-radius:9px;
-           padding:13px 15px;margin-bottom:11px;background:#fcfdfe;
+#tab-skript li.aufgabe{counter-increment:aufg;border:1px solid var(--line);border-radius:8px;
+           padding:8px 11px;margin-bottom:6px;background:#fcfdfe;font-size:13.5px;line-height:1.45;
            break-inside:avoid;page-break-inside:avoid;}
-#tab-skript li.aufgabe .frage{display:flex;gap:10px;font-weight:600;margin-bottom:9px;}
+#tab-skript li.aufgabe .frage{display:flex;gap:8px;font-weight:600;font-size:13.5px;line-height:1.45;}
 #tab-skript li.aufgabe .frage::before{content:counter(aufg) ".";flex:0 0 auto;color:var(--muted);font-weight:700;}
-#tab-skript .niveau{flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
-        padding:2px 7px;border-radius:5px;height:fit-content;margin-top:3px;}
+#tab-skript .niveau{flex:0 0 auto;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+        padding:2px 6px;border-radius:4px;height:fit-content;margin-top:2px;}
 #tab-skript .niveau.grund{background:#e8eef9;color:#30507f;}
 #tab-skript .niveau.fortg{background:#f3e8fd;color:#6b21a8;}
-#tab-skript .loesung{display:flex;gap:10px;font-size:14.5px;background:var(--okbg);
-         border-radius:7px;padding:9px 12px;color:#14532d;}
-#tab-skript .loesung-label{flex:0 0 auto;font-weight:700;font-size:11.5px;text-transform:uppercase;
+#tab-skript .loesung{display:flex;gap:8px;font-size:13px;line-height:1.5;background:var(--okbg);
+         border-radius:6px;padding:7px 10px;color:#14532d;margin-top:7px;}
+#tab-skript .loesung-label{flex:0 0 auto;font-weight:700;font-size:10.5px;text-transform:uppercase;
                letter-spacing:.05em;color:var(--ok);margin-top:2px;}
-#tab-skript body.ohne-loesung li.aufgabe:not(.offen) .loesung{display:none;}
-#tab-skript body.ohne-loesung li.aufgabe:not(.offen){cursor:pointer;}
-#tab-skript body.ohne-loesung li.aufgabe:not(.offen)::after{content:"Lösung anzeigen";display:block;
-        font-size:12px;color:var(--muted);margin-top:2px;}
+#tab-skript body.loesungen-aus li.aufgabe:not(.offen) .loesung{display:none;}
+#tab-skript body.loesungen-aus li.aufgabe{cursor:pointer;}
+#tab-skript body.loesungen-aus li.aufgabe:not(.offen)::after{content:"+ Lösung anzeigen";display:block;
+        font-size:11px;font-weight:600;color:var(--accent);margin-top:5px;}
+#tab-skript body.loesungen-aus li.aufgabe.offen::after{content:"− Lösung verbergen";display:block;
+        font-size:11px;font-weight:600;color:var(--muted);margin-top:5px;}
 #tab-skript footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
        font-size:13.5px;color:var(--muted);}
 #tab-skript .formelsammlung{margin-top:42px;padding-top:22px;border-top:2px solid var(--line);}
@@ -325,8 +336,8 @@ body{background:var(--app-bg);color:var(--app-ink);
 #tab-skript .modul:first-of-type{break-before:auto;page-break-before:auto;}
 #tab-skript .teil{break-before:page;page-break-before:always;}
 #tab-skript .teil:first-of-type{break-before:auto;page-break-before:auto;}
-#tab-skript body.ohne-loesung li.aufgabe .loesung{display:flex !important;}
-#tab-skript body.ohne-loesung li.aufgabe::after{content:none !important;}
+#tab-skript body.loesungen-aus li.aufgabe .loesung{display:flex !important;}
+#tab-skript body.loesungen-aus li.aufgabe::after{content:none !important;}
 #tab-skript .merkregel, #tab-skript .loesung, #tab-skript .erklaerung p{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
 #tab-vde{--bg:#f4f5f7;--panel:#fff;--ink:#1b1f24;--muted:#5c6672;--line:#dde1e6;
         --accent:#1d4ed8;--ok:#15803d;--okbg:#eaf7ef;--warn:#6b5410;--warnbg:#fff8e6;}
@@ -441,7 +452,7 @@ body{background:var(--app-bg);color:var(--app-ink);
   <header>
     <h1>Elektro-Prüfungsfragen</h1>
     <p class="sub">Eigener Übungsfragenkatalog zur Vorbereitung auf die Gesellenprüfung</p>
-    <p class="fassung">Fassung vom 21.10.2026 um 18:55 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
+    <p class="fassung">Fassung vom 21.10.2026 um 19:06 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
@@ -543,30 +554,136 @@ body{background:var(--app-bg);color:var(--app-ink);
 <button id="toggle">Lösungen verbergen</button>
 <button id="drucken">Drucken</button>
 </div>
-<div class="toc">
+<div class="toc" id="toc">
+<div class="toc-kopf"><span>Inhaltsverzeichnis</span> <button id="toc-schalter" type="button">Unterkapitel ausblenden</button></div>
 <h2>Teil A · Gesellenebene</h2>
 <ol>
-<li><a href="#LF0"><span class="nr">SICHER</span>Arbeitssicherheit und Prüfmittel (übergreifend für alle Lernfelder)</a></li>
-<li><a href="#LF1"><span class="nr">LF1</span>Elektrotechnische Systeme analysieren, Funktionen prüfen, Fehler beheben</a></li>
-<li><a href="#LF2"><span class="nr">LF2</span>Elektrische Systeme planen und installieren</a></li>
-<li><a href="#LF3"><span class="nr">LF3</span>Steuerungen und Regelungen analysieren und realisieren</a></li>
-<li><a href="#LF4"><span class="nr">LF4</span>Informationstechnische Systeme bereitstellen</a></li>
-<li><a href="#LF5"><span class="nr">LF5</span>Elektroenergieversorgung und Sicherheit - Prüftechnik (Kernbereich)</a></li>
-<li><a href="#LF6"><span class="nr">LF6</span>Elektrotechnische Systeme analysieren und prüfen - Fehlersuche</a></li>
-<li><a href="#LF7"><span class="nr">LF7</span>Steuerungen und Regelungen für Systeme programmieren und realisieren</a></li>
-<li><a href="#LF8"><span class="nr">LF8</span>Energiewandlungssysteme auswählen und integrieren</a></li>
-<li><a href="#LF9"><span class="nr">LF9</span>Kommunikation von Systemen in Wohn- und Zweckbauten</a></li>
-<li><a href="#LF10"><span class="nr">LF10</span>Elektrische Geräte und Anlagen der Haustechnik</a></li>
-<li><a href="#LF11"><span class="nr">LF11</span>Energietechnische Systeme errichten - TREI-relevant</a></li>
-<li><a href="#LF12"><span class="nr">LF12</span>Energie- und gebäudetechnische Anlagen planen und realisieren</a></li>
-<li><a href="#LF13"><span class="nr">LF13</span>Energie- und gebäudetechnische Systeme anpassen und dokumentieren</a></li>
+<li><a href="#LF0"><span class="nr">SICHER</span>Arbeitssicherheit und Prüfmittel (übergreifend für alle Lernfelder)</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf0-sicherheitsregeln-und-spannungsfreiheit">Sicherheitsregeln und Spannungsfreiheit</a></li>
+    <li><a href="#kap-lf0-pruefmittel-und-ihre-grenzen">Prüfmittel und ihre Grenzen</a></li>
+    <li><a href="#kap-lf0-persoenliche-schutzausruestung">Persönliche Schutzausrüstung</a></li>
+    <li><a href="#kap-lf0-notfall-und-erste-hilfe">Notfall und Erste Hilfe</a></li>
+  </ul>
+</li>
+<li><a href="#LF1"><span class="nr">LF1</span>Elektrotechnische Systeme analysieren, Funktionen prüfen, Fehler beheben</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf1-grundgesetze-der-elektrotechnik">Grundgesetze der Elektrotechnik</a></li>
+    <li><a href="#kap-lf1-reihen-und-parallelschaltung">Reihen- und Parallelschaltung</a></li>
+    <li><a href="#kap-lf1-normen-und-spannungsbegriffe">Normen und Spannungsbegriffe</a></li>
+    <li><a href="#kap-lf1-fehlersuche-und-fehlerarten">Fehlersuche und Fehlerarten</a></li>
+    <li><a href="#kap-lf1-wechselstromgroessen">Wechselstromgrößen</a></li>
+    <li><a href="#kap-lf1-oberschwingungen-und-netzrueckwirkungen">Oberschwingungen und Netzrückwirkungen</a></li>
+    <li><a href="#kap-lf1-leiterwiderstand-und-leitfaehigkeit">Leiterwiderstand und Leitfähigkeit</a></li>
+    <li><a href="#kap-lf1-gleichspannung-und-wechselspannung">Gleichspannung und Wechselspannung</a></li>
+  </ul>
+</li>
+<li><a href="#LF2"><span class="nr">LF2</span>Elektrische Systeme planen und installieren</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf2-auftragsanalyse-und-leitungsdimensionierung">Auftragsanalyse und Leitungsdimensionierung</a></li>
+    <li><a href="#kap-lf2-leiterquerschnitt-ermitteln">Leiterquerschnitt ermitteln</a></li>
+    <li><a href="#kap-lf2-strombelastbarkeit-und-erwaermung">Strombelastbarkeit und Erwärmung</a></li>
+    <li><a href="#kap-lf2-plaene-und-kalkulation">Pläne und Kalkulation</a></li>
+    <li><a href="#kap-lf2-schutzbereiche-in-sonderraeumen">Schutzbereiche in Sonderräumen</a></li>
+    <li><a href="#kap-lf2-schutzarten-nach-ip-code">Schutzarten nach IP-Code</a></li>
+    <li><a href="#kap-lf2-kriechstroeme-und-waermestau">Kriechströme und Wärmestau</a></li>
+    <li><a href="#kap-lf2-schutzorgane-und-kurzschlussfestigkeit">Schutzorgane und Kurzschlussfestigkeit</a></li>
+    <li><a href="#kap-lf2-steckvorrichtungen-und-anschluesse">Steckvorrichtungen und Anschlüsse</a></li>
+    <li><a href="#kap-lf2-tragschienen-und-verteilereinbau">Tragschienen und Verteilereinbau</a></li>
+    <li><a href="#kap-lf2-verteiler-und-schaltanlagen">Verteiler und Schaltanlagen</a></li>
+    <li><a href="#kap-lf2-leitungen-und-kabel">Leitungen und Kabel</a></li>
+    <li><a href="#kap-lf2-aderzahl-und-aderfarben">Aderzahl und Aderfarben</a></li>
+    <li><a href="#kap-lf2-nennquerschnitt-und-querschnittsreihe">Nennquerschnitt und Querschnittsreihe</a></li>
+    <li><a href="#kap-lf2-leiteraufbau-und-leiterklassen">Leiteraufbau und Leiterklassen</a></li>
+    <li><a href="#kap-lf2-biegeradius-und-verlegung">Biegeradius und Verlegung</a></li>
+    <li><a href="#kap-lf2-befestigung-und-rohrschellen">Befestigung und Rohrschellen</a></li>
+    <li><a href="#kap-lf2-leitungen-einziehen">Leitungen einziehen</a></li>
+    <li><a href="#kap-lf2-klemmstellen">Klemmstellen</a></li>
+    <li><a href="#kap-lf2-uebergangswiderstand-und-kontaktierung">Übergangswiderstand und Kontaktierung</a></li>
+    <li><a href="#kap-lf2-schmelzsicherungen">Schmelzsicherungen</a></li>
+    <li><a href="#kap-lf2-fi-ls-kombielemente">FI/LS-Kombielemente</a></li>
+    <li><a href="#kap-lf2-installationszonen-nach-din-18015">Installationszonen nach DIN 18015</a></li>
+    <li><a href="#kap-lf2-elektromagnetische-vertraeglichkeit">Elektromagnetische Verträglichkeit</a></li>
+  </ul>
+</li>
+<li><a href="#LF3"><span class="nr">LF3</span>Steuerungen und Regelungen analysieren und realisieren</a>
+</li>
+<li><a href="#LF4"><span class="nr">LF4</span>Informationstechnische Systeme bereitstellen</a>
+</li>
+<li><a href="#LF5"><span class="nr">LF5</span>Elektroenergieversorgung und Sicherheit - Prüftechnik (Kernbereich)</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf5-isolationswiderstand-grundlagen">Isolationswiderstand: Grundlagen</a></li>
+    <li><a href="#kap-lf5-isolationsmessung-in-der-praxis">Isolationsmessung in der Praxis</a></li>
+    <li><a href="#kap-lf5-schleifenimpedanz-und-abschaltbedingung">Schleifenimpedanz und Abschaltbedingung</a></li>
+    <li><a href="#kap-lf5-fehlerstrom-schutzeinrichtungen">Fehlerstrom-Schutzeinrichtungen</a></li>
+    <li><a href="#kap-lf5-gleichfehlerstroeme">Gleichfehlerströme</a></li>
+    <li><a href="#kap-lf5-geraetepruefung-und-messmittel">Geräteprüfung und Messmittel</a></li>
+    <li><a href="#kap-lf5-schutzmassnahmen-nach-din-vde-0100-410">Schutzmaßnahmen nach DIN VDE 0100-410</a></li>
+    <li><a href="#kap-lf5-baustellen-nach-din-vde-0100-704">Baustellen nach DIN VDE 0100-704</a></li>
+  </ul>
+</li>
+<li><a href="#LF6"><span class="nr">LF6</span>Elektrotechnische Systeme analysieren und prüfen - Fehlersuche</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf6-pruefverfahren-und-ablauf">Prüfverfahren und Ablauf</a></li>
+    <li><a href="#kap-lf6-pruefprotokoll-und-betreiberpflichten">Prüfprotokoll und Betreiberpflichten</a></li>
+    <li><a href="#kap-lf6-fehlersuche-und-drehfeldpruefung">Fehlersuche und Drehfeldprüfung</a></li>
+    <li><a href="#kap-lf6-zustandsbewertung-und-diagnose">Zustandsbewertung und Diagnose</a></li>
+    <li><a href="#kap-lf6-durchgangspruefung">Durchgangsprüfung</a></li>
+    <li><a href="#kap-lf6-brandschutz-an-leitungsanlagen">Brandschutz an Leitungsanlagen</a></li>
+    <li><a href="#kap-lf6-geraetepruefung-nach-din-en-50678-und-din-en-50699">Geräteprüfung nach DIN EN 50678 und DIN EN 50699</a></li>
+  </ul>
+</li>
+<li><a href="#LF7"><span class="nr">LF7</span>Steuerungen und Regelungen für Systeme programmieren und realisieren</a>
+</li>
+<li><a href="#LF8"><span class="nr">LF8</span>Energiewandlungssysteme auswählen und integrieren</a>
+</li>
+<li><a href="#LF9"><span class="nr">LF9</span>Kommunikation von Systemen in Wohn- und Zweckbauten</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf9-kommunikationssysteme-im-gebaeude">Kommunikationssysteme im Gebäude</a></li>
+    <li><a href="#kap-lf9-funkstandards-und-gateways">Funkstandards und Gateways</a></li>
+    <li><a href="#kap-lf9-licht-und-praesenzsteuerung">Licht- und Präsenzsteuerung</a></li>
+    <li><a href="#kap-lf9-knx-und-gebaeudeleittechnik">KNX und Gebäudeleittechnik</a></li>
+  </ul>
+</li>
+<li><a href="#LF10"><span class="nr">LF10</span>Elektrische Geräte und Anlagen der Haustechnik</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf10-blitzschutz-und-uebergabe">Blitzschutz und Übergabe</a></li>
+    <li><a href="#kap-lf10-sicherheitsstromversorgung">Sicherheitsstromversorgung</a></li>
+    <li><a href="#kap-lf10-beleuchtungstechnik">Beleuchtungstechnik</a></li>
+    <li><a href="#kap-lf10-farbtemperatur-und-lichtqualitaet">Farbtemperatur und Lichtqualität</a></li>
+  </ul>
+</li>
+<li><a href="#LF11"><span class="nr">LF11</span>Energietechnische Systeme errichten - TREI-relevant</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf11-netzsysteme">Netzsysteme</a></li>
+    <li><a href="#kap-lf11-der-pen-leiter">Der PEN-Leiter</a></li>
+    <li><a href="#kap-lf11-photovoltaik-und-ladeinfrastruktur">Photovoltaik und Ladeinfrastruktur</a></li>
+    <li><a href="#kap-lf11-fehlerstromschutz-und-potenzialausgleich">Fehlerstromschutz und Potenzialausgleich</a></li>
+    <li><a href="#kap-lf11-schutzleiter-und-schutzleiterquerschnitt">Schutzleiter und Schutzleiterquerschnitt</a></li>
+    <li><a href="#kap-lf11-netzqualitaet-und-netzanschluss">Netzqualität und Netzanschluss</a></li>
+    <li><a href="#kap-lf11-netzbetreiber-und-zaehleranlage">Netzbetreiber und Zähleranlage</a></li>
+    <li><a href="#kap-lf11-ueberspannungsschutz">Überspannungsschutz</a></li>
+  </ul>
+</li>
+<li><a href="#LF12"><span class="nr">LF12</span>Energie- und gebäudetechnische Anlagen planen und realisieren</a>
+</li>
+<li><a href="#LF13"><span class="nr">LF13</span>Energie- und gebäudetechnische Systeme anpassen und dokumentieren</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf13-anlagen-anpassen-und-dokumentieren">Anlagen anpassen und dokumentieren</a></li>
+    <li><a href="#kap-lf13-instandhaltung">Instandhaltung</a></li>
+  </ul>
+</li>
 </ol>
 <h2>Teil B · Meisterebene</h2>
 <ol>
-<li><a href="#B1"><span class="nr">B1</span>Teil I: Fachpraxis - Meisterprüfungsprojekt, Fachgespräch, Situationsaufgabe</a></li>
-<li><a href="#B2"><span class="nr">B2</span>Prüfungsfach 1/3: ETSI - Elektro- und Sicherheitstechnik</a></li>
-<li><a href="#B3"><span class="nr">B3</span>Prüfungsfach 2/3: Auftragsabwicklung (AA)</a></li>
-<li><a href="#B4"><span class="nr">B4</span>Prüfungsfach 3/3: Betriebsführung und -organisation (BuO)</a></li>
+<li><a href="#B1"><span class="nr">B1</span>Teil I: Fachpraxis - Meisterprüfungsprojekt, Fachgespräch, Situationsaufgabe</a>
+</li>
+<li><a href="#B2"><span class="nr">B2</span>Prüfungsfach 1/3: ETSI - Elektro- und Sicherheitstechnik</a>
+</li>
+<li><a href="#B3"><span class="nr">B3</span>Prüfungsfach 2/3: Auftragsabwicklung (AA)</a>
+</li>
+<li><a href="#B4"><span class="nr">B4</span>Prüfungsfach 3/3: Betriebsführung und -organisation (BuO)</a>
+</li>
 </ol>
 </div>
 <div class="teil"><h2>Teil A · Gesellenebene</h2><p>13 Lernfelder nach dem KMK-Rahmenlehrplan für die Ausbildung, ergänzt um ein übergreifendes Modul zu Arbeitssicherheit und Prüfmitteln</p></div>
@@ -1063,6 +1180,8 @@ body{background:var(--app-bg);color:var(--app-ink);
         <li>Die Nennleistung ist diejenige Leistung, für die ein Betriebsmittel vom Hersteller ausgelegt und bemessen wurde, und sie steht zusammen mit der Nennspannung und dem Nennstrom auf dem Typenschild jedes Gerätes. Sie ist die Grundlage für die Auswahl von Motor, Leitung, Schaltgerät und Schutzeinrichtung, denn alle diese Betriebsmittel müssen den sich daraus ergebenden Betriebsstrom dauerhaft führen können, ohne unzulässig warm zu werden. Der Leistungsbedarf einer Anlage ist dagegen die Summe der Nennleistungen aller angeschlossenen Verbraucher, und er stellt damit zunächst nur einen rein rechnerischen Höchstwert dar, der in der Praxis so gut wie nie gleichzeitig auftritt. Deshalb rechnet man bei der Dimensionierung mit einem Gleichzeitigkeitsfaktor, der das Verhältnis des tatsächlich gleichzeitig zu erwartenden Bedarfs zur Summe aller Nennleistungen angibt. Der Grund für dieses Vorgehen liegt darin, dass in einer Wohnanlage, einem Betrieb oder einem Gebäude nie alle Verbraucher zugleich mit voller Leistung arbeiten: Herd, Waschmaschine, Warmwasserbereiter und Beleuchtung werden zu unterschiedlichen Zeiten genutzt, und selbst gleichzeitig laufende Geräte erreichen ihre volle Leistung oft nur zeitweise. Würde man die Zuleitung nach der ungekürzten Summe aller Nennleistungen bemessen, ergäbe sich ein unnötig großer Querschnitt mit hohen Kosten für Leitung, Absicherung und Verteilerschrank, ohne dass dafür ein echter Bedarf besteht. Umgekehrt darf der Faktor nicht willkürlich klein gewählt werden, weil die Anlage sonst im Überlastfall nicht zuverlässig geschützt wäre, weshalb man ihn aus Erfahrungswerten oder einschlägigen Planungsunterlagen ableitet. Bei der Ermittlung des Leistungsbedarfs erfasst man daher zuerst die Nennleistungen und Betriebsströme der Verbraucher aus Typenschild und Datenblatt, bildet die Summe und multipliziert sie mit dem Gleichzeitigkeitsfaktor, woraus sich der maßgebende Bedarf und der zu erwartende Betriebsstrom ergeben. Für die Auswahl von Leitungen, Schutzeinrichtungen und Anschlussleistung ist dieses Ergebnis die maßgebende Größe; bei Motoren berücksichtigt man zusätzlich den Anlaufstrom, weil der Motor beim Einschalten ein Mehrfaches seines Nennstromes aufnimmt.</li>
         <li>Die Netzfrequenz beträgt in Europa 50 Hz, und daraus ergibt sich die Periodendauer als Kehrwert der Frequenz zu T = 1 / f = 1 / 50 Hz = 0,02 s, also 20 ms. In dieser Zeit durchläuft die Wechselspannung eine vollständige Schwingung mit einer positiven und einer negativen Halbwelle, sodass eine Halbwelle 10 ms dauert. Aus der Periodendauer lassen sich mehrere praktische Werte ableiten: Im Drehstromnetz sind die drei Außenleiter um 120 Grad gegeneinander versetzt, was einem Zeitversatz von 6,67 ms entspricht; im Generator des Kraftwerks ergibt eine Periode genau eine Umdrehung des Drehfelds, woraus für eine zweipolige Maschine die synchrone Drehzahl von 3000 Umdrehungen je Minute folgt. Nach der Gleichrichtung pulsiert die Spannung mit der doppelten Frequenz von 100 Hz, also mit einer Periodendauer von 10 ms, weshalb dieses Brummen in Netzteilen und Verstärkern so häufig auftritt. In Netzen mit 60 Hz, etwa in Nordamerika, beträgt die Periodendauer dagegen 16,7 ms. Die Netzfrequenz wird vom Netzbetreiber eng geregelt, weil sie das Gleichgewicht zwischen Erzeugung und Verbrauch anzeigt, und über den Tag wird die Zahl der Perioden so geführt, dass netzsynchrone Uhren richtig bleiben.</li>
         <li>Drei Werte beschreiben eine Wechselgröße, und sie dürfen nicht verwechselt werden. Der Scheitelwert oder Spitzenwert ist der größte Augenblickswert innerhalb einer Periode, bei sinusförmiger Netzspannung also rund 325 V; der Abstand zwischen positivem und negativem Scheitelwert heißt Spitze-Spitze-Wert und beträgt das Doppelte, also rund 650 V. Der Effektivwert ist der Wert, der an einem ohmschen Widerstand dieselbe Leistung umsetzt wie eine gleich große Gleichspannung, und er beträgt beim Sinus das 0,707-fache des Scheitelwerts. Der Gleichrichtwert ist der Mittelwert des gleichgerichteten Verlaufs und liegt beim Sinus bei 0,637 des Scheitelwerts. Aus diesen Werten ergeben sich zwei Kennzahlen: Der Scheitelfaktor ist das Verhältnis von Scheitelwert zu Effektivwert und beträgt beim Sinus 1,414, der Formfaktor ist das Verhältnis von Effektivwert zu Gleichrichtwert und beträgt 1,11. Beide Kennzahlen gelten nur für sinusförmige Größen. In modernen Anlagen mit LED-Treibern, Schaltnetzteilen und Frequenzumrichtern ist der Verlauf jedoch verzerrt, sodass der Scheitelfaktor von 1,414 abweicht; ein Messgerät ohne echte Effektivwertbildung rechnet dann mit dem Faktor für den Sinus und zeigt einen zu niedrigen Wert an. Deshalb werden für Messungen an solchen Anlagen Geräte mit echter Effektivwertmessung benötigt, die als True RMS oder Echt-Effektivwert gekennzeichnet sind.</li>
+        <li>Der Widerstand im Wechselstromkreis ist nicht mit dem Gleichstromwiderstand gleichzusetzen, weil Strom und Spannung bei Spulen und Kondensatoren nicht gleichzeitig ihren Höchstwert erreichen. Man unterscheidet deshalb drei Begriffe. Der Wirkwiderstand R ist der Anteil, der elektrische Energie in Wärme umsetzt; er ist der einzige Anteil, der eine Wirkleistung erzeugt. Der Blindwiderstand X ist der Anteil, der Energie kurzzeitig speichert und wieder zurückgibt, ohne sie umzusetzen; er setzt sich aus dem induktiven und dem kapazitiven Anteil zusammen und ist die Differenz aus beiden, weil sie einander entgegenwirken. Der Scheinwiderstand oder die Impedanz Z ist der Gesamtwiderstand, den der Stromkreis dem Wechselstrom entgegensetzt, und er ergibt sich aus Wirk- und Blindwiderstand nach Z = Wurzel aus R² plus X². Die Impedanz ist damit immer größer oder gleich dem Wirkwiderstand, und sie ist die Größe, die in der Rechnung U = Z mal I steht.</li>
+        <li>Die Impedanz lässt sich auch als komplexe Größe schreiben, nämlich Z = R + j mal X, wobei j die imaginäre Einheit ist. Der Betrag dieser Größe ist der Scheinwiderstand, und der Winkel zwischen Wirk- und Scheinwiderstand ist die Phasenverschiebung zwischen Spannung und Strom; ihr Kosinus ist der Leistungsfaktor cos φ, der bei rein ohmscher Last eins ist und bei rein induktiver oder kapazitiver Last gegen null geht. Für die Praxis ist wichtig, dass nur der Wirkanteil Leistung überträgt und der Blindanteil die Leitung zusätzlich belastet, ohne Arbeit zu verrichten; deshalb wird der Blindanteil kompensiert, und deshalb sinkt der Spannungsfall, wenn der Leistungsfaktor verbessert wird. Bei Leitungen in der Installation ist der Blindanteil bis zu mittleren Querschnitten klein genug, dass mit dem Wirkwiderstand gerechnet werden darf; bei großen Querschnitten und langen Leitungen muss dagegen mit der Impedanz gerechnet werden.</li>
       </ul>
     </div>
     <div class="unterkapitel" id="kap-lf1-oberschwingungen-und-netzrueckwirkungen">
@@ -6499,9 +6618,13 @@ body{background:var(--app-bg);color:var(--app-ink);
         <div class="fs-groessen">X_L in Ω · f in Hz · L in H. Bei 50 Hz gilt als Merkregel: X_L ≈ 314 Ω je Henry.</div>
       </div>
       <div class="fs-formel">
-        <div class="fs-name">Wechselstromwiderstand (Impedanz)</div>
+        <div class="fs-name">Scheinwiderstand (Impedanz)</div>
         <div class="fs-ausdruck">Z = √( R² + (X_L − X_C)² )</div>
-        <div class="fs-groessen">Z in Ω. Bei Resonanz heben sich X_L und X_C auf, dann ist Z = R und der Strom wird allein vom Wirkwiderstand begrenzt.</div>
+        <div class="fs-umstellung">Z = R + j · X  (komplexe Schreibweise)</div>
+        <div class="fs-umstellung">tan φ = X / R</div>
+        <div class="fs-umstellung">cos φ = R / Z</div>
+        <div class="fs-umstellung">Bei mittleren Querschnitten genügt die Rechnung mit R.</div>
+        <div class="fs-groessen">Z in Ω. Wirkwiderstand R und Blindwiderstand X = X_L − X_C. Die Impedanz ist immer größer oder gleich R; der Winkel φ ist die Phasenverschiebung zwischen U und I.</div>
       </div>
       <div class="fs-formel">
         <div class="fs-name">Blindleistung am Blindwiderstand</div>
@@ -7903,15 +8026,54 @@ liste.addEventListener("change", () => {
   if (liste.value) { location.hash = liste.value; }
 });
 const knopf = document.getElementById("toggle");
+const LOESUNG_KEY = "em1nd3r-loesungen-v1";
+
+function setzeLoesungen(aus) {
+  document.body.classList.toggle("loesungen-aus", aus);
+  knopf.textContent = aus ? "Alle Lösungen anzeigen" : "Alle Lösungen verbergen";
+  if (!aus) {
+    document.querySelectorAll("li.aufgabe.offen").forEach(el => el.classList.remove("offen"));
+  }
+  try { localStorage.setItem(LOESUNG_KEY, aus ? "0" : "1"); } catch (e) {}
+}
+
 knopf.addEventListener("click", () => {
-  const ohne = document.body.classList.toggle("ohne-loesung");
-  knopf.textContent = ohne ? "Lösungen anzeigen" : "Lösungen verbergen";
-  document.querySelectorAll("li.aufgabe.offen").forEach(el => el.classList.remove("offen"));
+  setzeLoesungen(!document.body.classList.contains("loesungen-aus"));
 });
+
+let loesungenGemerkt = "0";
+try {
+  const g = localStorage.getItem(LOESUNG_KEY);
+  if (g === "0" || g === "1") loesungenGemerkt = g;
+} catch (e) {}
+setzeLoesungen(loesungenGemerkt === "0");
+
 document.querySelectorAll("li.aufgabe").forEach(el => {
-  el.addEventListener("click", () => el.classList.toggle("offen"));
+  el.addEventListener("click", () => {
+    if (!document.body.classList.contains("loesungen-aus")) return;
+    el.classList.toggle("offen");
+  });
 });
 document.getElementById("drucken").addEventListener("click", () => window.print());
+
+// Unterkapitel im Inhaltsverzeichnis ein- und ausblenden
+(function () {
+  var toc = document.getElementById("toc");
+  var knopf = document.getElementById("toc-schalter");
+  if (!toc || !knopf) return;
+  var SCHLUESSEL = "em1nd3r-toc-kap-v1";
+  function setze(an) {
+    toc.classList.toggle("ohne-kap", !an);
+    knopf.textContent = an ? "Unterkapitel ausblenden" : "Unterkapitel einblenden";
+    try { localStorage.setItem(SCHLUESSEL, an ? "1" : "0"); } catch (e) {}
+  }
+  var gemerkt = "1";
+  try { var g = localStorage.getItem(SCHLUESSEL); if (g === "0" || g === "1") gemerkt = g; } catch (e) {}
+  setze(gemerkt === "1");
+  knopf.addEventListener("click", function () {
+    setze(toc.classList.contains("ohne-kap"));
+  });
+})();
 
 })();
 
