@@ -5455,6 +5455,14 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <figcaption><strong>Fehlerstromarten und RCD-Typen</strong> Wechselstrom, pulsierender und glatter Gleichstrom, Mischfrequenz — und welcher Typ sie erfasst.</figcaption>
       </figure>
     </div>
+    <div class="unterkapitel" id="kap-lf11-schutzleiter-und-schutzleiterquerschnitt">
+      <h4><a class="anker" href="#kap-lf11-schutzleiter-und-schutzleiterquerschnitt" aria-label="Link auf dieses Kapitel">#</a>Schutzleiter und Schutzleiterquerschnitt</h4>
+      <ul class="theorie">
+        <li>Der Querschnitt des Schutzleiters wird nicht frei gewählt, sondern folgt dem Querschnitt der Außenleiter und wird in drei Stufen festgelegt. Bis zu einem Außenleiterquerschnitt von 16 Quadratmillimetern ist der Schutzleiter genauso groß wie der Außenleiter. Liegt der Außenleiterquerschnitt zwischen 16 und 35 Quadratmillimetern, dann beträgt der Schutzleiter 16 Quadratmillimeter. Bei Außenleiterquerschnitten über 35 Quadratmillimetern genügt die Hälfte des Außenleiterquerschnitts. Diese Staffelung gilt für Schutzleiter aus demselben Werkstoff wie der Außenleiter und ist der vereinfachte Niederschlag des eigentlichen Nachweises, der über den Werkstofffaktor k geführt wird; die Regel steht in DIN VDE 0100-540.</li>
+        <li>Der eigentliche Nachweis lautet S Schutzleiter größer oder gleich Wurzel aus I² mal t, geteilt durch k. Dabei ist I der Fehlerstrom, t die Abschaltzeit und k der Werkstofffaktor, der für Kupfer mit PVC-Isolierung in einer Leitung etwa 115 und für Kupfer mit vernetzter Isolierung etwa 143 beträgt; für Aluminium gelten 76 beziehungsweise 94. Der Faktor bringt zum Ausdruck, wie viel Wärme der Werkstoff bis zur zulässigen Endtemperatur aufnehmen kann: Je höher die zulässige Endtemperatur, desto größer k und desto kleiner der erforderliche Querschnitt. Weil bei kleinen Querschnitten der Fehlerstrom ohnehin durch den Außenleiterquerschnitt begrenzt wird, führt dieser Nachweis in der Regel auf die Staffelung der dreie Stufen, und deshalb darf im Alltag die Tabelle verwendet werden. Der exakte Faktor ist immer der Tabelle der Norm zu entnehmen, weil er von Werkstoff, Isolierung und Verlegeart abhängt.</li>
+        <li>Beim Schutzleiter sind außerdem Mindestwerte und Wechselwirkungen zu beachten. Ein separat verlegter Schutzleiter wird in der Praxis nicht dünner als 2,5 Quadratmillimeter ausgeführt, weil er mechanisch beansprucht werden kann; innerhalb einer mehradrigen Leitung gilt als Untergrenze 1,5 Quadratmillimeter. Für den PEN-Leiter gilt der höhere Mindestwert von 10 Quadratmillimetern Kupfer beziehungsweise 16 Quadratmillimetern Aluminium, weil er gleichzeitig die Neutralleiterfunktion trägt und ein Bruch den Schutz aufhebt. Bei großem Außenleiterquerschnitt ist schließlich zu beachten, dass der Schutzleiter zwar rechnerisch die Hälfte betragen darf, die Wirksamkeit der Schutzmaßnahme aber über die Schleifenimpedanz nachgewiesen werden muss: Ein zu dünn gewählter Schutzleiter kann die Abschaltbedingung verletzen, obwohl sein Querschnitt für die Erwärmung ausreichend wäre.</li>
+      </ul>
+    </div>
     <div class="unterkapitel" id="kap-lf11-netzqualitaet-und-netzanschluss">
       <h4><a class="anker" href="#kap-lf11-netzqualitaet-und-netzanschluss" aria-label="Link auf dieses Kapitel">#</a>Netzqualität und Netzanschluss</h4>
       <ul class="theorie">
@@ -6030,6 +6038,13 @@ table.fs.zeichen td:first-child{font-family:ui-monospace,SFMono-Regular,Menlo,mo
         <div class="fs-ausdruck">R_iso = U / I_Leck</div>
         <div class="fs-umstellung">I_Leck = U / R_iso</div>
         <div class="fs-groessen">Beispiel: 230 V durch 1 MΩ ergeben 0,23 mA — deshalb gilt 1 MΩ als Mindestwert.</div>
+      </div>
+      <div class="fs-formel">
+        <div class="fs-name">Mindestquerschnitt des Schutzleiters</div>
+        <div class="fs-ausdruck">S_PE = S  für S ≤ 16 mm²</div>
+        <div class="fs-umstellung">S_PE = 16 mm²  für 16 &lt; S ≤ 35 mm²</div>
+        <div class="fs-umstellung">S_PE = S / 2  für S &gt; 35 mm²</div>
+        <div class="fs-groessen">S Außenleiterquerschnitt · S_PE Schutzleiterquerschnitt. Gleicher Werkstoff vorausgesetzt; separat verlegter Schutzleiter mindestens 2,5 mm², als Ader mindestens 1,5 mm².</div>
       </div>
     </div>
   </div>
