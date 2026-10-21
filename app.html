@@ -241,6 +241,15 @@ body{background:var(--app-bg);color:var(--app-ink);
 #tab-skript .toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;}
 #tab-skript .toc a:hover{border-bottom-color:var(--accent);color:var(--accent);}
 #tab-skript .toc .nr{display:inline-block;min-width:44px;color:var(--muted);font-weight:600;font-size:13px;}
+#tab-skript .toc-kopf{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+          font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+          font-weight:700;margin:0 0 10px;}
+#tab-skript .toc-kopf button{text-transform:none;letter-spacing:0;font-size:12.5px;font-weight:600;padding:5px 10px;}
+#tab-skript .toc-kap{list-style:none;margin:4px 0 9px;padding:0 0 0 44px;}
+#tab-skript .toc-kap li{margin:2px 0;font-size:13px;line-height:1.45;}
+#tab-skript .toc-kap a{color:var(--muted);}
+#tab-skript .toc-kap a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+#tab-skript #toc.ohne-kap .toc-kap{display:none;}
 #tab-skript .teil{margin:38px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink);}
 #tab-skript .teil h2{font-size:20px;margin:0 0 4px;}
 #tab-skript .teil p{margin:0;color:var(--muted);font-size:14px;}
@@ -441,7 +450,7 @@ body{background:var(--app-bg);color:var(--app-ink);
   <header>
     <h1>Elektro-Prüfungsfragen</h1>
     <p class="sub">Eigener Übungsfragenkatalog zur Vorbereitung auf die Gesellenprüfung</p>
-    <p class="fassung">Fassung vom 21.10.2026 um 18:55 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
+    <p class="fassung">Fassung vom 21.10.2026 um 18:56 Uhr · Antworten erscheinen nur beim Antippen einer Frage und markieren sie dann als beantwortet</p>
     <div class="hint">Diese Fragen sind selbst erstelltes Übungsmaterial im Stil der App (3 Antwortoptionen, eine richtig, mit Erklärung). Es sind NICHT die Originalfragen aus eM1ND3R.</div>
   </header>
 
@@ -543,30 +552,136 @@ body{background:var(--app-bg);color:var(--app-ink);
 <button id="toggle">Lösungen verbergen</button>
 <button id="drucken">Drucken</button>
 </div>
-<div class="toc">
+<div class="toc" id="toc">
+<div class="toc-kopf"><span>Inhaltsverzeichnis</span> <button id="toc-schalter" type="button">Unterkapitel ausblenden</button></div>
 <h2>Teil A · Gesellenebene</h2>
 <ol>
-<li><a href="#LF0"><span class="nr">SICHER</span>Arbeitssicherheit und Prüfmittel (übergreifend für alle Lernfelder)</a></li>
-<li><a href="#LF1"><span class="nr">LF1</span>Elektrotechnische Systeme analysieren, Funktionen prüfen, Fehler beheben</a></li>
-<li><a href="#LF2"><span class="nr">LF2</span>Elektrische Systeme planen und installieren</a></li>
-<li><a href="#LF3"><span class="nr">LF3</span>Steuerungen und Regelungen analysieren und realisieren</a></li>
-<li><a href="#LF4"><span class="nr">LF4</span>Informationstechnische Systeme bereitstellen</a></li>
-<li><a href="#LF5"><span class="nr">LF5</span>Elektroenergieversorgung und Sicherheit - Prüftechnik (Kernbereich)</a></li>
-<li><a href="#LF6"><span class="nr">LF6</span>Elektrotechnische Systeme analysieren und prüfen - Fehlersuche</a></li>
-<li><a href="#LF7"><span class="nr">LF7</span>Steuerungen und Regelungen für Systeme programmieren und realisieren</a></li>
-<li><a href="#LF8"><span class="nr">LF8</span>Energiewandlungssysteme auswählen und integrieren</a></li>
-<li><a href="#LF9"><span class="nr">LF9</span>Kommunikation von Systemen in Wohn- und Zweckbauten</a></li>
-<li><a href="#LF10"><span class="nr">LF10</span>Elektrische Geräte und Anlagen der Haustechnik</a></li>
-<li><a href="#LF11"><span class="nr">LF11</span>Energietechnische Systeme errichten - TREI-relevant</a></li>
-<li><a href="#LF12"><span class="nr">LF12</span>Energie- und gebäudetechnische Anlagen planen und realisieren</a></li>
-<li><a href="#LF13"><span class="nr">LF13</span>Energie- und gebäudetechnische Systeme anpassen und dokumentieren</a></li>
+<li><a href="#LF0"><span class="nr">SICHER</span>Arbeitssicherheit und Prüfmittel (übergreifend für alle Lernfelder)</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf0-sicherheitsregeln-und-spannungsfreiheit">Sicherheitsregeln und Spannungsfreiheit</a></li>
+    <li><a href="#kap-lf0-pruefmittel-und-ihre-grenzen">Prüfmittel und ihre Grenzen</a></li>
+    <li><a href="#kap-lf0-persoenliche-schutzausruestung">Persönliche Schutzausrüstung</a></li>
+    <li><a href="#kap-lf0-notfall-und-erste-hilfe">Notfall und Erste Hilfe</a></li>
+  </ul>
+</li>
+<li><a href="#LF1"><span class="nr">LF1</span>Elektrotechnische Systeme analysieren, Funktionen prüfen, Fehler beheben</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf1-grundgesetze-der-elektrotechnik">Grundgesetze der Elektrotechnik</a></li>
+    <li><a href="#kap-lf1-reihen-und-parallelschaltung">Reihen- und Parallelschaltung</a></li>
+    <li><a href="#kap-lf1-normen-und-spannungsbegriffe">Normen und Spannungsbegriffe</a></li>
+    <li><a href="#kap-lf1-fehlersuche-und-fehlerarten">Fehlersuche und Fehlerarten</a></li>
+    <li><a href="#kap-lf1-wechselstromgroessen">Wechselstromgrößen</a></li>
+    <li><a href="#kap-lf1-oberschwingungen-und-netzrueckwirkungen">Oberschwingungen und Netzrückwirkungen</a></li>
+    <li><a href="#kap-lf1-leiterwiderstand-und-leitfaehigkeit">Leiterwiderstand und Leitfähigkeit</a></li>
+    <li><a href="#kap-lf1-gleichspannung-und-wechselspannung">Gleichspannung und Wechselspannung</a></li>
+  </ul>
+</li>
+<li><a href="#LF2"><span class="nr">LF2</span>Elektrische Systeme planen und installieren</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf2-auftragsanalyse-und-leitungsdimensionierung">Auftragsanalyse und Leitungsdimensionierung</a></li>
+    <li><a href="#kap-lf2-leiterquerschnitt-ermitteln">Leiterquerschnitt ermitteln</a></li>
+    <li><a href="#kap-lf2-strombelastbarkeit-und-erwaermung">Strombelastbarkeit und Erwärmung</a></li>
+    <li><a href="#kap-lf2-plaene-und-kalkulation">Pläne und Kalkulation</a></li>
+    <li><a href="#kap-lf2-schutzbereiche-in-sonderraeumen">Schutzbereiche in Sonderräumen</a></li>
+    <li><a href="#kap-lf2-schutzarten-nach-ip-code">Schutzarten nach IP-Code</a></li>
+    <li><a href="#kap-lf2-kriechstroeme-und-waermestau">Kriechströme und Wärmestau</a></li>
+    <li><a href="#kap-lf2-schutzorgane-und-kurzschlussfestigkeit">Schutzorgane und Kurzschlussfestigkeit</a></li>
+    <li><a href="#kap-lf2-steckvorrichtungen-und-anschluesse">Steckvorrichtungen und Anschlüsse</a></li>
+    <li><a href="#kap-lf2-tragschienen-und-verteilereinbau">Tragschienen und Verteilereinbau</a></li>
+    <li><a href="#kap-lf2-verteiler-und-schaltanlagen">Verteiler und Schaltanlagen</a></li>
+    <li><a href="#kap-lf2-leitungen-und-kabel">Leitungen und Kabel</a></li>
+    <li><a href="#kap-lf2-aderzahl-und-aderfarben">Aderzahl und Aderfarben</a></li>
+    <li><a href="#kap-lf2-nennquerschnitt-und-querschnittsreihe">Nennquerschnitt und Querschnittsreihe</a></li>
+    <li><a href="#kap-lf2-leiteraufbau-und-leiterklassen">Leiteraufbau und Leiterklassen</a></li>
+    <li><a href="#kap-lf2-biegeradius-und-verlegung">Biegeradius und Verlegung</a></li>
+    <li><a href="#kap-lf2-befestigung-und-rohrschellen">Befestigung und Rohrschellen</a></li>
+    <li><a href="#kap-lf2-leitungen-einziehen">Leitungen einziehen</a></li>
+    <li><a href="#kap-lf2-klemmstellen">Klemmstellen</a></li>
+    <li><a href="#kap-lf2-uebergangswiderstand-und-kontaktierung">Übergangswiderstand und Kontaktierung</a></li>
+    <li><a href="#kap-lf2-schmelzsicherungen">Schmelzsicherungen</a></li>
+    <li><a href="#kap-lf2-fi-ls-kombielemente">FI/LS-Kombielemente</a></li>
+    <li><a href="#kap-lf2-installationszonen-nach-din-18015">Installationszonen nach DIN 18015</a></li>
+    <li><a href="#kap-lf2-elektromagnetische-vertraeglichkeit">Elektromagnetische Verträglichkeit</a></li>
+  </ul>
+</li>
+<li><a href="#LF3"><span class="nr">LF3</span>Steuerungen und Regelungen analysieren und realisieren</a>
+</li>
+<li><a href="#LF4"><span class="nr">LF4</span>Informationstechnische Systeme bereitstellen</a>
+</li>
+<li><a href="#LF5"><span class="nr">LF5</span>Elektroenergieversorgung und Sicherheit - Prüftechnik (Kernbereich)</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf5-isolationswiderstand-grundlagen">Isolationswiderstand: Grundlagen</a></li>
+    <li><a href="#kap-lf5-isolationsmessung-in-der-praxis">Isolationsmessung in der Praxis</a></li>
+    <li><a href="#kap-lf5-schleifenimpedanz-und-abschaltbedingung">Schleifenimpedanz und Abschaltbedingung</a></li>
+    <li><a href="#kap-lf5-fehlerstrom-schutzeinrichtungen">Fehlerstrom-Schutzeinrichtungen</a></li>
+    <li><a href="#kap-lf5-gleichfehlerstroeme">Gleichfehlerströme</a></li>
+    <li><a href="#kap-lf5-geraetepruefung-und-messmittel">Geräteprüfung und Messmittel</a></li>
+    <li><a href="#kap-lf5-schutzmassnahmen-nach-din-vde-0100-410">Schutzmaßnahmen nach DIN VDE 0100-410</a></li>
+    <li><a href="#kap-lf5-baustellen-nach-din-vde-0100-704">Baustellen nach DIN VDE 0100-704</a></li>
+  </ul>
+</li>
+<li><a href="#LF6"><span class="nr">LF6</span>Elektrotechnische Systeme analysieren und prüfen - Fehlersuche</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf6-pruefverfahren-und-ablauf">Prüfverfahren und Ablauf</a></li>
+    <li><a href="#kap-lf6-pruefprotokoll-und-betreiberpflichten">Prüfprotokoll und Betreiberpflichten</a></li>
+    <li><a href="#kap-lf6-fehlersuche-und-drehfeldpruefung">Fehlersuche und Drehfeldprüfung</a></li>
+    <li><a href="#kap-lf6-zustandsbewertung-und-diagnose">Zustandsbewertung und Diagnose</a></li>
+    <li><a href="#kap-lf6-durchgangspruefung">Durchgangsprüfung</a></li>
+    <li><a href="#kap-lf6-brandschutz-an-leitungsanlagen">Brandschutz an Leitungsanlagen</a></li>
+    <li><a href="#kap-lf6-geraetepruefung-nach-din-en-50678-und-din-en-50699">Geräteprüfung nach DIN EN 50678 und DIN EN 50699</a></li>
+  </ul>
+</li>
+<li><a href="#LF7"><span class="nr">LF7</span>Steuerungen und Regelungen für Systeme programmieren und realisieren</a>
+</li>
+<li><a href="#LF8"><span class="nr">LF8</span>Energiewandlungssysteme auswählen und integrieren</a>
+</li>
+<li><a href="#LF9"><span class="nr">LF9</span>Kommunikation von Systemen in Wohn- und Zweckbauten</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf9-kommunikationssysteme-im-gebaeude">Kommunikationssysteme im Gebäude</a></li>
+    <li><a href="#kap-lf9-funkstandards-und-gateways">Funkstandards und Gateways</a></li>
+    <li><a href="#kap-lf9-licht-und-praesenzsteuerung">Licht- und Präsenzsteuerung</a></li>
+    <li><a href="#kap-lf9-knx-und-gebaeudeleittechnik">KNX und Gebäudeleittechnik</a></li>
+  </ul>
+</li>
+<li><a href="#LF10"><span class="nr">LF10</span>Elektrische Geräte und Anlagen der Haustechnik</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf10-blitzschutz-und-uebergabe">Blitzschutz und Übergabe</a></li>
+    <li><a href="#kap-lf10-sicherheitsstromversorgung">Sicherheitsstromversorgung</a></li>
+    <li><a href="#kap-lf10-beleuchtungstechnik">Beleuchtungstechnik</a></li>
+    <li><a href="#kap-lf10-farbtemperatur-und-lichtqualitaet">Farbtemperatur und Lichtqualität</a></li>
+  </ul>
+</li>
+<li><a href="#LF11"><span class="nr">LF11</span>Energietechnische Systeme errichten - TREI-relevant</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf11-netzsysteme">Netzsysteme</a></li>
+    <li><a href="#kap-lf11-der-pen-leiter">Der PEN-Leiter</a></li>
+    <li><a href="#kap-lf11-photovoltaik-und-ladeinfrastruktur">Photovoltaik und Ladeinfrastruktur</a></li>
+    <li><a href="#kap-lf11-fehlerstromschutz-und-potenzialausgleich">Fehlerstromschutz und Potenzialausgleich</a></li>
+    <li><a href="#kap-lf11-schutzleiter-und-schutzleiterquerschnitt">Schutzleiter und Schutzleiterquerschnitt</a></li>
+    <li><a href="#kap-lf11-netzqualitaet-und-netzanschluss">Netzqualität und Netzanschluss</a></li>
+    <li><a href="#kap-lf11-netzbetreiber-und-zaehleranlage">Netzbetreiber und Zähleranlage</a></li>
+    <li><a href="#kap-lf11-ueberspannungsschutz">Überspannungsschutz</a></li>
+  </ul>
+</li>
+<li><a href="#LF12"><span class="nr">LF12</span>Energie- und gebäudetechnische Anlagen planen und realisieren</a>
+</li>
+<li><a href="#LF13"><span class="nr">LF13</span>Energie- und gebäudetechnische Systeme anpassen und dokumentieren</a>
+  <ul class="toc-kap">
+    <li><a href="#kap-lf13-anlagen-anpassen-und-dokumentieren">Anlagen anpassen und dokumentieren</a></li>
+    <li><a href="#kap-lf13-instandhaltung">Instandhaltung</a></li>
+  </ul>
+</li>
 </ol>
 <h2>Teil B · Meisterebene</h2>
 <ol>
-<li><a href="#B1"><span class="nr">B1</span>Teil I: Fachpraxis - Meisterprüfungsprojekt, Fachgespräch, Situationsaufgabe</a></li>
-<li><a href="#B2"><span class="nr">B2</span>Prüfungsfach 1/3: ETSI - Elektro- und Sicherheitstechnik</a></li>
-<li><a href="#B3"><span class="nr">B3</span>Prüfungsfach 2/3: Auftragsabwicklung (AA)</a></li>
-<li><a href="#B4"><span class="nr">B4</span>Prüfungsfach 3/3: Betriebsführung und -organisation (BuO)</a></li>
+<li><a href="#B1"><span class="nr">B1</span>Teil I: Fachpraxis - Meisterprüfungsprojekt, Fachgespräch, Situationsaufgabe</a>
+</li>
+<li><a href="#B2"><span class="nr">B2</span>Prüfungsfach 1/3: ETSI - Elektro- und Sicherheitstechnik</a>
+</li>
+<li><a href="#B3"><span class="nr">B3</span>Prüfungsfach 2/3: Auftragsabwicklung (AA)</a>
+</li>
+<li><a href="#B4"><span class="nr">B4</span>Prüfungsfach 3/3: Betriebsführung und -organisation (BuO)</a>
+</li>
 </ol>
 </div>
 <div class="teil"><h2>Teil A · Gesellenebene</h2><p>13 Lernfelder nach dem KMK-Rahmenlehrplan für die Ausbildung, ergänzt um ein übergreifendes Modul zu Arbeitssicherheit und Prüfmitteln</p></div>
@@ -7918,6 +8033,25 @@ document.querySelectorAll("li.aufgabe").forEach(el => {
   el.addEventListener("click", () => el.classList.toggle("offen"));
 });
 document.getElementById("drucken").addEventListener("click", () => window.print());
+
+// Unterkapitel im Inhaltsverzeichnis ein- und ausblenden
+(function () {
+  var toc = document.getElementById("toc");
+  var knopf = document.getElementById("toc-schalter");
+  if (!toc || !knopf) return;
+  var SCHLUESSEL = "em1nd3r-toc-kap-v1";
+  function setze(an) {
+    toc.classList.toggle("ohne-kap", !an);
+    knopf.textContent = an ? "Unterkapitel ausblenden" : "Unterkapitel einblenden";
+    try { localStorage.setItem(SCHLUESSEL, an ? "1" : "0"); } catch (e) {}
+  }
+  var gemerkt = "1";
+  try { var g = localStorage.getItem(SCHLUESSEL); if (g === "0" || g === "1") gemerkt = g; } catch (e) {}
+  setze(gemerkt === "1");
+  knopf.addEventListener("click", function () {
+    setze(toc.classList.contains("ohne-kap"));
+  });
+})();
 
 })();
 
